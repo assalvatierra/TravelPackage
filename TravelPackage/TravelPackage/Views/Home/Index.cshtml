@@ -1,38 +1,31 @@
-﻿@{
+﻿@model IEnumerable<TravelPackage.Models.tpAreas>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>Davao Tour Packages</h1>
+    <h1>Welcome to Philippine Travel Packages</h1>
     <p class="lead">Bringing you to the land of Eagles, Durian, Mt Apo.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>City Tour</h2>
-        <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="Samal Tour (Inland)"><img width="100%" src="~/Images/abreeza-mall.gif"></a>
-        <p>
-            Davao City Tour Packages as low as Php 1,350/pax (group of 6) -City Tour package gives you a comfortable ride around the city while enjoying exciting tourist attractions nearby. we are offering an most affordable and yet flexible tour packages. Destinations: Airport/Hotel Pick-up, Lonwha Buddist Temple, Museo Dabawenyo,San Pedro Cathedral, Peoples Park, Aldevinco Shopping Center, Duterte’s Residence, Shrine of Holy Infant Jesus of Prague, Davao Crocodile Park, Tribu K’Mindanawan (weekends…
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>CountrySide Tour</h2>
-        <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="Samal Tour (Inland)"><img width="100%" src="~/Images/CountrySide.gif"></a>
-        <p>Country Side Tour as low as Php 2,200/pax (group of 6) WITH LUNCH Feel the cool breeze from Davao country side. We’ll take you to Eden Nature park and enjoy the taste of LUNCH BUFFET served with veggies and fruits from their farm. Visit Davao Nature Parks, Mountains resorts and Philippine eagle sanctuary. Avail our Cheapest tour Package designed for family vacations and group adventures! Other exciting activities awaits at….</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Samal and Island Hopping</h2>
-        <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="Samal Tour (Inland)"><img width="100%" src="~/Images/SamalIslandHopping.png"></a>
-        <p>Samal Island Hopping offers you a chance to explore Talicud island’s amazing beauty Inclusions: 10 hours tour Air conditioned transportation (Exclusive for the group) Boat Fare & Docking Fee Parking & Barge Fee Destinations: Isla Reta Beach Resort – your can take your lunch while experience the crystal clear waters at Isla Reta. Isla Bonita – another paradise like stop over during the island hopping. Angel Cove and Coral Garden….</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Samal Tour (Inland)</h2>
-        <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="Samal Tour (Inland)"><img width="100%" src="~/Images/SamalTour.png" ></a>
-        <p>Samal tour gives you a chance to feel the real breeze of Davao. As low as Php 1,700/pax (Group of 6) Destinations: Monfort Bat Cave- The bat sanctuary in Samal Island. Hagimit Falls- quite waterfalls that flows calmly through the rock formations. Maxima Aqua-fun and resort Inclusions: 10 hours tour Air conditioned transportation (Exclusive for the group) Applicable Entrances Barge Fees, Parking Fees, Environmental Fees Additional options: Island hopping (Babu….</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2>@item.Name</h2>
+            <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="Samal Tour (Inland)"><img width="100%" src="@item.PgFeatureImg"></a>
+            <p>@item.PageRemarks</p>
+            <p>
+                @Html.ActionLink("GO TO " + @item.Name + " >>", "Destination", new { id = @item.Id }, new { @class = "btn btn-default" } )
+
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.PageView)
+            </p>
+        </div>
+    }
+
 </div>

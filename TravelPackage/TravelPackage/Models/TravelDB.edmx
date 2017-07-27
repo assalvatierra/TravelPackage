@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TravelDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TravelDBStoreContainer">
+    <EntitySet Name="tpAreas" EntityType="TravelDB.Store.tpAreas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tpProducts" EntityType="TravelDB.Store.tpProducts" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="tpAreastpProducts" Association="TravelDB.Store.tpAreastpProducts">
+      <End Role="tpAreas" EntitySet="tpAreas" />
+      <End Role="tpProducts" EntitySet="tpProducts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tpAreas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="PageRemarks" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="PageView" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="PgFeatureImg" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tpProducts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="ShortRemarks" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="PageView" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PgFeatureImg" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="tpAreasId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="tpAreastpProducts">
+    <End Role="tpAreas" Type="TravelDB.Store.tpAreas" Multiplicity="1" />
+    <End Role="tpProducts" Type="TravelDB.Store.tpProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpAreas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProducts">
+        <PropertyRef Name="tpAreasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TravelDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TravelDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tpAreas" EntityType="TravelDB.tpAreas" />
+          <EntitySet Name="tpProducts" EntityType="TravelDB.tpProducts" />
+          <AssociationSet Name="tpAreastpProducts" Association="TravelDB.tpAreastpProducts">
+            <End Role="tpAreas" EntitySet="tpAreas" />
+            <End Role="tpProducts" EntitySet="tpProducts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tpAreas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" />
+          <Property Name="PageRemarks" Type="String" Nullable="true" MaxLength="255" />
+          <Property Name="PageView" Type="String" Nullable="true" MaxLength="30" />
+          <Property Name="PgFeatureImg" Type="String" Nullable="true" MaxLength="150" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tpProducts" Relationship="TravelDB.tpAreastpProducts" FromRole="tpAreas" ToRole="tpProducts" />
+        </EntityType>
+        <EntityType Name="tpProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="80" />
+          <Property Name="ShortRemarks" Type="String" Nullable="true" MaxLength="250" />
+          <Property Name="PageView" Type="String" Nullable="true" MaxLength="50" />
+          <Property Name="PgFeatureImg" Type="String" Nullable="true" MaxLength="150" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tpArea" Relationship="TravelDB.tpAreastpProducts" FromRole="tpProducts" ToRole="tpAreas" />
+          <Property Name="tpAreasId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tpAreastpProducts">
+          <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
+          <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tpAreas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tpProducts">
+              <PropertyRef Name="tpAreasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelDBStoreContainer" CdmEntityContainer="TravelDBContainer">
+    <EntitySetMapping Name="tpAreas">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpAreas)">
+        <MappingFragment StoreEntitySet="tpAreas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PageRemarks" ColumnName="PageRemarks" />
+          <ScalarProperty Name="PageView" ColumnName="PageView" />
+          <ScalarProperty Name="PgFeatureImg" ColumnName="PgFeatureImg" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpProducts">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpProducts)">
+        <MappingFragment StoreEntitySet="tpProducts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortRemarks" ColumnName="ShortRemarks" />
+          <ScalarProperty Name="PageView" ColumnName="PageView" />
+          <ScalarProperty Name="PgFeatureImg" ColumnName="PgFeatureImg" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="tpAreasId" ColumnName="tpAreasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

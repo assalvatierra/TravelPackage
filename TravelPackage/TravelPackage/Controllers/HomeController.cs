@@ -1,16 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using TravelPackage.Models;
+
 
 namespace TravelPackage.Controllers
 {
     public class HomeController : Controller
     {
+        private TravelDBContainer db = new TravelDBContainer();
+
         public ActionResult Index()
         {
+            return View(db.tpAreas.ToList().OrderBy(d=>d.Sort) );
+        }
+
+        public ActionResult Destination(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tpAreas tpAreas = db.tpAreas.Find(id);
+            if (tpAreas == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.Destination = tpAreas.Name;
+
             return View();
+
         }
 
         public ActionResult About()

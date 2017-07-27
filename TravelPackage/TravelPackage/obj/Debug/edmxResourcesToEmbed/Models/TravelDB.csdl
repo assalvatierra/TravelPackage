@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TravelDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="TravelDBContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tpAreas" EntityType="TravelDB.tpAreas" />
+  </EntityContainer>
+  <EntityType Name="tpAreas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" />
+    <Property Name="PageRemarks" Type="String" Nullable="true" MaxLength="255" />
+    <Property Name="PageView" Type="String" Nullable="true" MaxLength="30" />
+    <Property Name="PgFeatureImg" Type="String" Nullable="true" MaxLength="150" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

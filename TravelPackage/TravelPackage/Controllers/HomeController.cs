@@ -20,7 +20,7 @@ namespace TravelPackage.Controllers
             return View(db.tpAreas.ToList().OrderBy(d=>d.Sort) );
         }
 
-        public ActionResult Destination(int? id)
+        public ActionResult Destination(int? id, string AreaName)
         {
             if (id == null)
             {
@@ -32,10 +32,31 @@ namespace TravelPackage.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.Destination = tpAreas.Name;
+            ViewBag.Destination = AreaName;
+            ViewBag.Description = tpAreas.PageRemarks;
 
-            return View();
+            var data = db.tpProducts.Where(d => d.tpAreasId == id).OrderBy(d => d.Sort).ToList();
+                
+            return View(data);
 
+        }
+
+        public ActionResult Product(int? id, string ProductName)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tpProducts product = db.tpProducts.Find(id);
+            if ( product == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.DestId = product.tpAreasId;
+            ViewBag.DestName = product.tpArea.Name;
+
+            return View(product);
         }
 
         public ActionResult About()

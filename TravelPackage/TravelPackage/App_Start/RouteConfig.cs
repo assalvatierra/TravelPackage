@@ -13,11 +13,17 @@ namespace TravelPackage
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    name: "Destination",
-            //    url: "TravelPackages/{Name}",
-            //    defaults: new { controller = "Home", action = "Destination" }
-            //);
+            routes.MapRoute(
+                name: "Destination",
+                url: "TravelPackages/{id}/{AreaName}",
+                defaults: new { controller = "Home", action = "Destination", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Product",
+                url: "TourPackages/{id}/{ProductName}",
+                defaults: new { controller = "Home", action = "Product", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

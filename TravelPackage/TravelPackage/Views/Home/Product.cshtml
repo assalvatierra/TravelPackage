@@ -1,0 +1,78 @@
+﻿@model TravelPackage.Models.tpProducts
+
+@{
+    ViewBag.Title = "Product";
+    string sArea = ViewBag.DestName;
+}
+
+<div class="jumbotron">
+    <h1>@Model.Name</h1>
+    <p class="lead">@Model.ShortRemarks</p>
+</div>
+<div class="breadcrumbs10" style="background-color: #eeeeee;">
+    <p>
+        &raquo;
+        @Html.ActionLink("HOME", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        @Html.ActionLink("DESTINATIONS", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        @Html.ActionLink(@sArea, "Destination", new { id = ViewBag.DestId, AreaName = sArea }, new { @class = "btn btn-primary btn-sm" })
+        @Model.Name&raquo;
+    </p>
+</div>
+
+<div>
+    <h4>tpProducts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortRemarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortRemarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageView)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PgFeatureImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PgFeatureImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tpArea.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tpArea.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Destination", new { id = ViewBag.DestId, AreaName = sArea } )
+</p>

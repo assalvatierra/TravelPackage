@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.breadcrumbs10 {
+  padding: 3px;
+  margin-bottom: 3px;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
+}

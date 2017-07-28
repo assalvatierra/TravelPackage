@@ -2,6 +2,11 @@
 <Schema Namespace="TravelDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="TravelDBStoreContainer">
     <EntitySet Name="tpAreas" EntityType="TravelDB.Store.tpAreas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tpProducts" EntityType="TravelDB.Store.tpProducts" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="tpAreastpProducts" Association="TravelDB.Store.tpAreastpProducts">
+      <End Role="tpAreas" EntitySet="tpAreas" />
+      <End Role="tpProducts" EntitySet="tpProducts" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -14,4 +19,28 @@
     <Property Name="PgFeatureImg" Type="nvarchar" Nullable="true" MaxLength="150" />
     <Property Name="Sort" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="tpProducts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="ShortRemarks" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="PageView" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PgFeatureImg" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="tpAreasId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="tpAreastpProducts">
+    <End Role="tpAreas" Type="TravelDB.Store.tpAreas" Multiplicity="1" />
+    <End Role="tpProducts" Type="TravelDB.Store.tpProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpAreas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProducts">
+        <PropertyRef Name="tpAreasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

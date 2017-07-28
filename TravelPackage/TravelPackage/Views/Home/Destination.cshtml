@@ -1,7 +1,37 @@
-﻿
+﻿@model IEnumerable<TravelPackage.Models.tpProducts>
+
 @{
     ViewBag.Title = "Destination";
 }
 
-<h2>@ViewBag.Destination</h2>
+<div class="jumbotron">
+    <h1>Welcome to @ViewBag.Destination</h1>
+    <p class="lead">@ViewBag.Description</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+<div class="breadcrumbs10" style="background-color: #eeeeee;">
+    <p>&raquo;
+    @Html.ActionLink("HOME", "Index", null, new { @class = "btn btn-primary btn-sm" })
+    @Html.ActionLink("DESTINATIONS", "Index", null, new {@class="btn btn-primary btn-sm"})
+    @ViewBag.Destination&raquo;
+    </p>
+</div>
+<div class="row">
 
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2>@item.Name</h2>
+            <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="@item.Name"><img width="100%" src="@item.PgFeatureImg"></a>
+            <p>@item.ShortRemarks</p>
+            <p>
+                @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name }, new { @class = "btn btn-default" })
+
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.PageView)
+            </p>
+        </div>
+    }
+
+</div>

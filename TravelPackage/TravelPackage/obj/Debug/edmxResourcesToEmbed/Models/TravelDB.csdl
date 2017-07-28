@@ -2,6 +2,11 @@
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TravelDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="TravelDBContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tpAreas" EntityType="TravelDB.tpAreas" />
+    <EntitySet Name="tpProducts" EntityType="TravelDB.tpProducts" />
+    <AssociationSet Name="tpAreastpProducts" Association="TravelDB.tpAreastpProducts">
+      <End Role="tpAreas" EntitySet="tpAreas" />
+      <End Role="tpProducts" EntitySet="tpProducts" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -13,5 +18,31 @@
     <Property Name="PageView" Type="String" Nullable="true" MaxLength="30" />
     <Property Name="PgFeatureImg" Type="String" Nullable="true" MaxLength="150" />
     <Property Name="Sort" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tpProducts" Relationship="TravelDB.tpAreastpProducts" FromRole="tpAreas" ToRole="tpProducts" />
   </EntityType>
+  <EntityType Name="tpProducts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="80" />
+    <Property Name="ShortRemarks" Type="String" Nullable="true" MaxLength="250" />
+    <Property Name="PageView" Type="String" Nullable="true" MaxLength="50" />
+    <Property Name="PgFeatureImg" Type="String" Nullable="true" MaxLength="150" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tpArea" Relationship="TravelDB.tpAreastpProducts" FromRole="tpProducts" ToRole="tpAreas" />
+    <Property Name="tpAreasId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tpAreastpProducts">
+    <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpAreas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProducts">
+        <PropertyRef Name="tpAreasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

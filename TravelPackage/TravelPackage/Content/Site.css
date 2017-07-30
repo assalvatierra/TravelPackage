@@ -33,3 +33,15 @@ textarea {
   color: inherit;
   background-color: #eeeeee;
 }
+
+@media (min-width: 768px){
+    .callbutton{
+        visibility:hidden !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .callbutton{
+        visibility:visible !important;
+    }
+}

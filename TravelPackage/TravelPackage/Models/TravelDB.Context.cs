@@ -27,5 +27,10 @@ namespace TravelPackage.Models
     
         public virtual DbSet<tpAreas> tpAreas { get; set; }
         public virtual DbSet<tpProducts> tpProducts { get; set; }
+        public virtual DbSet<tpProductImages> tpProductImages { get; set; }
+        public virtual DbSet<tpInquiry> tpInquiries { get; set; }
+        public virtual DbSet<tpProdCat> tpProdCats { get; set; }
+        public virtual DbSet<tpCategory> tpCategories { get; set; }
+        public virtual DbSet<tpInqServices> tpInqServices { get; set; }
     }
 }

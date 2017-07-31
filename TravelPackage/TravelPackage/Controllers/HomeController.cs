@@ -55,6 +55,8 @@ namespace TravelPackage.Controllers
 
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
+            ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
+            ViewBag.Inquiry = new WebInquiryForm();
 
             return View(product);
         }

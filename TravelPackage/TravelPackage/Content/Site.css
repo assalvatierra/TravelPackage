@@ -38,10 +38,18 @@ textarea {
     .callbutton{
         visibility:hidden !important;
     }
+
+    .contachbutton{
+        visibility:visible !important;
+    }
+
 }
 
 @media (max-width: 767px) {
     .callbutton{
         visibility:visible !important;
+    }
+    .contachbutton{
+        visibility:hidden !important;
     }
 }

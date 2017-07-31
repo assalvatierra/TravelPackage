@@ -14,6 +14,14 @@ namespace TravelPackage.Models
     
     public partial class tpProducts
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tpProducts()
+        {
+            this.tpProductImages = new HashSet<tpProductImages>();
+            this.tpProdCats = new HashSet<tpProdCat>();
+            this.tpInqServices = new HashSet<tpInqServices>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string ShortRemarks { get; set; }
@@ -23,5 +31,11 @@ namespace TravelPackage.Models
         public int tpAreasId { get; set; }
     
         public virtual tpAreas tpArea { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tpProductImages> tpProductImages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tpProdCat> tpProdCats { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tpInqServices> tpInqServices { get; set; }
     }
 }

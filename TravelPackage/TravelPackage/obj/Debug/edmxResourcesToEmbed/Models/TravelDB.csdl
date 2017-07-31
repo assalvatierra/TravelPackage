@@ -7,6 +7,31 @@
       <End Role="tpAreas" EntitySet="tpAreas" />
       <End Role="tpProducts" EntitySet="tpProducts" />
     </AssociationSet>
+    <EntitySet Name="tpProductImages" EntityType="TravelDB.tpProductImages" />
+    <AssociationSet Name="tpProductstpProductImages" Association="TravelDB.tpProductstpProductImages">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpProductImages" EntitySet="tpProductImages" />
+    </AssociationSet>
+    <EntitySet Name="tpInquiries" EntityType="TravelDB.tpInquiry" />
+    <EntitySet Name="tpProdCats" EntityType="TravelDB.tpProdCat" />
+    <EntitySet Name="tpCategories" EntityType="TravelDB.tpCategory" />
+    <AssociationSet Name="tpCategorytpProdCat" Association="TravelDB.tpCategorytpProdCat">
+      <End Role="tpCategory" EntitySet="tpCategories" />
+      <End Role="tpProdCat" EntitySet="tpProdCats" />
+    </AssociationSet>
+    <AssociationSet Name="tpProductstpProdCat" Association="TravelDB.tpProductstpProdCat">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpProdCat" EntitySet="tpProdCats" />
+    </AssociationSet>
+    <EntitySet Name="tpInqServices" EntityType="TravelDB.tpInqServices" />
+    <AssociationSet Name="tpProductstpInqServices" Association="TravelDB.tpProductstpInqServices">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpInqServices" EntitySet="tpInqServices" />
+    </AssociationSet>
+    <AssociationSet Name="tpInquirytpInqServices" Association="TravelDB.tpInquirytpInqServices">
+      <End Role="tpInquiry" EntitySet="tpInquiries" />
+      <End Role="tpInqServices" EntitySet="tpInqServices" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -32,6 +57,9 @@
     <Property Name="Sort" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tpArea" Relationship="TravelDB.tpAreastpProducts" FromRole="tpProducts" ToRole="tpAreas" />
     <Property Name="tpAreasId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tpProductImages" Relationship="TravelDB.tpProductstpProductImages" FromRole="tpProducts" ToRole="tpProductImages" />
+    <NavigationProperty Name="tpProdCats" Relationship="TravelDB.tpProductstpProdCat" FromRole="tpProducts" ToRole="tpProdCat" />
+    <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpProductstpInqServices" FromRole="tpProducts" ToRole="tpInqServices" />
   </EntityType>
   <Association Name="tpAreastpProducts">
     <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
@@ -42,6 +70,123 @@
       </Principal>
       <Dependent Role="tpProducts">
         <PropertyRef Name="tpAreasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpProductImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpProductImages" FromRole="tpProductImages" ToRole="tpProducts" />
+    <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+    <Property Name="ImgPath" Type="String" Nullable="false" MaxLength="250" />
+    <Property Name="Desc" Type="String" Nullable="true" MaxLength="150" />
+    <Property Name="AltName" Type="String" Nullable="true" MaxLength="80" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tpProductstpProductImages">
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+    <End Type="TravelDB.tpProductImages" Role="tpProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProductImages">
+        <PropertyRef Name="tpProductsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpInquiry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtInquiry" Type="DateTime" Nullable="false" />
+    <Property Name="LeadGuest" Type="String" Nullable="false" MaxLength="250" />
+    <Property Name="ContactNo" Type="String" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="String" Nullable="true" MaxLength="120" />
+    <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpInquirytpInqServices" FromRole="tpInquiry" ToRole="tpInqServices" />
+    <Property Name="NoOfChild" Type="Int32" Nullable="false" />
+    <Property Name="NoOfAdult" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="tpProdCat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tpCategory" Relationship="TravelDB.tpCategorytpProdCat" FromRole="tpProdCat" ToRole="tpCategory" />
+    <Property Name="tpCategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpProdCat" FromRole="tpProdCat" ToRole="tpProducts" />
+    <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tpCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tpProdCats" Relationship="TravelDB.tpCategorytpProdCat" FromRole="tpCategory" ToRole="tpProdCat" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="80" />
+    <Property Name="SysCode" Type="String" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <Association Name="tpCategorytpProdCat">
+    <End Type="TravelDB.tpCategory" Role="tpCategory" Multiplicity="1" />
+    <End Type="TravelDB.tpProdCat" Role="tpProdCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProdCat">
+        <PropertyRef Name="tpCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tpProductstpProdCat">
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+    <End Type="TravelDB.tpProdCat" Role="tpProdCat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProdCat">
+        <PropertyRef Name="tpProductsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpInqServices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpInqServices" FromRole="tpInqServices" ToRole="tpProducts" />
+    <Property Name="tpInquiryId" Type="Int32" Nullable="false" />
+    <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tpInquiry" Relationship="TravelDB.tpInquirytpInqServices" FromRole="tpInqServices" ToRole="tpInquiry" />
+    <Property Name="dtSvcStart" Type="String" Nullable="false" />
+    <Property Name="Message" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="tpProductstpInqServices">
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+    <End Type="TravelDB.tpInqServices" Role="tpInqServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpInqServices">
+        <PropertyRef Name="tpProductsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tpInquirytpInqServices">
+    <End Type="TravelDB.tpInquiry" Role="tpInquiry" Multiplicity="1" />
+    <End Type="TravelDB.tpInqServices" Role="tpInqServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpInquiry">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpInqServices">
+        <PropertyRef Name="tpInquiryId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

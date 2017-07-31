@@ -4,6 +4,9 @@
     ViewBag.Title = "Product";
     string sArea = ViewBag.DestName;
     string pgView = Model.PageView;
+
+    List<TravelPackage.Models.tpProductImages> productImages = (List<TravelPackage.Models.tpProductImages>)ViewBag.ProdImages;
+    TravelPackage.Models.WebInquiryForm InquiryObj = (TravelPackage.Models.WebInquiryForm)ViewBag.Inquiry;
 }
 
 <div class="jumbotron">
@@ -20,13 +23,23 @@
     </p>
 </div>
 
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial(pgView, Model); }
+    </div>
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductInquiry", InquiryObj); }
+    </div>
+</div>
 
-<div>
-    @{ Html.RenderPartial(pgView, Model); }
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("productImages", productImages); }
+    </div>
 </div>
 
 <p>
-    @Html.ActionLink("Back to List", "Destination", new { id = ViewBag.DestId, AreaName = sArea } )
+    @Html.ActionLink("Back to List", "Destination", new { id = ViewBag.DestId, AreaName = sArea })
 </p>
 
 

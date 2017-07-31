@@ -26,5 +26,60 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tpProductImages">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpProductImages)">
+        <MappingFragment StoreEntitySet="tpProductImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+          <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="AltName" ColumnName="AltName" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpInquiries">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpInquiry)">
+        <MappingFragment StoreEntitySet="tpInquiries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="dtInquiry" ColumnName="dtInquiry" />
+          <ScalarProperty Name="LeadGuest" ColumnName="LeadGuest" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NoOfChild" ColumnName="NoOfChild" />
+          <ScalarProperty Name="NoOfAdult" ColumnName="NoOfAdult" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpProdCats">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpProdCat)">
+        <MappingFragment StoreEntitySet="tpProdCats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tpCategoryId" ColumnName="tpCategoryId" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpCategory)">
+        <MappingFragment StoreEntitySet="tpCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SysCode" ColumnName="SysCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpInqServices">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpInqServices)">
+        <MappingFragment StoreEntitySet="tpInqServices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tpInquiryId" ColumnName="tpInquiryId" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+          <ScalarProperty Name="dtSvcStart" ColumnName="dtSvcStart" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -7,7 +7,7 @@
 Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values 
 ('City Tour','City Tour','ProductDefaultView','/Images/abreeza-mall.gif',1,1),
 ('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',1,1),
-('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',1,2),
+('Country Side Tour','Country Side Tour','BoholPackages/CountrySide','/Images/CountrySide.gif',1,2),
 ('Panglao Tour','Panglao Tour','ProductDefaultView2','/Images/SamalIslandHopping.png',1,2);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values

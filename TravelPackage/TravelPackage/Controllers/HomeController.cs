@@ -148,7 +148,7 @@ namespace TravelPackage.Controllers
 
             if (wif.Status == "BOOK")
             {
-                return RedirectToAction("RequestBook", tpInq.Id);
+                return RedirectToAction("RequestBook", new { bookingId = tpInq.Id });
             }
 
             return View(wif);
@@ -162,7 +162,7 @@ namespace TravelPackage.Controllers
 
         public ActionResult RequestBook(int? bookingId)
         {
-            ViewBag.BookingRef = bookingId;
+            ViewBag.BookingRef = (int) bookingId;
             return View();
         }
 

@@ -353,6 +353,9 @@
     <Content Include="Views\Home\ProductImages.cshtml" />
     <Content Include="Views\Home\ProductInquiry.cshtml" />
     <Content Include="Views\Home\BoholPackages\CountrySide.cshtml" />
+    <Content Include="Views\Home\RequestProduct.cshtml" />
+    <Content Include="Views\Home\RequestQuote.cshtml" />
+    <Content Include="Views\Home\RequestBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

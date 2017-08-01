@@ -53,12 +53,117 @@ namespace TravelPackage.Controllers
                 return HttpNotFound();
             }
 
+            WebInquiryForm wif = new WebInquiryForm();
+            if (Session["INQUIRYOBJ"] != null )
+            {
+                wif = (WebInquiryForm)Session["INQUIRYOBJ"];
+            }
+            else
+            {
+                wif.items = new List<WebInquiryItems>();
+            }
+            wif.ProductId = (int)id;
+            wif.JobStart = DateTime.Today;
+
+            ViewBag.Inquiry = wif;
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
             ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
-            ViewBag.Inquiry = new WebInquiryForm();
 
             return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult Product([Bind( Include = "ProductId, LeadGuest, ContactNo, Email, NoOfAdult, NoOfChild, JobStart, Message, Status")] WebInquiryForm wif, string btnSubmit)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    //add product for inquiry/book 
+                    if (wif.items == null) wif.items = new List<WebInquiryItems>();
+                    wif.items.Add( new WebInquiryItems
+                    {
+                        ProductId = wif.ProductId,
+                        dtStart = wif.JobStart,
+                        Message = wif.Message
+                    });
+                    wif.Message = ""; //clean message value for next inquiry
+
+                    if (btnSubmit == "Request a Quote") wif.Status = "QUOTE";
+                    if (btnSubmit == "Book this Product") wif.Status = "BOOK";
+
+                    Session["INQUIRYOBJ"] = wif; //update session web inquiry object
+                }
+
+                return RedirectToAction("RequestProduct");
+            }
+            catch (Exception e)
+            {
+                ViewBag.errormsg = e.Message.Trim(); //for debugging purposes only
+                return RedirectToAction("RequestProduct");
+            }
+        }
+
+        public ActionResult RequestProduct()
+        {
+            WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
+
+            //add to database
+            Models.tpInquiry tpInq = new tpInquiry
+            {
+                dtInquiry = DateTime.Now,
+                LeadGuest = wif.LeadGuest,
+                ContactNo = wif.ContactNo,
+                Email = wif.Email,
+                NoOfAdult = wif.NoOfAdult,
+                NoOfChild = wif.NoOfChild,
+                Status = wif.Status
+            };
+            db.tpInquiries.Add(tpInq);
+            db.SaveChanges();
+
+            var item01 = wif.items.FirstOrDefault();
+            if (item01 != null)
+            {
+                Models.tpInqServices tpSvc = new tpInqServices
+                {
+                    tpInquiryId = tpInq.Id,
+                    tpProductsId = item01.ProductId,
+                    dtSvcStart = item01.dtStart,
+                    Message = item01.Message
+                };
+                db.tpInqServices.Add(tpSvc);
+                db.SaveChanges();
+            }
+
+            //retrieve product for view display purposes
+            ViewBag.product = db.tpProducts.Find(wif.ProductId);
+
+            if (wif.Status == "QUOTE")
+            {
+                return RedirectToAction("RequestQuote");
+            }
+
+            if (wif.Status == "BOOK")
+            {
+                return RedirectToAction("RequestBook", tpInq.Id);
+            }
+
+            return View(wif);
+
+        }
+
+        public ActionResult RequestQuote()
+        {
+            return View();
+        }
+
+        public ActionResult RequestBook(int? bookingId)
+        {
+            ViewBag.BookingRef = bookingId;
+            return View();
         }
 
         public ActionResult About()

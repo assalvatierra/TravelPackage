@@ -83,7 +83,7 @@
     <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="120" />
     <Property Name="NoOfChild" Type="int" Nullable="false" />
     <Property Name="NoOfAdult" Type="int" Nullable="false" />
-    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="10" />
   </EntityType>
   <EntityType Name="tpProdCats">
     <Key>
@@ -108,7 +108,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tpInquiryId" Type="int" Nullable="false" />
     <Property Name="tpProductsId" Type="int" Nullable="false" />
-    <Property Name="dtSvcStart" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dtSvcStart" Type="datetime" Nullable="false" />
     <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="tpAreastpProducts">
@@ -296,7 +296,7 @@
           <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpInquirytpInqServices" FromRole="tpInquiry" ToRole="tpInqServices" />
           <Property Name="NoOfChild" Type="Int32" Nullable="false" />
           <Property Name="NoOfAdult" Type="Int32" Nullable="false" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="3" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="10" />
         </EntityType>
         <EntityType Name="tpProdCat">
           <Key>
@@ -350,7 +350,7 @@
           <Property Name="tpInquiryId" Type="Int32" Nullable="false" />
           <Property Name="tpProductsId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tpInquiry" Relationship="TravelDB.tpInquirytpInqServices" FromRole="tpInqServices" ToRole="tpInquiry" />
-          <Property Name="dtSvcStart" Type="String" Nullable="false" />
+          <Property Name="dtSvcStart" Type="DateTime" Nullable="false" />
           <Property Name="Message" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="tpProductstpInqServices">

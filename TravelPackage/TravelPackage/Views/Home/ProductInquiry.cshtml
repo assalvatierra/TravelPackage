@@ -8,7 +8,7 @@
         <h4>Inquiry</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.SessionID)
+        @Html.HiddenFor(model => model.ProductId)
 
         <div class="form-group">
             @Html.LabelFor(model => model.LeadGuest, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -77,8 +77,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit" class="btn btn-default" />
+                <input type="submit" value="Request a Quote" name="btnSubmit" class="btn btn-default" />
+                <input type="submit" value="Book this Product" name="btnSubmit" class="btn btn-default" />
             </div>
         </div>
+
     </div>
+
 }

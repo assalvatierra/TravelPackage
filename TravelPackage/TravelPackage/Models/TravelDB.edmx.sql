@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/31/2017 15:18:07
+-- Date Created: 08/01/2017 14:35:10
 -- Generated from EDMX file: D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
 -- --------------------------------------------------
 
@@ -109,7 +109,7 @@ CREATE TABLE [dbo].[tpInquiries] (
     [Email] nvarchar(120)  NULL,
     [NoOfChild] int  NOT NULL,
     [NoOfAdult] int  NOT NULL,
-    [Status] nvarchar(3)  NOT NULL
+    [Status] nvarchar(10)  NOT NULL
 );
 GO
 
@@ -134,7 +134,7 @@ CREATE TABLE [dbo].[tpInqServices] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [tpInquiryId] int  NOT NULL,
     [tpProductsId] int  NOT NULL,
-    [dtSvcStart] nvarchar(max)  NOT NULL,
+    [dtSvcStart] datetime  NOT NULL,
     [Message] nvarchar(max)  NOT NULL
 );
 GO

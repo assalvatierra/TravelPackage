@@ -17,7 +17,7 @@ namespace TravelPackage.Models
         public int Id { get; set; }
         public int tpInquiryId { get; set; }
         public int tpProductsId { get; set; }
-        public string dtSvcStart { get; set; }
+        public System.DateTime dtSvcStart { get; set; }
         public string Message { get; set; }
     
         public virtual tpProducts tpProduct { get; set; }

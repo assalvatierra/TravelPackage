@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "RequestBook";
+}
+
+<h2>Booking Request</h2>
+<p>
+    Dear Customer:
+    <br />
+    <br />Thank you for your booking request!
+    <br />Your request is now processed in our system.
+    <br />You will receive an email message for further instruction.
+    <br />
+    <br />As of the moment, our creditcard payment facility is still under development.
+    <br />
+    <br />To confirm your booking, you may deposit the payment thru our bank below:
+    <br />Bank of The Philippine Islands
+    <br />Real Breeze Travel & Tours
+    <br />Account No.: 214 955 3285
+    <br />
+    <br />You can then send the proof of payment to our email : Travel.RealBreeze@gmail.com
+    <br />with subject "Payment for Booking: " @ViewBag.BookingRef
+    <br />
+    <br />
+    <br />Sincerely!
+    <br />Sales Manager
+    <br />
+    <br />
+</p>
+
+@Html.ActionLink("Back", "Index")
+
+
+
+

@@ -7,7 +7,7 @@ namespace TravelPackage.Models
 {
     public class WebInquiryForm
     {
-        public string SessionID { get; set; }
+        public int ProductId { get; set; }
         public string LeadGuest { get; set; }
         public string ContactNo { get; set; }
         public string Email { get; set; }
@@ -16,5 +16,15 @@ namespace TravelPackage.Models
         public DateTime JobStart { get; set; }
         public string Message { get; set; }
         public string Status { get; set; }
+
+        public List<WebInquiryItems> items { get; set; }
     }
+
+    public class WebInquiryItems
+    {
+        public int ProductId { get; set; }
+        public DateTime dtStart { get; set; }
+        public string Message { get; set; }
+    }
+
 }

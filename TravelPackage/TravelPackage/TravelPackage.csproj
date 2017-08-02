@@ -221,10 +221,16 @@
     <Compile Include="Models\tpProdCat.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tpProdRate.cs">
+      <DependentUpon>TravelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tpProductImages.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tpProducts.cs">
+      <DependentUpon>TravelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tpUom.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -260,6 +266,9 @@
     <Content Include="Images\Destinations\Bohol\BaclayonChurch.jpg" />
     <Content Include="Images\Destinations\Bohol\BloodCompactShrine.jpg" />
     <Content Include="Images\Destinations\Bohol\ChocolateHills.jpg" />
+    <Content Include="Images\Destinations\Bohol\hotel.blue-star-dive-resort.jpg" />
+    <Content Include="Images\Destinations\Bohol\hotel.JRresidence.jpg" />
+    <Content Include="Images\Destinations\Bohol\hotel.ThePeacockGarden.jpg" />
     <Content Include="Images\Destinations\Bohol\LobocRiverCruising.jpg" />
     <Content Include="Images\Destinations\Bohol\ManMadeForest.jpg" />
     <Content Include="Images\Destinations\Bohol\Tarsier.jpg" />
@@ -272,6 +281,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Destinations\Bohol\PlanePAL.jpg" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

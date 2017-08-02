@@ -81,5 +81,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tpProdRates">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpProdRate)">
+        <MappingFragment StoreEntitySet="tpProdRates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+          <ScalarProperty Name="tpUomId" ColumnName="tpUomId" />
+          <ScalarProperty Name="GroupOf" ColumnName="GroupOf" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpUoms">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpUom)">
+        <MappingFragment StoreEntitySet="tpUoms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Measure" ColumnName="Measure" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

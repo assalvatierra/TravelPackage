@@ -32,6 +32,16 @@
       <End Role="tpInquiry" EntitySet="tpInquiries" />
       <End Role="tpInqServices" EntitySet="tpInqServices" />
     </AssociationSet>
+    <EntitySet Name="tpProdRates" EntityType="TravelDB.tpProdRate" />
+    <AssociationSet Name="tpProductstpProdRate" Association="TravelDB.tpProductstpProdRate">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpProdRate" EntitySet="tpProdRates" />
+    </AssociationSet>
+    <EntitySet Name="tpUoms" EntityType="TravelDB.tpUom" />
+    <AssociationSet Name="tpUomtpProdRate" Association="TravelDB.tpUomtpProdRate">
+      <End Role="tpUom" EntitySet="tpUoms" />
+      <End Role="tpProdRate" EntitySet="tpProdRates" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -60,6 +70,7 @@
     <NavigationProperty Name="tpProductImages" Relationship="TravelDB.tpProductstpProductImages" FromRole="tpProducts" ToRole="tpProductImages" />
     <NavigationProperty Name="tpProdCats" Relationship="TravelDB.tpProductstpProdCat" FromRole="tpProducts" ToRole="tpProdCat" />
     <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpProductstpInqServices" FromRole="tpProducts" ToRole="tpInqServices" />
+    <NavigationProperty Name="tpProdRates" Relationship="TravelDB.tpProductstpProdRate" FromRole="tpProducts" ToRole="tpProdRate" />
   </EntityType>
   <Association Name="tpAreastpProducts">
     <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
@@ -187,6 +198,53 @@
       </Principal>
       <Dependent Role="tpInqServices">
         <PropertyRef Name="tpInquiryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpProdRate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpProdRate" FromRole="tpProdRate" ToRole="tpProducts" />
+    <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+    <Property Name="tpUomId" Type="Int32" Nullable="false" />
+    <Property Name="GroupOf" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="tpUom" Relationship="TravelDB.tpUomtpProdRate" FromRole="tpProdRate" ToRole="tpUom" />
+    <Property Name="Remarks" Type="String" Nullable="true" MaxLength="80" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tpProductstpProdRate">
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+    <End Type="TravelDB.tpProdRate" Role="tpProdRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProdRate">
+        <PropertyRef Name="tpProductsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpUom">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Measure" Type="String" Nullable="false" MaxLength="30" />
+    <NavigationProperty Name="tpProdRates" Relationship="TravelDB.tpUomtpProdRate" FromRole="tpUom" ToRole="tpProdRate" />
+    <Property Name="Remarks" Type="String" Nullable="true" MaxLength="180" />
+  </EntityType>
+  <Association Name="tpUomtpProdRate">
+    <End Type="TravelDB.tpUom" Role="tpUom" Multiplicity="1" />
+    <End Type="TravelDB.tpProdRate" Role="tpProdRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpUom">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProdRate">
+        <PropertyRef Name="tpUomId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

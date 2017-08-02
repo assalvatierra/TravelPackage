@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/01/2017 14:35:10
+-- Date Created: 08/02/2017 10:30:21
 -- Generated from EDMX file: D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
 -- --------------------------------------------------
 
@@ -35,6 +35,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_tpInquirytpInqServices]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tpInqServices] DROP CONSTRAINT [FK_tpInquirytpInqServices];
 GO
+IF OBJECT_ID(N'[dbo].[FK_tpProductstpProdRate]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tpProdRates] DROP CONSTRAINT [FK_tpProductstpProdRate];
+GO
+IF OBJECT_ID(N'[dbo].[FK_tpUomtpProdRate]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tpProdRates] DROP CONSTRAINT [FK_tpUomtpProdRate];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -60,6 +66,12 @@ IF OBJECT_ID(N'[dbo].[tpCategories]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tpInqServices]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tpInqServices];
+GO
+IF OBJECT_ID(N'[dbo].[tpProdRates]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tpProdRates];
+GO
+IF OBJECT_ID(N'[dbo].[tpUoms]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tpUoms];
 GO
 
 -- --------------------------------------------------
@@ -139,6 +151,26 @@ CREATE TABLE [dbo].[tpInqServices] (
 );
 GO
 
+-- Creating table 'tpProdRates'
+CREATE TABLE [dbo].[tpProdRates] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [tpProductsId] int  NOT NULL,
+    [tpUomId] int  NOT NULL,
+    [GroupOf] int  NOT NULL,
+    [Rate] decimal(18,0)  NOT NULL,
+    [Remarks] nvarchar(80)  NULL,
+    [Sort] int  NOT NULL
+);
+GO
+
+-- Creating table 'tpUoms'
+CREATE TABLE [dbo].[tpUoms] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Measure] nvarchar(30)  NOT NULL,
+    [Remarks] nvarchar(180)  NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -182,6 +214,18 @@ GO
 -- Creating primary key on [Id] in table 'tpInqServices'
 ALTER TABLE [dbo].[tpInqServices]
 ADD CONSTRAINT [PK_tpInqServices]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tpProdRates'
+ALTER TABLE [dbo].[tpProdRates]
+ADD CONSTRAINT [PK_tpProdRates]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tpUoms'
+ALTER TABLE [dbo].[tpUoms]
+ADD CONSTRAINT [PK_tpUoms]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -277,6 +321,36 @@ GO
 CREATE INDEX [IX_FK_tpInquirytpInqServices]
 ON [dbo].[tpInqServices]
     ([tpInquiryId]);
+GO
+
+-- Creating foreign key on [tpProductsId] in table 'tpProdRates'
+ALTER TABLE [dbo].[tpProdRates]
+ADD CONSTRAINT [FK_tpProductstpProdRate]
+    FOREIGN KEY ([tpProductsId])
+    REFERENCES [dbo].[tpProducts]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tpProductstpProdRate'
+CREATE INDEX [IX_FK_tpProductstpProdRate]
+ON [dbo].[tpProdRates]
+    ([tpProductsId]);
+GO
+
+-- Creating foreign key on [tpUomId] in table 'tpProdRates'
+ALTER TABLE [dbo].[tpProdRates]
+ADD CONSTRAINT [FK_tpUomtpProdRate]
+    FOREIGN KEY ([tpUomId])
+    REFERENCES [dbo].[tpUoms]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tpUomtpProdRate'
+CREATE INDEX [IX_FK_tpUomtpProdRate]
+ON [dbo].[tpProdRates]
+    ([tpUomId]);
 GO
 
 -- --------------------------------------------------

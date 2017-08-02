@@ -7,7 +7,9 @@ namespace TravelPackage.Models
 {
     public class WebInquiryForm
     {
+        public int Id { get; set; }
         public int ProductId { get; set; }
+        public int areaId { get; set; }
         public string LeadGuest { get; set; }
         public string ContactNo { get; set; }
         public string Email { get; set; }

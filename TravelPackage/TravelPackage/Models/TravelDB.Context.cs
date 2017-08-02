@@ -32,5 +32,7 @@ namespace TravelPackage.Models
         public virtual DbSet<tpProdCat> tpProdCats { get; set; }
         public virtual DbSet<tpCategory> tpCategories { get; set; }
         public virtual DbSet<tpInqServices> tpInqServices { get; set; }
+        public virtual DbSet<tpProdRate> tpProdRates { get; set; }
+        public virtual DbSet<tpUom> tpUoms { get; set; }
     }
 }

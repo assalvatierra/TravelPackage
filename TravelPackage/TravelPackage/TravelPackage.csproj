@@ -263,14 +263,33 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\abreeza-mall.gif" />
     <Content Include="Images\CountrySide.gif" />
+    <Content Include="Images\Destinations\Bohol\3d2nBoholVacation.png" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach1.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach2.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach3.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach4.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_beefarm.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_church.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_dauis_church.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_Panglao_Hinagdanan_Cave.jpg" />
     <Content Include="Images\Destinations\Bohol\BaclayonChurch.jpg" />
     <Content Include="Images\Destinations\Bohol\BloodCompactShrine.jpg" />
+    <Content Include="Images\Bohol101.png" />
     <Content Include="Images\Destinations\Bohol\ChocolateHills.jpg" />
+    <Content Include="Images\Destinations\Bohol\CountrySideTour.png" />
+    <Content Include="Images\Destinations\Bohol\holiday_bohol_3d2n_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\holiday_bohol_3d2n_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\holiday_bohol_3d2n_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\holiday_bohol_3d2n_04.jpg" />
+    <Content Include="Images\Destinations\Bohol\holiday_bohol_3d2n_05.jpg" />
+    <Content Include="Images\Destinations\Bohol\holiday_bohol_alona24.jpg" />
     <Content Include="Images\Destinations\Bohol\hotel.blue-star-dive-resort.jpg" />
     <Content Include="Images\Destinations\Bohol\hotel.JRresidence.jpg" />
     <Content Include="Images\Destinations\Bohol\hotel.ThePeacockGarden.jpg" />
     <Content Include="Images\Destinations\Bohol\LobocRiverCruising.jpg" />
     <Content Include="Images\Destinations\Bohol\ManMadeForest.jpg" />
+    <Content Include="Images\Destinations\Bohol\panglao-map.png" />
+    <Content Include="Images\Destinations\Bohol\PanglaoTour.png" />
     <Content Include="Images\Destinations\Bohol\Tarsier.jpg" />
     <Content Include="Images\Destinations\Bohol\TigbaoHangingBridge.jpg" />
     <Content Include="Images\SamalIslandHopping.png" />
@@ -366,6 +385,8 @@
     <Content Include="Views\Home\RequestProduct.cshtml" />
     <Content Include="Views\Home\RequestQuote.cshtml" />
     <Content Include="Views\Home\RequestBook.cshtml" />
+    <Content Include="Views\Home\BoholPackages\Panglao.cshtml" />
+    <Content Include="Views\Home\BoholPackages\3d2n_Panglao_Alona42.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

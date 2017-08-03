@@ -29,9 +29,6 @@
                 @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name }, new { @class = "btn btn-default" })
 
             </p>
-            <p>
-                @Html.DisplayFor(modelItem => item.PageView)
-            </p>
         </div>
     }
 
@@ -42,8 +39,8 @@
     @foreach (var item in AddOns)
     {
         <div class="col-md-2">
-            <h4>@item.Name</h4>
-            <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="@item.Name"><img width="100%" src="@item.PgFeatureImg"></a>
+            <span style="font-weight:600;">@item.Name</span>
+            <div style="width:100%;height:150px;background-color:aliceblue;background-image:url(@item.PgFeatureImg);background-size: cover; background-repeat:no-repeat">test</div>
             <p>@item.ShortRemarks</p>
             <p>
                 @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name }, new { @class = "btn btn-default" })

@@ -14,14 +14,25 @@
     <br />
 </p>
 
+<p>
+    --- Requested Products ---
+</p>
 @foreach (var item in AddedProducts)
 {
     <p>
-        <span>-@item.dtSvcStart</span>
+        <span>-@item.dtSvcStart.ToString("dd/MMM/yyyy")</span>
         <span>-@item.tpProduct.Name</span>
     </p> 
 }
-
+<p>
+    --- End of list ---
+</p>
+<p>
+    <br /> Rgds!
+    <br /> Sales Team
+    <br /> RealBreeze Travel and Tours
+    <br />
+</p>
 
 <div class="row" style="background-color: #eeeeee;">
     <h2>Other Products</h2>

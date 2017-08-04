@@ -79,4 +79,3 @@ D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\bin\Microsoft
 D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\obj\Debug\TravelPackage.dll
 D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\obj\Debug\TravelPackage.pdb
-D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\obj\Debug\TravelPackage.csprojResolveAssemblyReference.cache

@@ -40,6 +40,10 @@ namespace TravelPackage.Controllers
 
             var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
             ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
+
+            ViewBag.metaTitle = AreaName + " Vacation and Tour Packages | Best travel packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year+1).ToString();
+            ViewBag.metaDescription = "Vacation, Adventure Tour, Travel and Holiday Packages to " + AreaName;
+
             return View(data);
 
         }

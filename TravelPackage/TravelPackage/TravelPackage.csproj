@@ -387,6 +387,7 @@
     <Content Include="Views\Home\RequestBook.cshtml" />
     <Content Include="Views\Home\BoholPackages\Panglao.cshtml" />
     <Content Include="Views\Home\BoholPackages\3d2n_Panglao_Alona42.cshtml" />
+    <Content Include="Views\Home\ProductDefaultView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

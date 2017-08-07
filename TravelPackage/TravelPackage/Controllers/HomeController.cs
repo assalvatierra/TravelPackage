@@ -35,8 +35,15 @@ namespace TravelPackage.Controllers
             ViewBag.Destination = AreaName;
             ViewBag.Description = tpAreas.PageRemarks;
 
-            var data = db.tpProducts.Where(d => d.tpAreasId == id).OrderBy(d => d.Sort).ToList();
-                
+            var featured = db.tpProdCats.Where(d => d.tpCategory.SysCode == "FEATURED").Select(s=>s.tpProductsId);
+            var data = db.tpProducts.Where(d => d.tpAreasId == id && featured.Contains(d.Id) ).OrderBy(d => d.Sort).ToList();
+
+            var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
+            ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
+
+            ViewBag.metaTitle = AreaName + " Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year+1).ToString() + " Philippines";
+            ViewBag.metaDescription = "Vacation, Adventure Tour, Travel and Holiday Packages to " + AreaName;
+
             return View(data);
 
         }
@@ -69,6 +76,9 @@ namespace TravelPackage.Controllers
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
             ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
+
+            ViewBag.metaTitle = product.Name + "-(Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")"+ product.tpArea.Name;
+            ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
 
             return View(product);
         }
@@ -106,6 +116,36 @@ namespace TravelPackage.Controllers
             }
         }
 
+        public ActionResult AddRequestProduct(int? id)
+        {
+            if (Session["INQUIRYOBJ"] == null) return RedirectToAction("Index");
+
+            WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
+            //prepare item to add
+            tpInqServices item = new tpInqServices
+            {
+                tpInquiryId = wif.Id,
+                tpProductsId = (int)id,
+                dtSvcStart = wif.JobStart,
+                Message = "Addon"
+            };
+            db.tpInqServices.Add(item);
+            db.SaveChanges();
+
+            if (wif.Status == "QUOTE")
+            {
+                return RedirectToAction("RequestQuote", new { id = wif.areaId });
+            }
+
+            if (wif.Status == "BOOK")
+            {
+                return RedirectToAction("RequestBook", new { bookingId = wif.Id });
+            }
+
+            return RedirectToAction("index");
+
+        }
+
         public ActionResult RequestProduct()
         {
             WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
@@ -138,12 +178,19 @@ namespace TravelPackage.Controllers
                 db.SaveChanges();
             }
 
+            wif.Id = tpInq.Id;
+
             //retrieve product for view display purposes
-            ViewBag.product = db.tpProducts.Find(wif.ProductId);
+            var product = db.tpProducts.Find(wif.ProductId);
+            ViewBag.product = product;
+
+            wif.areaId = product.tpAreasId; //update areaID for use in addon
+            Session["INQUIRYOBJ"] = wif; //update session inquiry
+
 
             if (wif.Status == "QUOTE")
             {
-                return RedirectToAction("RequestQuote");
+                return RedirectToAction("RequestQuote", new { id = product.tpAreasId } );
             }
 
             if (wif.Status == "BOOK")
@@ -155,13 +202,22 @@ namespace TravelPackage.Controllers
 
         }
 
-        public ActionResult RequestQuote()
+        public ActionResult RequestQuote(int? id)
         {
+            WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
+
+            var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
+            ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
+            ViewBag.Added = db.tpInqServices.Where(d => d.tpInquiryId == wif.Id);
+
             return View();
         }
 
         public ActionResult RequestBook(int? bookingId)
         {
+            //var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
+            //ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
+
             ViewBag.BookingRef = (int) bookingId;
             return View();
         }

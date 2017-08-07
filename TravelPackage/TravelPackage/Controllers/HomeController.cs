@@ -41,7 +41,7 @@ namespace TravelPackage.Controllers
             var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
             ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
 
-            ViewBag.metaTitle = AreaName + " Vacation and Tour Packages | Best travel packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year+1).ToString();
+            ViewBag.metaTitle = AreaName + " Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year+1).ToString() + " Philippines";
             ViewBag.metaDescription = "Vacation, Adventure Tour, Travel and Holiday Packages to " + AreaName;
 
             return View(data);
@@ -76,6 +76,9 @@ namespace TravelPackage.Controllers
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
             ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
+
+            ViewBag.metaTitle = product.Name + "-(Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")"+ product.tpArea.Name;
+            ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
 
             return View(product);
         }

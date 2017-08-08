@@ -17,6 +17,10 @@ namespace TravelPackage.Controllers
 
         public ActionResult Index()
         {
+            string currentUrl = Request.Url.AbsoluteUri;
+            if (currentUrl.Substring(3, 19).ToLower() == "boholtravelpackages")
+                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+
             return View(db.tpAreas.ToList().OrderBy(d=>d.Sort) );
         }
 

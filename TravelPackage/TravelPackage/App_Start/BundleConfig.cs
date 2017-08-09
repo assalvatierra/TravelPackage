@@ -26,6 +26,17 @@ namespace TravelPackage
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //datetimepicker bundles
+            bundles.Add(new ScriptBundle("~/bundles/DateRangePicker").Include(
+                    "~/Scripts/DateRangePicker/moment.js",
+                    "~/Scripts/DateRangePicker/daterangepicker.js"
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/css/DateRangePicker").Include(
+                    "~/Content/daterangepicker.css"
+                ));
+
         }
     }
 }

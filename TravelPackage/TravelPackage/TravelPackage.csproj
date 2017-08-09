@@ -206,6 +206,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataAnnotations.cs" />
     <Compile Include="Models\DBClasses.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -257,10 +258,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\daterangepicker.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="googleccc62e697a97aaad.html" />
     <Content Include="Images\abreeza-mall.gif" />
     <Content Include="Images\CountrySide.gif" />
     <Content Include="Images\Destinations\Bohol\3d2nBoholVacation.png" />
@@ -301,8 +304,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Destinations\Bohol\PlanePAL.jpg" />
+    <Content Include="Content\daterangepicker.scss" />
     <None Include="Properties\PublishProfiles\myAsp.net.pubxml" />
+    <Content Include="Scripts\DateRangePicker\bower.json" />
+    <Content Include="Scripts\DateRangePicker\package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DateRangePicker\daterangepicker.js" />
+    <Content Include="Scripts\DateRangePicker\moment.js" />
+    <Content Include="Scripts\DateRangePicker\moment.min.js" />
+    <Content Include="Scripts\DateRangePicker\package.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

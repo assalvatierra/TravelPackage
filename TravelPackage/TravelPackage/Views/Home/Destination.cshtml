@@ -8,13 +8,13 @@
     <h1>Welcome to @ViewBag.Destination</h1>
     <p class="lead">@ViewBag.Description</p>
     <p>
-        @Html.ActionLink("Choose another destination", "Index", null, new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("Choose another destination", "Index", new { option = 1 }, new { @class = "btn btn-primary btn-lg" })
     </p>
 </div>
 <div class="breadcrumbs10" style="background-color: #eeeeee;">
     <p>&raquo;
-    @Html.ActionLink("HOME", "Index", null, new { @class = "btn btn-primary btn-sm" })
-    @Html.ActionLink("DESTINATIONS", "Index", null, new {@class="btn btn-primary btn-sm"})
+    @Html.ActionLink("HOME", "Index", new { option = 0 }, new { @class = "btn btn-primary btn-sm" })
+    @Html.ActionLink("DESTINATIONS", "Index", new { option = 1 }, new {@class="btn btn-primary btn-sm"})
     @ViewBag.Destination&raquo;
     </p>
 </div>

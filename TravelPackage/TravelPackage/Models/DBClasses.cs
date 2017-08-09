@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TravelPackage.Models
 {
-    public class WebInquiryForm
+    public partial class WebInquiryForm
     {
         public int Id { get; set; }
         public int ProductId { get; set; }

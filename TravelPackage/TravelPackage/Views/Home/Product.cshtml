@@ -46,3 +46,98 @@
 </p>
 
 
+@section scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#btnSubmit1').attr('disabled',true);
+            $('#btnSubmit2').attr('disabled',true);
+
+            InitDatePicker();
+            initFieldEvents();
+        })
+
+
+        function InitDatePicker() {
+
+            $('input[name="JobStart"]').daterangepicker(
+            {
+                singleDatePicker: true,
+                showDropdowns: true,
+                locale: {
+                    format: 'MM/DD/YYYY'
+                }
+            },
+            function (start, end, label) {
+                //alert(start.format('YYYY-MM-DD h:mm A'));
+                //computeCost();
+            }
+            );
+        }
+
+        function initFieldEvents()
+        {
+            $('#LeadGuest').on('change', function () {
+                checkvalues();
+            });
+            $('#NoOfAdult').on('change', function () {
+                checkvalues();
+            });
+            $('#Email').on('change', function () {
+                checkvalues();
+            });
+
+        }
+
+        function checkvalues()
+        {
+            var isOK = 0;
+
+            var leadguest = $('#LeadGuest').val();
+            if (leadguest.trim().length > 0) isOK = 1;
+            else isOK = 0;
+
+            if (isOK == 1) {
+                var NoAdults = $('#NoOfAdult').val();
+                if (NoAdults > 0) isOK = 1;
+                else isOK = 0;
+            }
+
+            if (isOK == 1) {
+                var email = $('#Email').val();
+                if (leadguest.trim().length > 0) {
+                    if (ValidateEmail(email)) isOK = 1;
+                    else isOK = 0;
+                }
+                else isOK = 0;
+            }
+
+
+            if (isOK) {
+                $('#btnSubmit1').attr('disabled');
+                $('#btnSubmit2').attr('disabled');
+            }
+            else
+            {
+                $('#btnSubmit1').removeAttr('disabled');
+                $('#btnSubmit2').removeAttr('disabled');
+            }
+            
+        }
+
+        function ValidateEmail(mail)
+        {
+            
+            var x = mail;
+            var atpos = x.indexOf('@@');
+            var dotpos = x.lastIndexOf(".");
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                alert("Not a valid e-mail address");
+                return (false);
+            }
+            
+            return (true);
+        }
+
+    </script>
+}

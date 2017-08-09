@@ -15,13 +15,37 @@ namespace TravelPackage.Controllers
     {
         private TravelDBContainer db = new TravelDBContainer();
 
-        public ActionResult Index()
+        public ActionResult Index(int? option)
         {
+            if ( option == 1 ) return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
+
             string currentUrl = Request.Url.AbsoluteUri;
-            if (currentUrl.Substring(3, 19).ToLower() == "boholtravelpackages")
+            int iPreChars = 7; // http://
+            int iRemainingChars = 0;
+            string sPartUri = currentUrl.Substring(iPreChars).ToLower();
+
+            //check sites
+            string s1 = "";
+            int is1 = 0;
+            string sTemp = "";
+            // check bohol website
+            s1 = "www.boholtravelpackages.com";
+            is1 = s1.Length;
+            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            sTemp = sPartUri.Substring(0, iRemainingChars);
+            if (sTemp == s1)
                 return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
 
-            return View(db.tpAreas.ToList().OrderBy(d=>d.Sort) );
+            ViewBag.UriArea = sTemp;
+            // check if localhost
+            s1 = "localhost";
+            is1 = s1.Length;
+            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            sTemp = sPartUri.Substring(0, iRemainingChars);
+            if (sTemp == s1)
+                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+
+            return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
         }
 
         public ActionResult Destination(int? id, string AreaName)

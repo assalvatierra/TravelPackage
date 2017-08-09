@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/02/2017 10:30:21
--- Generated from EDMX file: D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
+-- Date Created: 08/09/2017 20:35:52
+-- Generated from EDMX file: C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -147,7 +147,7 @@ CREATE TABLE [dbo].[tpInqServices] (
     [tpInquiryId] int  NOT NULL,
     [tpProductsId] int  NOT NULL,
     [dtSvcStart] datetime  NOT NULL,
-    [Message] nvarchar(max)  NOT NULL
+    [Message] nvarchar(250)  NULL
 );
 GO
 

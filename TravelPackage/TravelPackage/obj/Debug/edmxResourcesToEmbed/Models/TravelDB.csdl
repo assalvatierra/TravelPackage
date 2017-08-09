@@ -175,7 +175,7 @@
     <Property Name="tpProductsId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="tpInquiry" Relationship="TravelDB.tpInquirytpInqServices" FromRole="tpInqServices" ToRole="tpInquiry" />
     <Property Name="dtSvcStart" Type="DateTime" Nullable="false" />
-    <Property Name="Message" Type="String" Nullable="false" />
+    <Property Name="Message" Type="String" Nullable="true" MaxLength="250" />
   </EntityType>
   <Association Name="tpProductstpInqServices">
     <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />

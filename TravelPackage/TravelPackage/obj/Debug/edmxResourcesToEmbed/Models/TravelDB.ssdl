@@ -114,7 +114,7 @@
     <Property Name="tpInquiryId" Type="int" Nullable="false" />
     <Property Name="tpProductsId" Type="int" Nullable="false" />
     <Property Name="dtSvcStart" Type="datetime" Nullable="false" />
-    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" Nullable="true" MaxLength="250" />
   </EntityType>
   <EntityType Name="tpProdRates">
     <Key>

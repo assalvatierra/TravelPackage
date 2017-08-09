@@ -121,7 +121,7 @@ namespace TravelPackage.Controllers
 
                     //add product for inquiry/book 
                     if (wif.items == null) wif.items = new List<WebInquiryItems>();
-                    wif.items.Add( new WebInquiryItems
+                    wif.items.Add(new WebInquiryItems
                     {
                         ProductId = wif.ProductId,
                         dtStart = wif.JobStart,

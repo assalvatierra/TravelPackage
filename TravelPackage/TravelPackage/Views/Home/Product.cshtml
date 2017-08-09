@@ -114,13 +114,13 @@
 
 
             if (isOK) {
-                $('#btnSubmit1').attr('disabled');
-                $('#btnSubmit2').attr('disabled');
+                $('#btnSubmit1').removeAttr('disabled');
+                $('#btnSubmit2').removeAttr('disabled');
             }
             else
             {
-                $('#btnSubmit1').removeAttr('disabled');
-                $('#btnSubmit2').removeAttr('disabled');
+                $('#btnSubmit1').attr('disabled', true);
+                $('#btnSubmit2').attr('disabled', true);
             }
             
         }

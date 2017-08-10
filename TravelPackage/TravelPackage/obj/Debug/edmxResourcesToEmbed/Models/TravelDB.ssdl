@@ -10,6 +10,7 @@
     <EntitySet Name="tpInqServices" EntityType="TravelDB.Store.tpInqServices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tpProdRates" EntityType="TravelDB.Store.tpProdRates" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tpUoms" EntityType="TravelDB.Store.tpUoms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tpProductDescs" EntityType="TravelDB.Store.tpProductDescs" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="tpAreastpProducts" Association="TravelDB.Store.tpAreastpProducts">
       <End Role="tpAreas" EntitySet="tpAreas" />
       <End Role="tpProducts" EntitySet="tpProducts" />
@@ -41,6 +42,10 @@
     <AssociationSet Name="tpUomtpProdRate" Association="TravelDB.Store.tpUomtpProdRate">
       <End Role="tpUom" EntitySet="tpUoms" />
       <End Role="tpProdRate" EntitySet="tpProdRates" />
+    </AssociationSet>
+    <AssociationSet Name="tpProductstpProductDesc" Association="TravelDB.Store.tpProductstpProductDesc">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpProductDesc" EntitySet="tpProductDescs" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
@@ -136,6 +141,17 @@
     <Property Name="Measure" Type="nvarchar" Nullable="false" MaxLength="30" />
     <Property Name="Remarks" Type="nvarchar" Nullable="true" MaxLength="180" />
   </EntityType>
+  <EntityType Name="tpProductDescs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tpProductsId" Type="int" Nullable="false" />
+    <Property Name="tpDescH1" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="tpDescH2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="tpDesc" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="tpAreastpProducts">
     <End Role="tpAreas" Type="TravelDB.Store.tpAreas" Multiplicity="1" />
     <End Role="tpProducts" Type="TravelDB.Store.tpProducts" Multiplicity="*" />
@@ -229,6 +245,18 @@
       </Principal>
       <Dependent Role="tpProdRate">
         <PropertyRef Name="tpUomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tpProductstpProductDesc">
+    <End Role="tpProducts" Type="TravelDB.Store.tpProducts" Multiplicity="1" />
+    <End Role="tpProductDesc" Type="TravelDB.Store.tpProductDescs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProductDesc">
+        <PropertyRef Name="tpProductsId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

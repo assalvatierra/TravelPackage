@@ -6,6 +6,7 @@
     string pgView = Model.PageView;
 
     List<TravelPackage.Models.tpProductImages> productImages = (List<TravelPackage.Models.tpProductImages>)ViewBag.ProdImages;
+    List<TravelPackage.Models.tpProdRate> productRates = (List<TravelPackage.Models.tpProdRate>)ViewBag.ProdRate;
     TravelPackage.Models.WebInquiryForm InquiryObj = (TravelPackage.Models.WebInquiryForm)ViewBag.Inquiry;
 }
 
@@ -32,6 +33,12 @@
     </div>
     <div class="col-md-6">
         @{ Html.RenderPartial("ProductInquiry", InquiryObj); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductRates", productRates); }
     </div>
 </div>
 

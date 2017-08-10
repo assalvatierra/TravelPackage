@@ -42,6 +42,11 @@
       <End Role="tpUom" EntitySet="tpUoms" />
       <End Role="tpProdRate" EntitySet="tpProdRates" />
     </AssociationSet>
+    <EntitySet Name="tpProductDescs" EntityType="TravelDB.tpProductDesc" />
+    <AssociationSet Name="tpProductstpProductDesc" Association="TravelDB.tpProductstpProductDesc">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpProductDesc" EntitySet="tpProductDescs" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -71,6 +76,7 @@
     <NavigationProperty Name="tpProdCats" Relationship="TravelDB.tpProductstpProdCat" FromRole="tpProducts" ToRole="tpProdCat" />
     <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpProductstpInqServices" FromRole="tpProducts" ToRole="tpInqServices" />
     <NavigationProperty Name="tpProdRates" Relationship="TravelDB.tpProductstpProdRate" FromRole="tpProducts" ToRole="tpProdRate" />
+    <NavigationProperty Name="tpProductDescs" Relationship="TravelDB.tpProductstpProductDesc" FromRole="tpProducts" ToRole="tpProductDesc" />
   </EntityType>
   <Association Name="tpAreastpProducts">
     <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
@@ -245,6 +251,30 @@
       </Principal>
       <Dependent Role="tpProdRate">
         <PropertyRef Name="tpUomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpProductDesc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpProductDesc" FromRole="tpProductDesc" ToRole="tpProducts" />
+    <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+    <Property Name="tpDescH1" Type="String" Nullable="true" MaxLength="30" />
+    <Property Name="tpDescH2" Type="String" Nullable="true" MaxLength="50" />
+    <Property Name="tpDesc" Type="String" Nullable="true" MaxLength="250" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tpProductstpProductDesc">
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+    <End Type="TravelDB.tpProductDesc" Role="tpProductDesc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpProductDesc">
+        <PropertyRef Name="tpProductsId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

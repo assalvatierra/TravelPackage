@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/09/2017 20:35:52
--- Generated from EDMX file: C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
+-- Date Created: 08/10/2017 15:18:20
+-- Generated from EDMX file: D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -41,6 +41,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_tpUomtpProdRate]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tpProdRates] DROP CONSTRAINT [FK_tpUomtpProdRate];
 GO
+IF OBJECT_ID(N'[dbo].[FK_tpProductstpProductDesc]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tpProductDescs] DROP CONSTRAINT [FK_tpProductstpProductDesc];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -72,6 +75,9 @@ IF OBJECT_ID(N'[dbo].[tpProdRates]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tpUoms]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tpUoms];
+GO
+IF OBJECT_ID(N'[dbo].[tpProductDescs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tpProductDescs];
 GO
 
 -- --------------------------------------------------
@@ -171,6 +177,17 @@ CREATE TABLE [dbo].[tpUoms] (
 );
 GO
 
+-- Creating table 'tpProductDescs'
+CREATE TABLE [dbo].[tpProductDescs] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [tpProductsId] int  NOT NULL,
+    [tpDescH1] nvarchar(30)  NULL,
+    [tpDescH2] nvarchar(50)  NULL,
+    [tpDesc] nvarchar(250)  NULL,
+    [Sort] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -226,6 +243,12 @@ GO
 -- Creating primary key on [Id] in table 'tpUoms'
 ALTER TABLE [dbo].[tpUoms]
 ADD CONSTRAINT [PK_tpUoms]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tpProductDescs'
+ALTER TABLE [dbo].[tpProductDescs]
+ADD CONSTRAINT [PK_tpProductDescs]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -351,6 +374,21 @@ GO
 CREATE INDEX [IX_FK_tpUomtpProdRate]
 ON [dbo].[tpProdRates]
     ([tpUomId]);
+GO
+
+-- Creating foreign key on [tpProductsId] in table 'tpProductDescs'
+ALTER TABLE [dbo].[tpProductDescs]
+ADD CONSTRAINT [FK_tpProductstpProductDesc]
+    FOREIGN KEY ([tpProductsId])
+    REFERENCES [dbo].[tpProducts]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tpProductstpProductDesc'
+CREATE INDEX [IX_FK_tpProductstpProductDesc]
+ON [dbo].[tpProductDescs]
+    ([tpProductsId]);
 GO
 
 -- --------------------------------------------------

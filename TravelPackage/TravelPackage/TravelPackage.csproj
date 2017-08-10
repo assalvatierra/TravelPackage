@@ -225,6 +225,9 @@
     <Compile Include="Models\tpProdRate.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tpProductDesc.cs">
+      <DependentUpon>TravelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tpProductImages.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
@@ -267,6 +270,13 @@
     <Content Include="Images\abreeza-mall.gif" />
     <Content Include="Images\CountrySide.gif" />
     <Content Include="Images\Destinations\Bohol\3d2nBoholVacation.png" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_04.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_05.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_06.jpg" />
+    <Content Include="Images\Destinations\Bohol\Airlines101.png" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach1.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach2.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach3.jpg" />
@@ -400,6 +410,8 @@
     <Content Include="Views\Home\BoholPackages\Panglao.cshtml" />
     <Content Include="Views\Home\BoholPackages\3d2n_Panglao_Alona42.cshtml" />
     <Content Include="Views\Home\ProductDefaultView.cshtml" />
+    <Content Include="Views\Home\BoholPackages\AirTicket.cshtml" />
+    <Content Include="Views\Home\ProductRates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

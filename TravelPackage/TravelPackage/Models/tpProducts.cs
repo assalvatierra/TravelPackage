@@ -21,6 +21,7 @@ namespace TravelPackage.Models
             this.tpProdCats = new HashSet<tpProdCat>();
             this.tpInqServices = new HashSet<tpInqServices>();
             this.tpProdRates = new HashSet<tpProdRate>();
+            this.tpProductDescs = new HashSet<tpProductDesc>();
         }
     
         public int Id { get; set; }
@@ -40,5 +41,7 @@ namespace TravelPackage.Models
         public virtual ICollection<tpInqServices> tpInqServices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tpProdRate> tpProdRates { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tpProductDesc> tpProductDescs { get; set; }
     }
 }

@@ -104,6 +104,8 @@ namespace TravelPackage.Controllers
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
             ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
+            ViewBag.ProdDesc = db.tpProductDescs.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdRate = db.tpProdRates.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).Include(d=>d.tpUom).ToList();
 
             ViewBag.metaTitle = product.Name + "-(Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")"+ product.tpArea.Name;
             ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;

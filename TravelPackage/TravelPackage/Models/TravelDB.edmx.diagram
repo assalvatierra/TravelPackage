@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="TravelDB.tpAreas" Width="1.5" PointX="3.125" PointY="0.5" />
         <EntityTypeShape EntityType="TravelDB.tpProducts" Width="1.5" PointX="3.125" PointY="3.625" />
         <AssociationConnector Association="TravelDB.tpAreastpProducts" />
-        <EntityTypeShape EntityType="TravelDB.tpProductImages" Width="1.5" PointX="0.5" PointY="7.375" />
+        <EntityTypeShape EntityType="TravelDB.tpProductImages" Width="1.5" PointX="0.5" PointY="6.25" />
         <AssociationConnector Association="TravelDB.tpProductstpProductImages" />
         <EntityTypeShape EntityType="TravelDB.tpInquiry" Width="1.5" PointX="8" PointY="4" />
         <EntityTypeShape EntityType="TravelDB.tpProdCat" Width="1.5" PointX="0.5" PointY="3.75" />
@@ -22,6 +22,8 @@
         <AssociationConnector Association="TravelDB.tpProductstpProdRate" />
         <EntityTypeShape EntityType="TravelDB.tpUom" Width="1.5" PointX="5.625" PointY="1.25" />
         <AssociationConnector Association="TravelDB.tpUomtpProdRate" />
+        <EntityTypeShape EntityType="TravelDB.tpProductDesc" Width="1.5" PointX="0.5" PointY="9.125" />
+        <AssociationConnector Association="TravelDB.tpProductstpProductDesc" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

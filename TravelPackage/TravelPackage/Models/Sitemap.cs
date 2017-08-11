@@ -84,10 +84,17 @@ namespace TravelPackage
             return items;
         }
 
-        //public List<string> GetProducts()
-        //{
+        public List<string> GetProducts()
+        {
+            var data = db.tpProducts.OrderBy(s => s.Sort).ToList();
+            List<string> items = new List<string>();
+            foreach (var tmp in data)
+            {
+                items.Add("TourPackages/" + tmp.Id + "/" + tmp.Name);
+            }
+            return items;
 
-        //}
+        }
 
 
         public IReadOnlyCollection<SitemapNode> GetSitemapNodes(string _website)
@@ -119,7 +126,17 @@ namespace TravelPackage
                     });
             }
 
-
+            //Products
+            List<string> itemProduct = this.GetProducts();
+            foreach (var item in itemProduct)
+            {
+                nodes.Add(
+                    new SitemapNode()
+                    {
+                        Url = string.Format(_website + "{0}", item),
+                        Priority = 1
+                    });
+            }
 
             //foreach (int productId in productRepository.GetProductIds())
             //{

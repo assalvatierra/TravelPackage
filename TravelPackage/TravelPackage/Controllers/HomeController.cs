@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using TravelPackage.Models;
 
-
 namespace TravelPackage.Controllers
 {
     public class HomeController : Controller
@@ -265,5 +264,25 @@ namespace TravelPackage.Controllers
 
             return View();
         }
+
+
+        #region Dynamic SiteMap 
+        [Route("sitemap.xml")]
+        public ActionResult SitemapXml()
+        {
+            string currentUrl = Request.Url.AbsoluteUri;
+            int iTmp = currentUrl.IndexOf('/',7);
+            string newurl = currentUrl.Substring(0, iTmp+1);
+
+            SiteMap sm = new SiteMap();
+            var sitemapNodes = sm.GetSitemapNodes(newurl);
+            string xml = sm.GetSitemapDocument(sitemapNodes);
+            return this.Content(xml, "text/xml", System.Text.Encoding.UTF8);
+        }
+
+        #endregion
+
+
+
     }
 }

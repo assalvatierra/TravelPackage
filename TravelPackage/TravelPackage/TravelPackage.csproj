@@ -210,6 +210,7 @@
     <Compile Include="Models\DBClasses.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Sitemap.cs" />
     <Compile Include="Models\tpCategory.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>

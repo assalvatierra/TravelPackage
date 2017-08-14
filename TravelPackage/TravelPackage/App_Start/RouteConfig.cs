@@ -15,7 +15,7 @@ namespace TravelPackage
 
             routes.MapRoute(
                 name: "Sitemapxml",
-                url: "sitemap.xml",
+                url: "Sitemap.xml",
                 defaults: new { controller = "Home", action = "SitemapXml" }
                 );
 

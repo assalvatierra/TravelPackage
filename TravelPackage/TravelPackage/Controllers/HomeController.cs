@@ -267,7 +267,7 @@ namespace TravelPackage.Controllers
 
 
         #region Dynamic SiteMap 
-        [Route("sitemap.xml")]
+        //[Route("sitemap.xml")]
         public ActionResult SitemapXml()
         {
             string currentUrl = Request.Url.AbsoluteUri;

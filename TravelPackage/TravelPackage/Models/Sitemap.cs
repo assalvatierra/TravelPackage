@@ -138,17 +138,6 @@ namespace TravelPackage
                     });
             }
 
-            //foreach (int productId in productRepository.GetProductIds())
-            //{
-            //    nodes.Add(
-            //       new SitemapNode()
-            //       {
-            //           Url = urlHelper.AbsoluteRouteUrl("ProductGetProduct", new { id = productId }),
-            //           Frequency = SitemapFrequency.Weekly,
-            //           Priority = 0.8
-            //       });
-            //}
-
             return nodes;
         }
       

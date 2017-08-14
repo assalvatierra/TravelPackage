@@ -18,8 +18,8 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('3D2N Vacation','3Days 2 Nights Vacation Package. staying at the heart of the most visited beaches of Panglao.','BoholPackages/3d2n_Panglao_Alona42','/Images/Destinations/Bohol/3d2nBoholVacation.png',2,2),
 ('Manila-Bohol','Economy Airticket Manila - Tagbilaran','BoholPackages/AirTicket','/Images/Destinations/Bohol/Airlines101.png',3,2),
 ('Bohol Bee Farm','Resort & Restaurant','ProductDefaultView','/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg',4,2),
-('Blue Star Dive & Resort','Hotel/Accommodation','ProductDefaultView2','/Images/Destinations/Bohol/hotel.blue-star-dive-resort.jpg',5,2),
-('The Peacock Garden','Hotel/Accommodation','ProductDefaultView2','/Images/Destinations/Bohol/hotel.ThePeacockGarden.jpg',6,2);
+('Alona Tropical Beach Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-10.jpg',5,2),
+('South Palms Resort Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',6,2);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -51,7 +51,35 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (7,'/Images/Destinations/Bohol/accom_boholbeefarm_03.jpg','at night','Bee farm at night',3),
 (7,'/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg','Pool View','Bee farm Pool View',4),
 (7,'/Images/Destinations/Bohol/accom_boholbeefarm_05.jpg','Pool','Bee Farm Pool',5),
-(7,'/Images/Destinations/Bohol/accom_boholbeefarm_06.jpg','Garden','Bee Farm Garden',6);
+(7,'/Images/Destinations/Bohol/accom_boholbeefarm_06.jpg','Garden','Bee Farm Garden',6),
+-- Alona Tropical Beach Resort--
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-01.jpg','','Alona Tropical Beach Resort',1),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-02.jpg','','Alona Tropical Beach Resort',2),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-03.jpg','','Alona Tropical Beach Resort',3),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-04.jpg','','Alona Tropical Beach Resort',4),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-05.jpg','','Alona Tropical Beach Resort',5),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-06.jpg','','Alona Tropical Beach Resort',6),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-07.jpg','','Alona Tropical Beach Resort',7),
+--(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-08.jpg','','Alona Tropical Beach Resort',8),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-09.jpg','','Alona Tropical Beach Resort',9),
+--(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-10.jpg','','Alona Tropical Beach Resort',10),
+--(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-11.jpg','','Alona Tropical Beach Resort',11),
+(8,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-12.jpg','','Alona Tropical Beach Resort',12),
+-- South Palms Beach Resort--
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_01.jpg','','South Palms Beach Resort',1),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_02.jpg','','South Palms Beach Resort',2),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_03.jpg','','South Palms Beach Resort',3),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_04.jpg','','South Palms Beach Resort',4),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_05.jpg','','South Palms Beach Resort',5),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_06.jpg','','South Palms Beach Resort',6),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_07.jpg','','South Palms Beach Resort',7),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_08.jpg','','South Palms Beach Resort',8),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_09.jpg','','South Palms Beach Resort',9),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_10.jpg','','South Palms Beach Resort',10),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_11.jpg','','South Palms Beach Resort',11),
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_12.jpg','','South Palms Beach Resort',12);
+
+
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2),(1,3),(1,4),(1,5), -- Featured - Tour Packages 
@@ -70,5 +98,23 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 (7,'Amenities','','- Farm Tour (Organic farming, Craft & Livelihood, Raffia Weaving, Bee Colony)',7),
 (7,'','','- Dive Center',8),
 (7,'','','- Massage SPA and Wellness',9),
-(7,'','','- Function Halls (Wedding, Birthday, Special Events)',10);
+(7,'','','- Function Halls (Wedding, Birthday, Special Events)',10),
+-- Alona rooms --
+(8,'Double Deluxe','Php 3,360 per room/night','Tax inclusive',1),
+(8,'','Php 4,015 per room/night','With BreakFast, Tax inclusive',2),
+(8,'','Php 4,730 per room/night','Half Board, Tax inclusive',3),
+(8,'','Php 5,445 per room/night','Full Board, Tax inclusive',4),
+(8,'Suite Beach Front','Php 3,360 per room/night','Tax inclusive',5),
+(8,'','Php 6,815 per room/night','With BreakFast, Tax inclusive',6),
+(8,'','Php 7,530 per room/night','Half Board, Tax inclusive',7),
+(8,'','Php 8,245 per room/night','Full Board, Tax inclusive',8),
+(8,'Suite Pool View','Php 6,750 per room/night','Tax inclusive',9),
+(8,'','Php 7,450 per room/night','With BreakFast, Tax inclusive',10),
+(8,'','Php 8,130 per room/night','Half Board, Tax inclusive',11),
+(8,'','Php 8,840 per room/night','Full Board, Tax inclusive',12),
 
+-- South Palms  --
+(9,'Deluxe - Double or Twin','Php 9,125 per night Pool View','With Breakfast for 2',1),
+(9,'','Php 11,050 per night Beach Front','With Breakfast for 2',2),
+(9,'Premium - Double or Twin','Php 18,650 per night Beach Front','With Breakfast for 2',3),
+(9,'Panglao Villa','Php 39,050 per night','With Breakfast for 2',3);

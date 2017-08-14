@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<TravelPackage.Models.tpProdRate>
-
+@{ 
+    int iCnt = Model.Count();
+}
 <div class="row">
-    <h2>Rate</h2>
+    @if (iCnt > 0)
+    {
+        <h2>Rate</h2>
+    }
+
     @foreach (var item in Model)
     {
         <div class="col-md-2">
@@ -11,6 +17,7 @@
         </div>
     }
     <hr />
+    
 </div>
 
 

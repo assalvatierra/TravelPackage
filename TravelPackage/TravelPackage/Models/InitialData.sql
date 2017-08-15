@@ -16,10 +16,12 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('Country Side Tour','7 - 9 hrs tour across the island of Bohol. Passing thru is cultural destinations and fascinating views of the main island','BoholPackages/CountrySide','/Images/Destinations/Bohol/CountrySideTour.png',1,2),
 ('Panglao Tour','8hrs island tour to the treasured beaches of Panglao.','BoholPackages/Panglao','/Images/Destinations/Bohol/PanglaoTour.png',2,2),
 ('3D2N Vacation','3Days 2 Nights Vacation Package. staying at the heart of the most visited beaches of Panglao.','BoholPackages/3d2n_Panglao_Alona42','/Images/Destinations/Bohol/3d2nBoholVacation.png',2,2),
-('Manila-Bohol','Economy Airticket Manila - Tagbilaran','BoholPackages/AirTicket','/Images/Destinations/Bohol/Airlines101.png',3,2),
-('Bohol Bee Farm','Resort & Restaurant','ProductDefaultView','/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg',4,2),
+('Domestic Airticket Manila - Bohol','Economy Airticket Manila - Tagbilaran','BoholPackages/AirTicket','/Images/Destinations/Bohol/Airlines101.png',3,2),
+('Bohol Bee Farm - Panglao, Bohol','Resort & Restaurant','ProductDefaultView','/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg',8,2),
 ('Alona Tropical Beach Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-10.jpg',5,2),
-('South Palms Resort Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',6,2);
+('South Palms Resort Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',6,2),
+('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
+('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -77,13 +79,40 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (9,'/Images/Destinations/Bohol/accom_southpalmresort_09.jpg','','South Palms Beach Resort',9),
 (9,'/Images/Destinations/Bohol/accom_southpalmresort_10.jpg','','South Palms Beach Resort',10),
 (9,'/Images/Destinations/Bohol/accom_southpalmresort_11.jpg','','South Palms Beach Resort',11),
-(9,'/Images/Destinations/Bohol/accom_southpalmresort_12.jpg','','South Palms Beach Resort',12);
+(9,'/Images/Destinations/Bohol/accom_southpalmresort_12.jpg','','South Palms Beach Resort',12),
+-- Dumaluan Beach Resort--
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-01.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-02.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-03.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-04.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-05.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-06.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-07.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-08.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-10.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-11.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-12.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-13.jpg','','Dumaluan beach resort',1),
+(10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-14.jpg','','Dumaluan beach resort',1),
+-- Bohol Beach Club--
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_01.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_03.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_04.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_05.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_06.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_07.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_08.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_09.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_10.jpg','','Bohol Beacg Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_11.jpg','','Bohol Beacg Club',1);
 
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2),(1,3),(1,4),(1,5), -- Featured - Tour Packages 
-(2,6),(2,7),(2,8),(2,9); -- add on products
+(2,6),(2,7),(2,8),(2,9),(2,10),(2,11); -- bohol add on products
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
 (3,2,1,4250,'',1),(3,2,2,2600,'',1),(3,2,3,2100,'',1),(3,2,4,1950,'',1),(3,2,5,1800,'',1),(3,2,6,1700,'',1),(3,2,7,1600,'',1),(3,2,8,1550,'',1),(3,2,9,1450,'',1),(3,2,10,1350,'',1);
@@ -117,4 +146,10 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 (9,'Deluxe - Double or Twin','Php 9,125 per night Pool View','With Breakfast for 2',1),
 (9,'','Php 11,050 per night Beach Front','With Breakfast for 2',2),
 (9,'Premium - Double or Twin','Php 18,650 per night Beach Front','With Breakfast for 2',3),
-(9,'Panglao Villa','Php 39,050 per night','With Breakfast for 2',3);
+(9,'Panglao Villa','Php 39,050 per night','With Breakfast for 2',3),
+
+-- Dumaluan  --
+(10,'Room Rates','No Available as of this time','Contact our travel consultant for reservation',1),
+
+-- Bohol Beach Club --
+(11,'Room Rates','No Available as of this time','Contact our travel consultant for reservation',1);

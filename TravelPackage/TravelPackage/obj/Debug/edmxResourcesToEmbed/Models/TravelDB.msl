@@ -103,5 +103,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tpProductDescs">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpProductDesc)">
+        <MappingFragment StoreEntitySet="tpProductDescs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+          <ScalarProperty Name="tpDescH1" ColumnName="tpDescH1" />
+          <ScalarProperty Name="tpDescH2" ColumnName="tpDescH2" />
+          <ScalarProperty Name="tpDesc" ColumnName="tpDesc" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

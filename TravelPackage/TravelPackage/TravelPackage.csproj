@@ -206,9 +206,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataAnnotations.cs" />
     <Compile Include="Models\DBClasses.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Sitemap.cs" />
     <Compile Include="Models\tpCategory.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
@@ -222,6 +224,9 @@
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tpProdRate.cs">
+      <DependentUpon>TravelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tpProductDesc.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tpProductImages.cs">
@@ -257,13 +262,72 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\daterangepicker.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="googleccc62e697a97aaad.html" />
     <Content Include="Images\abreeza-mall.gif" />
     <Content Include="Images\CountrySide.gif" />
     <Content Include="Images\Destinations\Bohol\3d2nBoholVacation.png" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-02.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-03.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-04.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-05.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-06.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-07.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-08.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-09.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-10.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-11.png" />
+    <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-12.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_04.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_05.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_boholbeefarm_06.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_04.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_05.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_06.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_07.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_08.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_09.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_10.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_bohol_beachclub_11.jpeg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-02.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-03.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-04.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-05.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-06.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-07.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-08.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-09.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-10.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-11.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-12.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-13.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Dumaluan_beach-resort-14.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_Muro_Ami_Beach_Resort_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_04.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_05.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_06.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_07.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_08.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_09.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_10.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_11.jpg" />
+    <Content Include="Images\Destinations\Bohol\accom_southpalmresort_12.jpg" />
+    <Content Include="Images\Destinations\Bohol\Airlines101.png" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach1.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach2.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach3.jpg" />
@@ -301,8 +365,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Destinations\Bohol\PlanePAL.jpg" />
+    <Content Include="Content\daterangepicker.scss" />
     <None Include="Properties\PublishProfiles\myAsp.net.pubxml" />
+    <Content Include="Scripts\DateRangePicker\bower.json" />
+    <Content Include="Scripts\DateRangePicker\package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DateRangePicker\daterangepicker.js" />
+    <Content Include="Scripts\DateRangePicker\moment.js" />
+    <Content Include="Scripts\DateRangePicker\moment.min.js" />
+    <Content Include="Scripts\DateRangePicker\package.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -313,6 +384,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\TravelPackages\Product.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Models\TravelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -389,6 +461,8 @@
     <Content Include="Views\Home\BoholPackages\Panglao.cshtml" />
     <Content Include="Views\Home\BoholPackages\3d2n_Panglao_Alona42.cshtml" />
     <Content Include="Views\Home\ProductDefaultView.cshtml" />
+    <Content Include="Views\Home\BoholPackages\AirTicket.cshtml" />
+    <Content Include="Views\Home\ProductRates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

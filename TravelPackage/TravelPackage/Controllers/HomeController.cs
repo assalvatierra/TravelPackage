@@ -8,16 +8,43 @@ using System.Web;
 using System.Web.Mvc;
 using TravelPackage.Models;
 
-
 namespace TravelPackage.Controllers
 {
     public class HomeController : Controller
     {
         private TravelDBContainer db = new TravelDBContainer();
 
-        public ActionResult Index()
+        public ActionResult Index(int? option)
         {
-            return View(db.tpAreas.ToList().OrderBy(d=>d.Sort) );
+            if ( option == 1 ) return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
+
+            string currentUrl = Request.Url.AbsoluteUri;
+            int iPreChars = 7; // http://
+            int iRemainingChars = 0;
+            string sPartUri = currentUrl.Substring(iPreChars).ToLower();
+
+            //check sites
+            string s1 = "";
+            int is1 = 0;
+            string sTemp = "";
+            // check bohol website
+            s1 = "www.boholtravelpackages.com";
+            is1 = s1.Length;
+            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            sTemp = sPartUri.Substring(0, iRemainingChars);
+            if (sTemp == s1)
+                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+
+            ViewBag.UriArea = sTemp;
+            // check if localhost
+            s1 = "localhost";
+            is1 = s1.Length;
+            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            sTemp = sPartUri.Substring(0, iRemainingChars);
+            if (sTemp == s1)
+                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+
+            return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
         }
 
         public ActionResult Destination(int? id, string AreaName)
@@ -76,6 +103,8 @@ namespace TravelPackage.Controllers
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
             ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
+            ViewBag.ProdDesc = db.tpProductDescs.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdRate = db.tpProdRates.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).Include(d=>d.tpUom).ToList();
 
             ViewBag.metaTitle = product.Name + "-(Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")"+ product.tpArea.Name;
             ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
@@ -93,7 +122,7 @@ namespace TravelPackage.Controllers
 
                     //add product for inquiry/book 
                     if (wif.items == null) wif.items = new List<WebInquiryItems>();
-                    wif.items.Add( new WebInquiryItems
+                    wif.items.Add(new WebInquiryItems
                     {
                         ProductId = wif.ProductId,
                         dtStart = wif.JobStart,
@@ -235,5 +264,25 @@ namespace TravelPackage.Controllers
 
             return View();
         }
+
+
+        #region Dynamic SiteMap 
+        //[Route("sitemap.xml")]
+        public ActionResult SitemapXml()
+        {
+            string currentUrl = Request.Url.AbsoluteUri;
+            int iTmp = currentUrl.IndexOf('/',7);
+            string newurl = currentUrl.Substring(0, iTmp+1);
+
+            SiteMap sm = new SiteMap();
+            var sitemapNodes = sm.GetSitemapNodes(newurl);
+            string xml = sm.GetSitemapDocument(sitemapNodes);
+            return this.Content(xml, "text/xml", System.Text.Encoding.UTF8);
+        }
+
+        #endregion
+
+
+
     }
 }

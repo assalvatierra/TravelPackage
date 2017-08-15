@@ -34,5 +34,6 @@ namespace TravelPackage.Models
         public virtual DbSet<tpInqServices> tpInqServices { get; set; }
         public virtual DbSet<tpProdRate> tpProdRates { get; set; }
         public virtual DbSet<tpUom> tpUoms { get; set; }
+        public virtual DbSet<tpProductDesc> tpProductDescs { get; set; }
     }
 }

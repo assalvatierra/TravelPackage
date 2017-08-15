@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATmn4fi51IECv+VuQG043awAAAAACAAAAAAAQZgAAAAEAACAAAABSqGBjH8KyBlFZclTqhPqt4Yjo8FBUuYNU/xWF3H9cYwAAAAAOgAAAAAIAACAAAAC+o4F2Qbj6jLSx1en6zd/XaAS9Zx4DHzTbyfCw/tYYcSAAAAAOUGj1DAU0m6XNBcgW/9BoL6X464UHXGQmnhyL8V3730AAAABVLkGYsXtaT7bhW3lPrgxF6YiIIkInqOopqRY2qc5wsrZS2NMAw25dvV17Cqm7bHqonR1bW9Nm+vlCSDZDXncv</EncryptedPassword>
-    <_PublishTargetUrl>ftp:// ftp.myasp.net/products</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://ftp.myasp.net/products</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -152,7 +152,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 04:04:30</publishTime>
     </File>
     <File Include="bin/TravelPackage.dll">
-      <publishTime>08/07/2017 13:30:23</publishTime>
+      <publishTime>08/14/2017 09:27:50</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>09/10/2013 17:28:38</publishTime>
@@ -183,6 +183,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Global.asax">
       <publishTime>07/26/2017 14:15:09</publishTime>
+    </File>
+    <File Include="googleccc62e697a97aaad.html">
+      <publishTime>08/08/2017 09:37:35</publishTime>
     </File>
     <File Include="Images/abreeza-mall.gif">
       <publishTime>07/26/2017 15:20:33</publishTime>
@@ -389,10 +392,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/03/2017 12:46:22</publishTime>
     </File>
     <File Include="Views/Home/Destination.cshtml">
-      <publishTime>08/04/2017 18:07:57</publishTime>
+      <publishTime>08/09/2017 10:17:07</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/07/2017 09:06:58</publishTime>
+      <publishTime>08/09/2017 10:01:12</publishTime>
     </File>
     <File Include="Views/Home/Product.cshtml">
       <publishTime>08/01/2017 16:16:15</publishTime>
@@ -444,6 +447,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Shared/Lockout.cshtml">
       <publishTime>07/26/2017 14:15:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/08/2017 10:10:23</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>07/26/2017 14:15:24</publishTime>

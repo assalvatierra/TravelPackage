@@ -20,6 +20,12 @@ namespace TravelPackage
                 );
 
             routes.MapRoute(
+                name: "area_Sitemapxml",
+                url: "TravelPackages/{id}/{AreaName}/Sitemap.xml",
+                defaults: new { controller = "Home", action = "SitemapXml" }
+                );
+
+            routes.MapRoute(
                 name: "Destination",
                 url: "TravelPackages/{id}/{AreaName}",
                 defaults: new { controller = "Home", action = "Destination", id = UrlParameter.Optional }

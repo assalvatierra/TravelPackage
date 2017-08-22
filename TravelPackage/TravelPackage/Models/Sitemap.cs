@@ -110,6 +110,8 @@ namespace TravelPackage
                     new SitemapNode()
                     {
                         Url = string.Format(_website + "{0}",item),
+                        LastModified = System.DateTime.Now,
+                        Frequency = SitemapFrequency.Weekly,
                         Priority = 1
                     });
             }
@@ -122,6 +124,8 @@ namespace TravelPackage
                     new SitemapNode()
                     {
                         Url = string.Format(_website + "{0}", item),
+                        LastModified = System.DateTime.Now,
+                        Frequency = SitemapFrequency.Weekly,
                         Priority = 1
                     });
             }
@@ -134,6 +138,8 @@ namespace TravelPackage
                     new SitemapNode()
                     {
                         Url = string.Format(_website + "{0}", item),
+                        LastModified = System.DateTime.Now,
+                        Frequency = SitemapFrequency.Weekly,
                         Priority = 1
                     });
             }

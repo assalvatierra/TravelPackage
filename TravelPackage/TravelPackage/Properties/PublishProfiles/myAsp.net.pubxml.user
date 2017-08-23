@@ -376,6 +376,39 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Destinations/Bohol/Airlines101.png">
       <publishTime>08/15/2017 12:17:03</publishTime>
     </File>
+    <File Include="Images/Destinations/Bohol/Attraction_BoholIslandHopping.png">
+      <publishTime>08/23/2017 09:57:39</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping.jpg">
+      <publishTime>08/22/2017 14:52:55</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_balicasag_island.jpg">
+      <publishTime>08/22/2017 14:53:24</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_02.jpg">
+      <publishTime>08/22/2017 14:53:44</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_03.jpg">
+      <publishTime>08/22/2017 14:54:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_04.jpg">
+      <publishTime>08/22/2017 15:04:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_dolphin.jpg">
+      <publishTime>08/22/2017 14:54:49</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_snorkeling_01.jpg">
+      <publishTime>08/22/2017 15:02:40</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg">
+      <publishTime>08/22/2017 15:03:12</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg">
+      <publishTime>08/22/2017 15:03:47</publishTime>
+    </File>
+    <File Include="Images/Destinations/Bohol/attraction_islandHopping_virgin_island_03.jpg">
+      <publishTime>08/22/2017 14:55:23</publishTime>
+    </File>
     <File Include="Images/Destinations/Bohol/attraction_Panglao_beach1.jpg">
       <publishTime>08/07/2017 15:13:20</publishTime>
     </File>
@@ -585,6 +618,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Home/BoholPackages/CountrySide.cshtml">
       <publishTime>08/15/2017 12:17:04</publishTime>
+    </File>
+    <File Include="Views/Home/BoholPackages/IslandHopping.cshtml">
+      <publishTime>08/23/2017 09:44:05</publishTime>
     </File>
     <File Include="Views/Home/BoholPackages/Panglao.cshtml">
       <publishTime>08/15/2017 12:17:04</publishTime>

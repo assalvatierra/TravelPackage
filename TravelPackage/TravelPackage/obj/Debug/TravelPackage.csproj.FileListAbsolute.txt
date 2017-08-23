@@ -160,3 +160,4 @@ C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\bin\M
 C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\obj\Debug\TravelPackage.dll
 C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\obj\Debug\TravelPackage.pdb
+D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\obj\Debug\TravelPackage.csprojResolveAssemblyReference.cache

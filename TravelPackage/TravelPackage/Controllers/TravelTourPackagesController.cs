@@ -10,7 +10,7 @@ using TravelPackage.Models;
 
 namespace TravelPackage.Controllers
 {
-    public class tpProductsController : Controller
+    public class TravelTourPackagesController : Controller
     {
         private TravelDBContainer db = new TravelDBContainer();
 

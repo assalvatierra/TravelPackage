@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<TravelPackage.Models.tpAreas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Travel Package Destinations";
+    ViewBag.metaTitle = "Travel|Tour|Vacation Package Destinations";
 }
 
-<h2>Index</h2>
+<h2>Travel Destinations</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -41,9 +39,8 @@
             @Html.DisplayFor(modelItem => item.Sort)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |  
+            @Html.ActionLink("GO TO " + @item.Name + " >>", "Destination", "Home", new { id = @item.Id, AreaName = @item.Name }, null )
         </td>
     </tr>
 }

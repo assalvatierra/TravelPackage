@@ -200,8 +200,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\tpAreasController.cs" />
-    <Compile Include="Controllers\tpProductsController.cs" />
+    <Compile Include="Controllers\TravelDestinationsController.cs" />
+    <Compile Include="Controllers\TravelTourPackagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -452,17 +452,17 @@
     <Content Include="Models\TravelDB.edmx.diagram">
       <DependentUpon>TravelDB.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\tpAreas\Create.cshtml" />
-    <Content Include="Views\tpAreas\Delete.cshtml" />
-    <Content Include="Views\tpAreas\Details.cshtml" />
-    <Content Include="Views\tpAreas\Edit.cshtml" />
-    <Content Include="Views\tpAreas\Index.cshtml" />
+    <Content Include="Views\TravelDestinations\Create.cshtml" />
+    <Content Include="Views\TravelDestinations\Delete.cshtml" />
+    <Content Include="Views\TravelDestinations\Details.cshtml" />
+    <Content Include="Views\TravelDestinations\Edit.cshtml" />
+    <Content Include="Views\TravelDestinations\Index.cshtml" />
     <Content Include="Views\Home\Destination.cshtml" />
-    <Content Include="Views\tpProducts\Create.cshtml" />
-    <Content Include="Views\tpProducts\Delete.cshtml" />
-    <Content Include="Views\tpProducts\Details.cshtml" />
-    <Content Include="Views\tpProducts\Edit.cshtml" />
-    <Content Include="Views\tpProducts\Index.cshtml" />
+    <Content Include="Views\TravelTourPackages\Create.cshtml" />
+    <Content Include="Views\TravelTourPackages\Delete.cshtml" />
+    <Content Include="Views\TravelTourPackages\Details.cshtml" />
+    <Content Include="Views\TravelTourPackages\Edit.cshtml" />
+    <Content Include="Views\TravelTourPackages\Index.cshtml" />
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\ProductCustom.cshtml" />
     <Content Include="Views\Home\ProductDefaultView2.cshtml" />

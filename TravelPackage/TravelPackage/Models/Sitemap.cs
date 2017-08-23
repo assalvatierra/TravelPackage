@@ -69,7 +69,9 @@ namespace TravelPackage
             items.Add("Index");
             items.Add("About");
             items.Add("Contact");
-
+            items.Add("TravelDestinations");
+            items.Add("TravelTourPackages");
+            
             return items;
         }
 

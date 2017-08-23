@@ -328,6 +328,19 @@
     <Content Include="Images\Destinations\Bohol\accom_southpalmresort_11.jpg" />
     <Content Include="Images\Destinations\Bohol\accom_southpalmresort_12.jpg" />
     <Content Include="Images\Destinations\Bohol\Airlines101.png" />
+    <Content Include="Images\Destinations\Bohol\Attraction_BoholIslandHopping.png" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_balicasag_island.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_balicasag_island_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_balicasag_island_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_balicasag_island_04.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_dolphin.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_snorkeling_01.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_snorkeling_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_snorkeling_03.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_virgin_island_01.JPG" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_virgin_island_02.jpg" />
+    <Content Include="Images\Destinations\Bohol\attraction_islandHopping_virgin_island_03.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach1.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach2.jpg" />
     <Content Include="Images\Destinations\Bohol\attraction_Panglao_beach3.jpg" />
@@ -397,6 +410,7 @@
       <LastGenOutput>TravelDB.cs</LastGenOutput>
       <DependentUpon>TravelDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Views\Home\BoholPackages\Panglao.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -458,11 +472,11 @@
     <Content Include="Views\Home\RequestProduct.cshtml" />
     <Content Include="Views\Home\RequestQuote.cshtml" />
     <Content Include="Views\Home\RequestBook.cshtml" />
-    <Content Include="Views\Home\BoholPackages\Panglao.cshtml" />
     <Content Include="Views\Home\BoholPackages\3d2n_Panglao_Alona42.cshtml" />
     <Content Include="Views\Home\ProductDefaultView.cshtml" />
     <Content Include="Views\Home\BoholPackages\AirTicket.cshtml" />
     <Content Include="Views\Home\ProductRates.cshtml" />
+    <Content Include="Views\Home\BoholPackages\IslandHopping.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

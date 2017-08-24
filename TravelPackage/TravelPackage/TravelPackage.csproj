@@ -201,6 +201,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TravelDestinationsController.cs" />
+    <Compile Include="Controllers\TravelTourCategoriesController.cs" />
+    <Compile Include="Controllers\TravelTourImagesController.cs" />
     <Compile Include="Controllers\TravelTourPackagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -477,6 +479,16 @@
     <Content Include="Views\Home\BoholPackages\AirTicket.cshtml" />
     <Content Include="Views\Home\ProductRates.cshtml" />
     <Content Include="Views\Home\BoholPackages\IslandHopping.cshtml" />
+    <Content Include="Views\TravelTourImages\Create.cshtml" />
+    <Content Include="Views\TravelTourImages\Delete.cshtml" />
+    <Content Include="Views\TravelTourImages\Details.cshtml" />
+    <Content Include="Views\TravelTourImages\Edit.cshtml" />
+    <Content Include="Views\TravelTourImages\Index.cshtml" />
+    <Content Include="Views\TravelTourCategories\Create.cshtml" />
+    <Content Include="Views\TravelTourCategories\Delete.cshtml" />
+    <Content Include="Views\TravelTourCategories\Details.cshtml" />
+    <Content Include="Views\TravelTourCategories\Edit.cshtml" />
+    <Content Include="Views\TravelTourCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

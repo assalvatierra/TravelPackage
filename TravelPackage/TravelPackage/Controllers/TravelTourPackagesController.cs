@@ -21,6 +21,13 @@ namespace TravelPackage.Controllers
             return View(tpProducts.ToList());
         }
 
+        public ActionResult PackagesByCategory(int? CategoryId)
+        {
+            var tpCat = db.tpProdCats.Where(d => d.tpCategoryId == (int) CategoryId).Select( s=> s.Id);
+            var tpProducts = db.tpProducts.Include(t => t.tpArea).Where( d=> tpCat.Contains( d.Id));
+            return View("index", tpProducts.ToList() );
+        }
+
         // GET: tpProducts/Details/5
         public ActionResult Details(int? id)
         {

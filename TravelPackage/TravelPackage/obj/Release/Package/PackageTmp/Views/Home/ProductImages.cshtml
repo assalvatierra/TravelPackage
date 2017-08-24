@@ -5,7 +5,7 @@
     @foreach (var item in Model)
     {
         <div class="col-md-4">
-            <a href="http://realbreezedavaotours.com/TourPackages/samal-inland-package-tour/" title="@item.AltName">
+            <a href="@item.ImgPath" title="@item.AltName">
                 <img width="100%;" src="@item.ImgPath" alt="@item.AltName">
             </a>
             <p>@item.Desc</p>

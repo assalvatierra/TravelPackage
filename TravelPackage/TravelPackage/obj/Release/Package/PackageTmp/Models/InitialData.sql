@@ -15,13 +15,14 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',2,1),
 ('Country Side Tour','7 - 9 hrs tour across the island of Bohol. Passing thru is cultural destinations and fascinating views of the main island','BoholPackages/CountrySide','/Images/Destinations/Bohol/CountrySideTour.png',1,2),
 ('Panglao Tour','8hrs island tour to the treasured beaches of Panglao.','BoholPackages/Panglao','/Images/Destinations/Bohol/PanglaoTour.png',2,2),
-('3D2N Vacation','3Days 2 Nights Vacation Package. staying at the heart of the most visited beaches of Panglao.','BoholPackages/3d2n_Panglao_Alona42','/Images/Destinations/Bohol/3d2nBoholVacation.png',2,2),
+('3D2N Vacation','3Days 2 Nights Vacation Package. staying at the heart of the most visited beaches of Panglao.','BoholPackages/3d2n_Panglao_Alona42','/Images/Destinations/Bohol/3d2nBoholVacation.png',4,2),
 ('Domestic Airticket Manila - Bohol','Economy Airticket Manila - Tagbilaran','BoholPackages/AirTicket','/Images/Destinations/Bohol/Airlines101.png',3,2),
 ('Bohol Bee Farm - Panglao, Bohol','Resort & Restaurant','ProductDefaultView','/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg',8,2),
 ('Alona Tropical Beach Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-10.jpg',5,2),
 ('South Palms Resort Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',6,2),
 ('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
-('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2);
+('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2),
+('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/IslandHopping','/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png',3,2);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -96,22 +97,31 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-13.jpg','','Dumaluan beach resort',1),
 (10,'/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-14.jpg','','Dumaluan beach resort',1),
 -- Bohol Beach Club--
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_01.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_03.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_04.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_05.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_06.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_07.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_08.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_09.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_10.jpg','','Bohol Beacg Club',1),
-(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_11.jpg','','Bohol Beacg Club',1);
-
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_01.jpg','','Bohol Beach Club',1),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg','','Bohol Beach Club',2),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_03.jpg','','Bohol Beach Club',3),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_04.jpg','','Bohol Beach Club',4),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_05.jpg','','Bohol Beach Club',5),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_06.jpg','','Bohol Beach Club',6),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_07.jpg','','Bohol Beach Club',7),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_08.jpg','','Bohol Beach Club',8),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_09.jpg','','Bohol Beach Club',9),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_10.jpg','','Bohol Beach Club',10),
+(11,'/Images/Destinations/Bohol/accom_bohol_beachclub_11.jpg','','Bohol Beach Club',11),
+-- Bohol - Island Hopping --
+(12,'/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png','','Bohol Island Hopping',1),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_virgin_island_01.JPG','','Island Hopping Virgin Island Bohol ',2),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping.jpg','','Bohol Island Hopping',3),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_02.jpg','','Island Hopping Balicasag Island Bohol ',4),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_04.jpg','','Island Hopping Balicasag Island Bohol ',5),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_01.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',6),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',7),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',8);
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
-(1,1),(1,2),(1,3),(1,4),(1,5), -- Featured - Tour Packages 
+(1,1),(1,2), -- Davao
+(1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages 
 (2,6),(2,7),(2,8),(2,9),(2,10),(2,11); -- bohol add on products
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values

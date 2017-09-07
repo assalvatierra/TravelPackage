@@ -265,6 +265,10 @@ namespace TravelPackage.Controllers
             return View();
         }
 
+        public ActionResult LinkSite()
+        {
+            return View();
+        }
 
         #region Dynamic SiteMap 
         //[Route("sitemap.xml")]

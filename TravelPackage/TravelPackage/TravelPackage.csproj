@@ -489,6 +489,7 @@
     <Content Include="Views\TravelTourCategories\Details.cshtml" />
     <Content Include="Views\TravelTourCategories\Edit.cshtml" />
     <Content Include="Views\TravelTourCategories\Index.cshtml" />
+    <Content Include="Views\Home\LinkSite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

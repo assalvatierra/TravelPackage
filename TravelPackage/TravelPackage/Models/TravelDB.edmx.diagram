@@ -24,6 +24,8 @@
         <AssociationConnector Association="TravelDB.tpUomtpProdRate" />
         <EntityTypeShape EntityType="TravelDB.tpProductDesc" Width="1.5" PointX="0.5" PointY="9.125" />
         <AssociationConnector Association="TravelDB.tpProductstpProductDesc" />
+        <EntityTypeShape EntityType="TravelDB.tpKeyword" Width="1.5" PointX="0.625" PointY="11.875" />
+        <AssociationConnector Association="TravelDB.tpProductstpKeyword" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

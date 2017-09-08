@@ -8,6 +8,11 @@
     List<TravelPackage.Models.tpProductImages> productImages = (List<TravelPackage.Models.tpProductImages>)ViewBag.ProdImages;
     List<TravelPackage.Models.tpProdRate> productRates = (List<TravelPackage.Models.tpProdRate>)ViewBag.ProdRate;
     TravelPackage.Models.WebInquiryForm InquiryObj = (TravelPackage.Models.WebInquiryForm)ViewBag.Inquiry;
+    List<TravelPackage.Models.tpCategory> productCategories = (List<TravelPackage.Models.tpCategory>)ViewBag.ProductCategories;
+    List<TravelPackage.Models.tpKeyword> productKeywords = (List<TravelPackage.Models.tpKeyword>)ViewBag.ProductKeywords;
+
+    List<TravelPackage.Models.tpProducts> nearbyAds = (List<TravelPackage.Models.tpProducts>)ViewBag.NearbyAds;
+    List<TravelPackage.Models.tpProducts> similarAds = (List<TravelPackage.Models.tpProducts>)ViewBag.SimilarAds;
 }
 
 <div class="breadcrumbs10" style="background-color: #eeeeee;">
@@ -47,6 +52,32 @@
         @{ Html.RenderPartial("productImages", productImages); }
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductCategories", productCategories); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductKeywords", productKeywords); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductNearby", nearbyAds); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductSimilarAds", similarAds); }
+    </div>
+</div>
+
+
 
 <p>
     @Html.ActionLink("Back to List", "Destination", new { id = ViewBag.DestId, AreaName = sArea })

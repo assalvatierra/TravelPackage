@@ -47,6 +47,11 @@
       <End Role="tpProducts" EntitySet="tpProducts" />
       <End Role="tpProductDesc" EntitySet="tpProductDescs" />
     </AssociationSet>
+    <EntitySet Name="tpKeywords" EntityType="TravelDB.tpKeyword" />
+    <AssociationSet Name="tpProductstpKeyword" Association="TravelDB.tpProductstpKeyword">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpKeyword" EntitySet="tpKeywords" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -77,6 +82,7 @@
     <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpProductstpInqServices" FromRole="tpProducts" ToRole="tpInqServices" />
     <NavigationProperty Name="tpProdRates" Relationship="TravelDB.tpProductstpProdRate" FromRole="tpProducts" ToRole="tpProdRate" />
     <NavigationProperty Name="tpProductDescs" Relationship="TravelDB.tpProductstpProductDesc" FromRole="tpProducts" ToRole="tpProductDesc" />
+    <NavigationProperty Name="tpKeywords" Relationship="TravelDB.tpProductstpKeyword" FromRole="tpProducts" ToRole="tpKeyword" />
   </EntityType>
   <Association Name="tpAreastpProducts">
     <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
@@ -274,6 +280,27 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="tpProductDesc">
+        <PropertyRef Name="tpProductsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tpKeyword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Keyword" Type="String" Nullable="false" MaxLength="150" />
+    <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpKeyword" FromRole="tpKeyword" ToRole="tpProducts" />
+    <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="tpProductstpKeyword">
+    <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+    <End Type="TravelDB.tpKeyword" Role="tpKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpKeyword">
         <PropertyRef Name="tpProductsId" />
       </Dependent>
     </ReferentialConstraint>

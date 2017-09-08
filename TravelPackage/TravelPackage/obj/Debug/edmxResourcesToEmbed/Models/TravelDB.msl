@@ -115,5 +115,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tpKeywords">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpKeyword)">
+        <MappingFragment StoreEntitySet="tpKeywords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

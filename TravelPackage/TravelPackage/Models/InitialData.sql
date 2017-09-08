@@ -163,3 +163,16 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 
 -- Bohol Beach Club --
 (11,'Room Rates','No Available as of this time','Contact our travel consultant for reservation',1);
+
+
+Insert into tpKeywords([Keyword],[tpProductsId]) values
+('Bohol','3'),('Tour','3'),('Travel','3'),('Vacation','3'),('Package','3'),
+('Bohol','4'),('Tour','4'),('Travel','4'),('Vacation','4'),('Package','4'),
+('Bohol','5'),('Tour','5'),('Travel','5'),('Vacation','5'),('Package','5'),
+('Bohol','6'),('Tour','6'),('Travel','6'),('Vacation','6'),('Package','6'),
+('Bohol','7'),('Tour','7'),('Travel','7'),('Vacation','7'),('Package','7'),
+('Bohol','8'),('Tour','8'),('Travel','8'),('Vacation','8'),('Package','8'),
+('Bohol','9'),('Tour','9'),('Travel','9'),('Vacation','9'),('Package','9'),
+('Bohol','10'),('Tour','10'),('Travel','10'),('Vacation','10'),('Package','10'),
+('Bohol','11'),('Tour','11'),('Travel','11'),('Vacation','11'),('Package','11'),
+('Bohol','12'),('Tour','12'),('Travel','12'),('Vacation','12'),('Package','12');

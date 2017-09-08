@@ -222,6 +222,9 @@
     <Compile Include="Models\tpInquiry.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tpKeyword.cs">
+      <DependentUpon>TravelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tpProdCat.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
@@ -490,6 +493,10 @@
     <Content Include="Views\TravelTourCategories\Edit.cshtml" />
     <Content Include="Views\TravelTourCategories\Index.cshtml" />
     <Content Include="Views\Home\LinkSite.cshtml" />
+    <Content Include="Views\Home\ProductCategories.cshtml" />
+    <Content Include="Views\Home\ProductKeywords.cshtml" />
+    <Content Include="Views\Home\ProductNearby.cshtml" />
+    <Content Include="Views\Home\ProductSimilarAds.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

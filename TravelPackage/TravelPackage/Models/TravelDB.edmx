@@ -16,6 +16,7 @@
     <EntitySet Name="tpProdRates" EntityType="TravelDB.Store.tpProdRates" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tpUoms" EntityType="TravelDB.Store.tpUoms" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tpProductDescs" EntityType="TravelDB.Store.tpProductDescs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tpKeywords" EntityType="TravelDB.Store.tpKeywords" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="tpAreastpProducts" Association="TravelDB.Store.tpAreastpProducts">
       <End Role="tpAreas" EntitySet="tpAreas" />
       <End Role="tpProducts" EntitySet="tpProducts" />
@@ -51,6 +52,10 @@
     <AssociationSet Name="tpProductstpProductDesc" Association="TravelDB.Store.tpProductstpProductDesc">
       <End Role="tpProducts" EntitySet="tpProducts" />
       <End Role="tpProductDesc" EntitySet="tpProductDescs" />
+    </AssociationSet>
+    <AssociationSet Name="tpProductstpKeyword" Association="TravelDB.Store.tpProductstpKeyword">
+      <End Role="tpProducts" EntitySet="tpProducts" />
+      <End Role="tpKeyword" EntitySet="tpKeywords" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="tpAreas">
@@ -156,6 +161,14 @@
     <Property Name="tpDescH2" Type="nvarchar" Nullable="true" MaxLength="50" />
     <Property Name="tpDesc" Type="nvarchar" Nullable="true" MaxLength="250" />
     <Property Name="Sort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tpKeywords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Keyword" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="tpProductsId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="tpAreastpProducts">
     <End Role="tpAreas" Type="TravelDB.Store.tpAreas" Multiplicity="1" />
@@ -265,6 +278,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="tpProductstpKeyword">
+    <End Role="tpProducts" Type="TravelDB.Store.tpProducts" Multiplicity="1" />
+    <End Role="tpKeyword" Type="TravelDB.Store.tpKeywords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tpProducts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tpKeyword">
+        <PropertyRef Name="tpProductsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -316,6 +341,11 @@
             <End Role="tpProducts" EntitySet="tpProducts" />
             <End Role="tpProductDesc" EntitySet="tpProductDescs" />
           </AssociationSet>
+          <EntitySet Name="tpKeywords" EntityType="TravelDB.tpKeyword" />
+          <AssociationSet Name="tpProductstpKeyword" Association="TravelDB.tpProductstpKeyword">
+            <End Role="tpProducts" EntitySet="tpProducts" />
+            <End Role="tpKeyword" EntitySet="tpKeywords" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tpAreas">
           <Key>
@@ -346,6 +376,7 @@
           <NavigationProperty Name="tpInqServices" Relationship="TravelDB.tpProductstpInqServices" FromRole="tpProducts" ToRole="tpInqServices" />
           <NavigationProperty Name="tpProdRates" Relationship="TravelDB.tpProductstpProdRate" FromRole="tpProducts" ToRole="tpProdRate" />
           <NavigationProperty Name="tpProductDescs" Relationship="TravelDB.tpProductstpProductDesc" FromRole="tpProducts" ToRole="tpProductDesc" />
+          <NavigationProperty Name="tpKeywords" Relationship="TravelDB.tpProductstpKeyword" FromRole="tpProducts" ToRole="tpKeyword" />
         </EntityType>
         <Association Name="tpAreastpProducts">
           <End Type="TravelDB.tpAreas" Role="tpAreas" Multiplicity="1" />
@@ -547,6 +578,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tpKeyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Keyword" Type="String" Nullable="false" MaxLength="150" />
+          <NavigationProperty Name="tpProduct" Relationship="TravelDB.tpProductstpKeyword" FromRole="tpKeyword" ToRole="tpProducts" />
+          <Property Name="tpProductsId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="tpProductstpKeyword">
+          <End Type="TravelDB.tpProducts" Role="tpProducts" Multiplicity="1" />
+          <End Type="TravelDB.tpKeyword" Role="tpKeyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tpProducts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tpKeyword">
+              <PropertyRef Name="tpProductsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -664,6 +716,15 @@
           <ScalarProperty Name="tpDescH2" ColumnName="tpDescH2" />
           <ScalarProperty Name="tpDesc" ColumnName="tpDesc" />
           <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpKeywords">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpKeyword)">
+        <MappingFragment StoreEntitySet="tpKeywords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

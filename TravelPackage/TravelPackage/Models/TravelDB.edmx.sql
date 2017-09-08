@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/10/2017 15:18:20
+-- Date Created: 09/08/2017 10:32:40
 -- Generated from EDMX file: D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
 -- --------------------------------------------------
 
@@ -44,6 +44,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_tpProductstpProductDesc]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[tpProductDescs] DROP CONSTRAINT [FK_tpProductstpProductDesc];
 GO
+IF OBJECT_ID(N'[dbo].[FK_tpProductstpKeyword]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[tpKeywords] DROP CONSTRAINT [FK_tpProductstpKeyword];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -78,6 +81,9 @@ IF OBJECT_ID(N'[dbo].[tpUoms]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tpProductDescs]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tpProductDescs];
+GO
+IF OBJECT_ID(N'[dbo].[tpKeywords]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tpKeywords];
 GO
 
 -- --------------------------------------------------
@@ -188,6 +194,14 @@ CREATE TABLE [dbo].[tpProductDescs] (
 );
 GO
 
+-- Creating table 'tpKeywords'
+CREATE TABLE [dbo].[tpKeywords] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Keyword] nvarchar(150)  NOT NULL,
+    [tpProductsId] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -249,6 +263,12 @@ GO
 -- Creating primary key on [Id] in table 'tpProductDescs'
 ALTER TABLE [dbo].[tpProductDescs]
 ADD CONSTRAINT [PK_tpProductDescs]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tpKeywords'
+ALTER TABLE [dbo].[tpKeywords]
+ADD CONSTRAINT [PK_tpKeywords]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -388,6 +408,21 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_tpProductstpProductDesc'
 CREATE INDEX [IX_FK_tpProductstpProductDesc]
 ON [dbo].[tpProductDescs]
+    ([tpProductsId]);
+GO
+
+-- Creating foreign key on [tpProductsId] in table 'tpKeywords'
+ALTER TABLE [dbo].[tpKeywords]
+ADD CONSTRAINT [FK_tpProductstpKeyword]
+    FOREIGN KEY ([tpProductsId])
+    REFERENCES [dbo].[tpProducts]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_tpProductstpKeyword'
+CREATE INDEX [IX_FK_tpProductstpKeyword]
+ON [dbo].[tpKeywords]
     ([tpProductsId]);
 GO
 

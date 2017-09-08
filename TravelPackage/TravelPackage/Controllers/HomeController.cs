@@ -106,6 +106,19 @@ namespace TravelPackage.Controllers
             ViewBag.ProdDesc = db.tpProductDescs.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).ToList();
             ViewBag.ProdRate = db.tpProdRates.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).Include(d=>d.tpUom).ToList();
 
+            // categories and tags/keywords
+            var sCat = db.tpProdCats.Where(d => d.tpProductsId == id).Select(d => d.tpCategoryId);
+            ViewBag.ProductCategories = db.tpCategories.Where(d => sCat.Contains(d.Id)).ToList();
+            ViewBag.ProductKeywords = db.tpKeywords.Where(d => d.tpProductsId == id).ToList();
+
+            //Related links: nearby | similar | affiliates
+            var featured = db.tpCategories.Where(d => d.SysCode == "FEATURED").Select(d=>d.Id);
+            var featuredProducts = db.tpProdCats.Where(d => featured.Contains(d.tpCategoryId)).Select(d=>d.tpProductsId).ToList();
+            ViewBag.NearbyAds = db.tpProducts.Where(d => d.tpAreasId == product.tpAreasId).Where(d=> featuredProducts.Contains(d.Id)).ToList();
+
+            var similarCat = db.tpProdCats.Where(d => sCat.Contains(d.tpCategoryId)).Select(d=>d.tpProductsId).ToList();
+            ViewBag.SimilarAds = db.tpProducts.Where(d => similarCat.Contains(d.Id)).Where(d=> d.tpAreasId != product.tpAreasId).ToList();
+
             ViewBag.metaTitle = product.Name + "-(Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")"+ product.tpArea.Name;
             ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
 

@@ -21,7 +21,8 @@
                     <span>&nbsp;</span>
                 }
 
-                @Html.ActionLink(item.Description, "Details", new { id = item.Id })
+                @Html.ActionLink(item.Description, "PackagesByCategory", "TravelTourPackages", new { CategoryId = item.Id }, null)
+
             }
         </p>
     </div>

@@ -204,6 +204,7 @@
     <Compile Include="Controllers\TravelTourCategoriesController.cs" />
     <Compile Include="Controllers\TravelTourImagesController.cs" />
     <Compile Include="Controllers\TravelTourPackagesController.cs" />
+    <Compile Include="Controllers\TravelTourTagsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -497,6 +498,11 @@
     <Content Include="Views\Home\ProductKeywords.cshtml" />
     <Content Include="Views\Home\ProductNearby.cshtml" />
     <Content Include="Views\Home\ProductSimilarAds.cshtml" />
+    <Content Include="Views\TravelTourTags\Create.cshtml" />
+    <Content Include="Views\TravelTourTags\Delete.cshtml" />
+    <Content Include="Views\TravelTourTags\Details.cshtml" />
+    <Content Include="Views\TravelTourTags\Edit.cshtml" />
+    <Content Include="Views\TravelTourTags\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

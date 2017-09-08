@@ -73,6 +73,7 @@ namespace TravelPackage
             items.Add("TravelTourPackages");
             items.Add("TravelTourImages");
             items.Add("TravelTourCategories");
+            items.Add("TravelTourTags");
 
             return items;
         }

@@ -6,7 +6,7 @@ Insert into tpUoms([Measure],[Remarks]) values
 
 Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
 ('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
-('BOHOL','Place of wonderful beaches','BoholPage','/Images/Bohol101.png',2),
+('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
 ('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
 
 
@@ -163,3 +163,23 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 
 -- Bohol Beach Club --
 (11,'Room Rates','No Available as of this time','Contact our travel consultant for reservation',1);
+
+
+Insert into tpKeywords([Keyword],[tpProductsId]) values
+('Bohol','3'),('Tour','3'),('Travel','3'),('Vacation','3'),('Package','3'),
+('Bohol','4'),('Tour','4'),('Travel','4'),('Vacation','4'),('Package','4'),
+('Bohol','5'),('Tour','5'),('Travel','5'),('Vacation','5'),('Package','5'),
+('Bohol','6'),('Tour','6'),('Travel','6'),('Vacation','6'),('Package','6'),
+('Bohol','7'),('Tour','7'),('Travel','7'),('Vacation','7'),('Package','7'),
+('Bohol','8'),('Tour','8'),('Travel','8'),('Vacation','8'),('Package','8'),
+('Bohol','9'),('Tour','9'),('Travel','9'),('Vacation','9'),('Package','9'),
+('Bohol','10'),('Tour','10'),('Travel','10'),('Vacation','10'),('Package','10'),
+('Bohol','11'),('Tour','11'),('Travel','11'),('Vacation','11'),('Package','11'),
+('Bohol','12'),('Tour','12'),('Travel','12'),('Vacation','12'),('Package','12');
+
+
+Insert into tpBacklinks([LinkType],[LinkUrl],[Description],[LinkExpiry],[Status]) values
+('PRODUCT','http://realbreezedavaotours.com/','Real Breeze Davao - Affordable Tour Packages in Davao','2020-01-01','ACT'),
+('PRODUCT','http://davaotourpackages.com/','Popular Tour Packages in Davao','2020-01-01','ACT'),
+('PRODUCT','http://www.ajdavaocarrental.com/','AJ Davao Car Rental - Rent a car in Davao','2020-01-01','ACT'),
+('PRODUCT','http://realwheelsdavao.com/','Real Wheels Davao  Rent a car in Davao','2020-01-01','ACT');

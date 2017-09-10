@@ -115,5 +115,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tpKeywords">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpKeyword)">
+        <MappingFragment StoreEntitySet="tpKeywords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="tpProductsId" ColumnName="tpProductsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpBacklinks">
+      <EntityTypeMapping TypeName="IsTypeOf(TravelDB.tpBacklink)">
+        <MappingFragment StoreEntitySet="tpBacklinks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LinkType" ColumnName="LinkType" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LinkExpiry" ColumnName="LinkExpiry" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

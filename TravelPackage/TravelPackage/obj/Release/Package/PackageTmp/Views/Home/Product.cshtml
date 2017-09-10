@@ -8,6 +8,13 @@
     List<TravelPackage.Models.tpProductImages> productImages = (List<TravelPackage.Models.tpProductImages>)ViewBag.ProdImages;
     List<TravelPackage.Models.tpProdRate> productRates = (List<TravelPackage.Models.tpProdRate>)ViewBag.ProdRate;
     TravelPackage.Models.WebInquiryForm InquiryObj = (TravelPackage.Models.WebInquiryForm)ViewBag.Inquiry;
+    List<TravelPackage.Models.tpCategory> productCategories = (List<TravelPackage.Models.tpCategory>)ViewBag.ProductCategories;
+    List<TravelPackage.Models.tpKeyword> productKeywords = (List<TravelPackage.Models.tpKeyword>)ViewBag.ProductKeywords;
+
+    List<TravelPackage.Models.tpProducts> nearbyAds = (List<TravelPackage.Models.tpProducts>)ViewBag.NearbyAds;
+    List<TravelPackage.Models.tpProducts> similarAds = (List<TravelPackage.Models.tpProducts>)ViewBag.SimilarAds;
+
+    List<TravelPackage.Models.tpBacklink> backLinks = (List<TravelPackage.Models.tpBacklink>)ViewBag.Backlinks;
 }
 
 <div class="breadcrumbs10" style="background-color: #eeeeee;">
@@ -23,6 +30,7 @@
 <div class="row">
     <div class="col-md-10">
         <h1>@Model.Name</h1>
+        <h2 style="font-size:medium;">@ViewBag.subTitle</h2>
         <p class="lead">@Model.ShortRemarks</p>
     </div>
 </div>
@@ -47,6 +55,37 @@
         @{ Html.RenderPartial("productImages", productImages); }
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductCategories", productCategories); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductKeywords", productKeywords); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductNearby", nearbyAds); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductSimilarAds", similarAds); }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductBacklinks", backLinks); }
+    </div>
+</div>
+
 
 <p>
     @Html.ActionLink("Back to List", "Destination", new { id = ViewBag.DestId, AreaName = sArea })

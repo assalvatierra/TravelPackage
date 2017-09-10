@@ -52,6 +52,7 @@
       <End Role="tpProducts" EntitySet="tpProducts" />
       <End Role="tpKeyword" EntitySet="tpKeywords" />
     </AssociationSet>
+    <EntitySet Name="tpBacklinks" EntityType="TravelDB.tpBacklink" />
   </EntityContainer>
   <EntityType Name="tpAreas">
     <Key>
@@ -305,4 +306,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="tpBacklink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LinkType" Type="String" Nullable="false" MaxLength="10" />
+    <Property Name="LinkUrl" Type="String" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="250" />
+    <Property Name="LinkExpiry" Type="DateTime" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="3" />
+  </EntityType>
 </Schema>

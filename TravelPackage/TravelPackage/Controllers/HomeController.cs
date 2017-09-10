@@ -68,7 +68,7 @@ namespace TravelPackage.Controllers
             var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
             ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
 
-            ViewBag.metaTitle = AreaName + " Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year+1).ToString() + " Philippines";
+            ViewBag.metaTitle = AreaName + " Tour Packages | Vacation | Travel - " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year+1).ToString() + " Philippines";
             ViewBag.metaDescription = "Vacation, Adventure Tour, Travel and Holiday Packages to " + AreaName;
 
             return View(data);
@@ -119,9 +119,13 @@ namespace TravelPackage.Controllers
             var similarCat = db.tpProdCats.Where(d => sCat.Contains(d.tpCategoryId)).Select(d=>d.tpProductsId).ToList();
             ViewBag.SimilarAds = db.tpProducts.Where(d => similarCat.Contains(d.Id)).Where(d=> d.tpAreasId != product.tpAreasId).ToList();
 
-            ViewBag.metaTitle = product.Name + "-(Tour|Vacation|Travel Packages " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")"+ product.tpArea.Name;
-            ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
+            //Backlinks
+            ViewBag.Backlinks = db.tpBacklinks.Where(d=>d.LinkType=="PRODUCT").ToList();
 
+
+            ViewBag.metaTitle = product.Name + " - " + product.tpArea.Name + " Travel|Tour Packages - " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")";
+            ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
+            ViewBag.subTitle = product.tpArea.Name + " Travel and Tour Packages - " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString();
             return View(product);
         }
 

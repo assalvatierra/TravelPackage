@@ -12,6 +12,7 @@
     <EntitySet Name="tpUoms" EntityType="TravelDB.Store.tpUoms" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tpProductDescs" EntityType="TravelDB.Store.tpProductDescs" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tpKeywords" EntityType="TravelDB.Store.tpKeywords" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tpBacklinks" EntityType="TravelDB.Store.tpBacklinks" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="tpAreastpProducts" Association="TravelDB.Store.tpAreastpProducts">
       <End Role="tpAreas" EntitySet="tpAreas" />
       <End Role="tpProducts" EntitySet="tpProducts" />
@@ -164,6 +165,17 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Keyword" Type="nvarchar" Nullable="false" MaxLength="150" />
     <Property Name="tpProductsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tpBacklinks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LinkType" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="LinkUrl" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="LinkExpiry" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="3" />
   </EntityType>
   <Association Name="tpAreastpProducts">
     <End Role="tpAreas" Type="TravelDB.Store.tpAreas" Multiplicity="1" />

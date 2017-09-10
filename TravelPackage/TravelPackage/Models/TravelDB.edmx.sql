@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/08/2017 10:32:40
--- Generated from EDMX file: D:\Data\Real\Apps\GitHub\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
+-- Date Created: 09/10/2017 21:27:03
+-- Generated from EDMX file: C:\Data\ABEL\Projects\GitHubApps\TravelPackage\TravelPackage\TravelPackage\Models\TravelDB.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -84,6 +84,9 @@ IF OBJECT_ID(N'[dbo].[tpProductDescs]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[tpKeywords]', 'U') IS NOT NULL
     DROP TABLE [dbo].[tpKeywords];
+GO
+IF OBJECT_ID(N'[dbo].[tpBacklinks]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tpBacklinks];
 GO
 
 -- --------------------------------------------------
@@ -202,6 +205,17 @@ CREATE TABLE [dbo].[tpKeywords] (
 );
 GO
 
+-- Creating table 'tpBacklinks'
+CREATE TABLE [dbo].[tpBacklinks] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [LinkType] nvarchar(10)  NOT NULL,
+    [LinkUrl] nvarchar(250)  NOT NULL,
+    [Description] nvarchar(250)  NOT NULL,
+    [LinkExpiry] datetime  NOT NULL,
+    [Status] nvarchar(3)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -269,6 +283,12 @@ GO
 -- Creating primary key on [Id] in table 'tpKeywords'
 ALTER TABLE [dbo].[tpKeywords]
 ADD CONSTRAINT [PK_tpKeywords]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tpBacklinks'
+ALTER TABLE [dbo].[tpBacklinks]
+ADD CONSTRAINT [PK_tpBacklinks]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

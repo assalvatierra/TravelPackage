@@ -13,6 +13,8 @@
 
     List<TravelPackage.Models.tpProducts> nearbyAds = (List<TravelPackage.Models.tpProducts>)ViewBag.NearbyAds;
     List<TravelPackage.Models.tpProducts> similarAds = (List<TravelPackage.Models.tpProducts>)ViewBag.SimilarAds;
+
+    List<TravelPackage.Models.tpBacklink> backLinks = (List<TravelPackage.Models.tpBacklink>)ViewBag.Backlinks;
 }
 
 <div class="breadcrumbs10" style="background-color: #eeeeee;">
@@ -28,6 +30,7 @@
 <div class="row">
     <div class="col-md-10">
         <h1>@Model.Name</h1>
+        <h2 style="font-size:medium;">@ViewBag.subTitle</h2>
         <p class="lead">@Model.ShortRemarks</p>
     </div>
 </div>
@@ -77,6 +80,11 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-6">
+        @{ Html.RenderPartial("ProductBacklinks", backLinks); }
+    </div>
+</div>
 
 
 <p>

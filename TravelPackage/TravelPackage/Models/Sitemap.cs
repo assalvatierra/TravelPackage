@@ -74,6 +74,7 @@ namespace TravelPackage
             items.Add("TravelTourImages");
             items.Add("TravelTourCategories");
             items.Add("TravelTourTags");
+            items.Add("TravelTourBacklinks");
 
             return items;
         }

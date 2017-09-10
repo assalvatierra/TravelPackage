@@ -6,7 +6,7 @@ Insert into tpUoms([Measure],[Remarks]) values
 
 Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
 ('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
-('BOHOL','Place of wonderful beaches','BoholPage','/Images/Bohol101.png',2),
+('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
 ('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
 
 
@@ -176,3 +176,10 @@ Insert into tpKeywords([Keyword],[tpProductsId]) values
 ('Bohol','10'),('Tour','10'),('Travel','10'),('Vacation','10'),('Package','10'),
 ('Bohol','11'),('Tour','11'),('Travel','11'),('Vacation','11'),('Package','11'),
 ('Bohol','12'),('Tour','12'),('Travel','12'),('Vacation','12'),('Package','12');
+
+
+Insert into tpBacklinks([LinkType],[LinkUrl],[Description],[LinkExpiry],[Status]) values
+('PRODUCT','http://realbreezedavaotours.com/','Real Breeze Davao - Affordable Tour Packages in Davao','2020-01-01','ACT'),
+('PRODUCT','http://davaotourpackages.com/','Popular Tour Packages in Davao','2020-01-01','ACT'),
+('PRODUCT','http://www.ajdavaocarrental.com/','AJ Davao Car Rental - Rent a car in Davao','2020-01-01','ACT'),
+('PRODUCT','http://realwheelsdavao.com/','Real Wheels Davao  Rent a car in Davao','2020-01-01','ACT');

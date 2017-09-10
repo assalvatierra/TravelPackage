@@ -36,5 +36,6 @@ namespace TravelPackage.Models
         public virtual DbSet<tpUom> tpUoms { get; set; }
         public virtual DbSet<tpProductDesc> tpProductDescs { get; set; }
         public virtual DbSet<tpKeyword> tpKeywords { get; set; }
+        public virtual DbSet<tpBacklink> tpBacklinks { get; set; }
     }
 }

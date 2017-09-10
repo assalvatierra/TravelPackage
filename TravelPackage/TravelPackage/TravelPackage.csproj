@@ -201,6 +201,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TravelDestinationsController.cs" />
+    <Compile Include="Controllers\TravelTourBacklinksController.cs" />
     <Compile Include="Controllers\TravelTourCategoriesController.cs" />
     <Compile Include="Controllers\TravelTourImagesController.cs" />
     <Compile Include="Controllers\TravelTourPackagesController.cs" />
@@ -214,6 +215,9 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Sitemap.cs" />
+    <Compile Include="Models\tpBacklink.cs">
+      <DependentUpon>TravelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tpCategory.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
@@ -503,6 +507,12 @@
     <Content Include="Views\TravelTourTags\Details.cshtml" />
     <Content Include="Views\TravelTourTags\Edit.cshtml" />
     <Content Include="Views\TravelTourTags\Index.cshtml" />
+    <Content Include="Views\TravelTourBacklinks\Create.cshtml" />
+    <Content Include="Views\TravelTourBacklinks\Delete.cshtml" />
+    <Content Include="Views\TravelTourBacklinks\Details.cshtml" />
+    <Content Include="Views\TravelTourBacklinks\Edit.cshtml" />
+    <Content Include="Views\TravelTourBacklinks\Index.cshtml" />
+    <Content Include="Views\Home\ProductBacklinks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

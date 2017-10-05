@@ -379,6 +379,12 @@
     <Content Include="Images\Destinations\Bohol\PanglaoTour.png" />
     <Content Include="Images\Destinations\Bohol\Tarsier.jpg" />
     <Content Include="Images\Destinations\Bohol\TigbaoHangingBridge.jpg" />
+    <Content Include="Images\Destinations\Camiguin\attraction_camiguinColdSpring.jpg" />
+    <Content Include="Images\Destinations\Camiguin\attraction_camiguinCross.jpg" />
+    <Content Include="Images\Destinations\Camiguin\attraction_camiguinKatigbasawFalls.jpg" />
+    <Content Include="Images\Destinations\Camiguin\attraction_camiguinMantigueIsland.jpg" />
+    <Content Include="Images\Destinations\Camiguin\attraction_camiguinpond.jpg" />
+    <Content Include="Images\Destinations\Camiguin\CamiguinTourPackageDefault.jpg" />
     <Content Include="Images\SamalIslandHopping.png" />
     <Content Include="Images\SamalTour.png" />
     <Content Include="Models\InitialData.sql" />
@@ -513,6 +519,7 @@
     <Content Include="Views\TravelTourBacklinks\Edit.cshtml" />
     <Content Include="Views\TravelTourBacklinks\Index.cshtml" />
     <Content Include="Views\Home\ProductBacklinks.cshtml" />
+    <Content Include="Views\Home\CamiguinPackages\CamiguinTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

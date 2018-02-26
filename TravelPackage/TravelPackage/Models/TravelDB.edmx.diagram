@@ -24,7 +24,7 @@
         <AssociationConnector Association="TravelDB.tpUomtpProdRate" />
         <EntityTypeShape EntityType="TravelDB.tpProductDesc" Width="1.5" PointX="0.5" PointY="9.125" />
         <AssociationConnector Association="TravelDB.tpProductstpProductDesc" />
-        <EntityTypeShape EntityType="TravelDB.tpKeyword" Width="1.5" PointX="0.625" PointY="11.875" />
+        <EntityTypeShape EntityType="TravelDB.tpKeyword" Width="1.5" PointX="0.5" PointY="11.875" />
         <AssociationConnector Association="TravelDB.tpProductstpKeyword" />
         <EntityTypeShape EntityType="TravelDB.tpBacklink" Width="1.5" PointX="4.75" PointY="10.5" />
       </Diagram>

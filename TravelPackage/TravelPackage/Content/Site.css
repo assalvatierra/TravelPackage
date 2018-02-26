@@ -53,3 +53,11 @@ textarea {
         visibility:hidden !important;
     }
 }
+
+.col-sm-6.services{
+    background-color:darkslategrey;
+}
+
+.container-fluid.dark{
+    background-color:darkgray;
+}

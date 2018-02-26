@@ -18,31 +18,31 @@ namespace TravelPackage.Controllers
         {
             if ( option == 1 ) return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
 
-            string currentUrl = Request.Url.AbsoluteUri;
-            int iPreChars = 7; // http://
-            int iRemainingChars = 0;
-            string sPartUri = currentUrl.Substring(iPreChars).ToLower();
+            //string currentUrl = Request.Url.AbsoluteUri;
+            //int iPreChars = 7; // http://
+            //int iRemainingChars = 0;
+            //string sPartUri = currentUrl.Substring(iPreChars).ToLower();
 
-            //check sites
-            string s1 = "";
-            int is1 = 0;
-            string sTemp = "";
-            // check bohol website
-            s1 = "www.boholtravelpackages.com";
-            is1 = s1.Length;
-            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
-            sTemp = sPartUri.Substring(0, iRemainingChars);
-            if (sTemp == s1)
-                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+            ////check sites
+            //string s1 = "";
+            //int is1 = 0;
+            //string sTemp = "";
+            //// check bohol website
+            //s1 = "www.boholtravelpackages.com";
+            //is1 = s1.Length;
+            //iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            //sTemp = sPartUri.Substring(0, iRemainingChars);
+            //if (sTemp == s1)
+            //    return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
 
-            ViewBag.UriArea = sTemp;
-            // check if localhost
-            s1 = "localhost";
-            is1 = s1.Length;
-            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
-            sTemp = sPartUri.Substring(0, iRemainingChars);
-            if (sTemp == s1)
-                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+            //ViewBag.UriArea = sTemp;
+            //// check if localhost
+            //s1 = "localhost";
+            //is1 = s1.Length;
+            //iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            //sTemp = sPartUri.Substring(0, iRemainingChars);
+            //if (sTemp == s1)
+            //    return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
 
             return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
         }
@@ -72,7 +72,6 @@ namespace TravelPackage.Controllers
             ViewBag.metaDescription = "Vacation, Adventure Tour, Travel and Holiday Packages to " + AreaName;
 
             return View(data);
-
         }
 
         public ActionResult Product(int? id, string ProductName)

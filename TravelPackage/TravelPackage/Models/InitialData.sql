@@ -4,12 +4,13 @@
 Insert into tpUoms([Measure],[Remarks]) values
 ('Unit','Per unit ( Room, Car, Boat)'),('Pax','per person rate');
 
+--AREAS -> SERVICES-----
 Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
 ('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
 ('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
 ('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
 
-
+-- PROJECTS ---
 Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values 
 ('City Tour','City Tour','ProductDefaultView','/Images/abreeza-mall.gif',1,1),
 ('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',2,1),

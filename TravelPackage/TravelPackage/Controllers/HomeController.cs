@@ -43,7 +43,7 @@ namespace TravelPackage.Controllers
             //sTemp = sPartUri.Substring(0, iRemainingChars);
             //if (sTemp == s1)
             //    return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
-
+            ViewBag.Projects = db.tpProducts.ToList();
             return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
         }
 

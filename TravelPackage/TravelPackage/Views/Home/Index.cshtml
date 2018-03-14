@@ -5,109 +5,49 @@
     ViewBag.metaDescription = "IT Software Services";
 }
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div class="jumbotron">
     <h1>ZeeIT Technologies</h1>
-    <p>Software Services</p>
+    <p>Software Development Services</p>
 </div>
-
-@*<div class="row">
-
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4">
-            <h2>@item.Name</h2>
-            <a href="@Url.Action("Destination",new { id = @item.Id, AreaName = @item.Name })" title="@item.Name"><img width="100%" src="@item.PgFeatureImg"></a>
-
-            <p>@item.PageRemarks</p>
-            <p>
-                @Html.ActionLink("GO TO " + @item.Name + " >>", "Destination", new { id = @item.Id, AreaName = @item.Name }, new { @class = "btn btn-default" } )
-
-            </p>
-        </div>
-    }
-
-</div>*@
+<!--About-->
 
 
+
+<!--Services -->
 <div class="container">
-    <h2>SERVICES</h2>
+    <h1 class="Title">Services</h1>
     <div class="row">
-        <div class="col-sm-6">
+
+        @foreach (var item in Model)
+        {
+        <div class="col-sm-6 services">
             <div class="col-sm-3">
-                <img src="~/Images/icons/software.png">
-                </div>
-            <div class="col-sm-9">
-                <h3>Software Development</h3>
+                <img class="services-img" src="@item.PgFeatureImg">
+            </div>
+            <div class="col-sm-9 services">
+                <h3 class="services">@item.Name</h3>
                 <p>
-                    We develop unique and tailored software applications
-                    based on the needs of our partners. Our applications
-                    provide the best experience in Desktop, Mobile and Web.
+                   @item.PageRemarks
                 </p>
             </div>
         </div>
-
-
-        <div class="col-sm-6">
-            <div class="col-sm-3">
-                <img src="~/Images/icons/web.png">
-            </div>
-            <div class="col-sm-9">
-                <h3>Web Development</h3>
-                <p>
-                    We use the latest technologies in building websites
-                    for our partners. We will handle design,development,
-                    deployment and maintenance that are compatible in every device.
-                </p>
-            </div>
-        </div>
-
-
-        <div class="col-sm-6">
-            <div class="col-sm-3">
-                <img src="~/Images/icons/automation.png">
-            </div>
-            <div class="col-sm-9">
-                <h3>Industrial & Home Automation</h3>
-                <p>
-                    Our team finds the best way to solve problems and automate
-                    processes in your home or business.
-                </p>
-            </div>
-        </div>
-
-
-        <div class="col-sm-6">
-            <div class="col-sm-3">
-                <img src="~/Images/icons/software.png">
-            </div>
-            <div class="col-sm-9">
-                <h3>IT Consultation</h3>
-                <p>
-                    We will help you decide and solve business problems.
-                    Our consultants will find the best solution using the
-                    best technology available in the market.
-
-                </p>
-            </div>
-        </div>
-
+        }
     </div>
 </div>
 
 <!--Projects-->
-<div class="container-fluid">
-    <h1>Projects</h1>
+<div class="container-fluid projects">
+    <h1 class="Title">Projects</h1>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 projects">
             <div class="row">
-                <div style="width:auto" class="col-sm-3">
+                <div class="col-sm-3">
+
+                    <img class="projects" src="~/Images/misc/lab.png" />
                 </div>
 
-                <div class="col-sm-9">
-                    <h3>Laboratory Information System</h3>
+                <div class="col-sm-6 projects-desc">
+                    <h2 class="projects">Laboratory Information System</h2>
                     <p>
                         Manages the scheduling and updates of
                         laboratory appointments with automated
@@ -118,14 +58,15 @@
         </div>
 
 
-        <div class="col-sm-12">
+        <div class="col-sm-12  projects">
             <div class="row">
 
-                <div style="width:auto" class="col-sm-3">
+                <div class="col-sm-3">
+                    <img class="projects" src="~/Images/misc/trolley.png" />
                 </div>
 
-                <div class="col-sm-9">
-                    <h3>Inventory System</h3>
+                <div class="col-sm-6 projects-desc">
+                    <h2 class="projects">Inventory System</h2>
                     <p>
                         A customized Inventory System that handles the 
                         products of the company and provide updates to 
@@ -136,17 +77,18 @@
             </div>
         </div>
 
-
-        <div class="col-sm-12">
+        <div class="col-sm-12 projects">
             <div class="row">
 
-                <div  style="width:auto" class="col-sm-3">
+                <div  class="col-sm-3">
+                    <img class="projects" src="~/Images/misc/web.png" />
                 </div>
 
-                <div class="col-sm-9">
-                    <h3>Realbreeze Website Project</h3>
+                <div class="col-sm-6 projects-desc">
+                    <h2 class="projects">Realbreeze Davao Website</h2>
                     <p>
-                        Realbreeze Travel and Tours website.
+                        Realbreeze Travel and Tours website located in Davao City.
+                        They off tour packages, ticketing, car rental and other services
 
                     </p>
                 </div>
@@ -155,19 +97,61 @@
     </div>
 </div>
 
-<div class="container">
-    <h1>About Us</h1>
+
+<!--Clients-->
+<div class="container clients">
+
     <div class="row">
-        <div class="col-sm-3">
-          
+
+        <h1 class="Title">Clients</h1>
+
+        <div class="col-sm-4">
+            <a href="http://realbreezedavaotours.com/"><img  class="client-img" src="~/Images/misc/realbreeze_logo.png" /></a>
         </div>
 
-        <div class="col-sm-9">
-            <h3>Contact Information</h3>
-            <p>
-                
-
-            </p>
+        <div class="col-sm-4">
+            <a href="http://www.ajdavaocarrental.com/"><img  class="client-img"  src="~/Images/misc/AJCarRental.png" /></a>
         </div>
+
+        <div class="col-sm-4">
+            <a href="http://realwheelsdavao.com/"><img  class="client-img" src="~/Images/misc/Realwheelsdavao_logo.png" /></a>
+        </div>
+
+
     </div>
 </div>
+
+<!--About-->
+<div class="container about" >
+  
+    <div class="row">
+
+        <h1 class="Title">About Us</h1>
+
+        <div class="col-sm-6">
+            <img class="about" src="~/Images/misc/aboutus.png" />
+        </div>
+
+        <div class="col-sm-6">
+            <p class="about">
+                 We develop software and systems that
+             maximizes the potential in every business. Using the
+             new technologies available in the market, our team
+             integrates those available resources to provide a 
+             sustainable and efficient services and products to 
+             partners. Our team focuses on software planning, 
+             design, development, testing and integration. 
+            </p>
+
+            <br />
+            <p class="about">
+            <p>Company Address</p>
+            <p>2nd Floor Sulit Bldg McArthur Hwy, Matina, Davao City, 8000 Davao del Sur</p>
+
+        </div>
+
+
+    </div>
+</div>
+
+

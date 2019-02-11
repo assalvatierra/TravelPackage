@@ -33,16 +33,16 @@ namespace TravelPackage.Controllers
             iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
             sTemp = sPartUri.Substring(0, iRemainingChars);
             if (sTemp == s1)
-                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+                return Redirect("http://realbreezetravel.com/TravelPackages/2/BOHOL");
 
             ViewBag.UriArea = sTemp;
             // check if localhost
-            s1 = "localhost";
+            s1 = "davao";
             is1 = s1.Length;
             iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
             sTemp = sPartUri.Substring(0, iRemainingChars);
             if (sTemp == s1)
-                return RedirectToAction("Destination", new { id = 2, AreaName = "Bohol" });
+                return Redirect("http://realbreezedavaotours.com/");
 
             return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
         }
@@ -58,6 +58,9 @@ namespace TravelPackage.Controllers
             {
                 return HttpNotFound();
             }
+
+            if (AreaName == "DAVAO" || id == 1)
+                return Redirect("http://realbreezedavaotours.com/");
 
             ViewBag.Destination = AreaName;
             ViewBag.Description = tpAreas.PageRemarks;

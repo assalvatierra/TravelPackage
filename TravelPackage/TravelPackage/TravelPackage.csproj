@@ -279,8 +279,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="googleccc62e697a97aaad.html" />
     <Content Include="Images\abreeza-mall.gif" />
+    <Content Include="Images\CebuCity.jpg" />
+    <Content Include="Images\coron_palawan.jpg" />
     <Content Include="Images\CountrySide.gif" />
     <Content Include="Images\Destinations\Bohol\3d2nBoholVacation.png" />
+    <Content Include="Images\Destinations\Bohol\3d2nCountrySide.jpg" />
+    <Content Include="Images\Destinations\Bohol\3d2nCountrySidePanglao2.jpg" />
     <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-01.jpg" />
     <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-02.jpg" />
     <Content Include="Images\Destinations\Bohol\accom_alona-tropical-beach-resort-03.jpg" />
@@ -362,6 +366,7 @@
     <Content Include="Images\Destinations\Bohol\BaclayonChurch.jpg" />
     <Content Include="Images\Destinations\Bohol\BloodCompactShrine.jpg" />
     <Content Include="Images\Bohol101.png" />
+    <Content Include="Images\Destinations\Bohol\BoholLobocRiver.JPG" />
     <Content Include="Images\Destinations\Bohol\ChocolateHills.jpg" />
     <Content Include="Images\Destinations\Bohol\CountrySideTour.png" />
     <Content Include="Images\Destinations\Bohol\holiday_bohol_3d2n_01.jpg" />
@@ -385,6 +390,12 @@
     <Content Include="Images\Destinations\Camiguin\attraction_camiguinMantigueIsland.jpg" />
     <Content Include="Images\Destinations\Camiguin\attraction_camiguinpond.jpg" />
     <Content Include="Images\Destinations\Camiguin\CamiguinTourPackageDefault.jpg" />
+    <Content Include="Images\Destinations\Palawan\coron_palawan.jpg" />
+    <Content Include="Images\Destinations\Palawan\El_Nido_Palawan.jpg" />
+    <Content Include="Images\Destinations\Palawan\puertoprincesa.JPG" />
+    <Content Include="Images\El_Nido_Palawan.jpg" />
+    <Content Include="Images\Puerto.JPG" />
+    <Content Include="Images\puertoprincesa.JPG" />
     <Content Include="Images\SamalIslandHopping.png" />
     <Content Include="Images\SamalTour.png" />
     <Content Include="Models\InitialData.sql" />
@@ -520,6 +531,9 @@
     <Content Include="Views\TravelTourBacklinks\Index.cshtml" />
     <Content Include="Views\Home\ProductBacklinks.cshtml" />
     <Content Include="Views\Home\CamiguinPackages\CamiguinTour.cshtml" />
+    <Content Include="Views\Home\BoholPackages\DolphinWatching.cshtml" />
+    <Content Include="Views\Home\BoholPackages\3d2nCountrysidePanglao.cshtml" />
+    <Content Include="Views\Home\BoholPackages\3d2nCountryside.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

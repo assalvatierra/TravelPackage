@@ -1,4 +1,12 @@
-﻿Insert into tpCategories([Description],[SysCode]) values
+﻿--Readme
+--Adding new products with cshtml views
+-- add in the tpProducts, add description and images
+-- add cshtml under views/(Destination)Packages, add content / ProductDefaultView - set desciption intpProductDescs
+-- add add images in sql
+-- add in tpProdCats to either main view or sub view
+
+
+Insert into tpCategories([Description],[SysCode]) values
 ('Featured','FEATURED'),('Addon','ADDON'),('Activities','ACTIVITY'),('Accommodation','ACCOM'),('Transportation','TRANSPO');
 
 Insert into tpUoms([Measure],[Remarks]) values
@@ -7,23 +15,41 @@ Insert into tpUoms([Measure],[Remarks]) values
 Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
 ('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
 ('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
-('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
+('CEBU','One of the most popular travel and vacation destination in Philippines.','CebuPage','/Images/CebuCity.jpg',3),
+('EL NIDO','One of the most popular travel and vacation destination in Philippines.','ElNidoPage','/Images/El_Nido_Palawan.jpg',4),
+('CORON','One of the most popular travel and vacation destination in Philippines.','CoronPage','/Images/coron_palawan.jpg',5),
+('PUERTO PRINCESA','One of the most popular travel and vacation destination in Philippines.','PuertoPrincesaPage','/Images/Puerto.JPG',6)
+;
+--('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
 
 
 Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values 
+-- Davao
 ('City Tour','City Tour','ProductDefaultView','/Images/abreeza-mall.gif',1,1),
 ('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',2,1),
+
+-- Bohol
 ('Country Side Tour','7 - 9 hrs tour across the island of Bohol. Passing thru is cultural destinations and fascinating views of the main island','BoholPackages/CountrySide','/Images/Destinations/Bohol/CountrySideTour.png',1,2),
 ('Panglao Tour','8hrs island tour to the treasured beaches of Panglao.','BoholPackages/Panglao','/Images/Destinations/Bohol/PanglaoTour.png',2,2),
 ('3D2N Vacation','3Days 2 Nights Vacation Package. staying at the heart of the most visited beaches of Panglao.','BoholPackages/3d2n_Panglao_Alona42','/Images/Destinations/Bohol/3d2nBoholVacation.png',4,2),
 ('Domestic Airticket Manila - Bohol','Economy Airticket Manila - Tagbilaran','BoholPackages/AirTicket','/Images/Destinations/Bohol/Airlines101.png',3,2),
 ('Bohol Bee Farm - Panglao, Bohol','Resort & Restaurant','ProductDefaultView','/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg',8,2),
+
 ('Alona Tropical Beach Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-10.jpg',5,2),
 ('South Palms Resort Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',6,2),
 ('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
 ('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2),
 ('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/IslandHopping','/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png',3,2),
-('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3);
+
+('Countryside and Panglao','3 Days 2 Nights Vacation Package','BoholPackages/3d2nCountrysidePanglao','/Images/Destinations/Bohol/3d2nCountrySidePanglao2.jpg',9,2),
+('3D2N Countryside','3 Days 2 Nights Vacation Package','BoholPackages/3d2nCountryside','/Images/Destinations/Bohol/3d2nCountrySide.jpg',10,2),
+
+--Palawan
+('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/DolphinWatching','/Images/Destinations/Bohol/CountrySideTour.png',3,2)
+
+--Camiguin
+--('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3)
+;
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -118,19 +144,29 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_01.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',6),
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',7),
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',8),
--- Camiguin - Tour Package --
-(13,'/Images/Destinations/Camiguin/attraction_camiguinCross.jpg','Camiguin Cross','Camiguin Cross',1),
-(13,'/Images/Destinations/Camiguin/attraction_camiguinColdSpring.jpg','Camiguin Cold Spring','Camiguin Cold Spring',2),
-(13,'/Images/Destinations/Camiguin/attraction_camiguinKatigbasawFalls.jpg','Camiguin Katigbasaw Falls','Camiguin Katigbasaw Falls',3),
-(13,'/Images/Destinations/Camiguin/attraction_camiguinMantigueIsland.jpg','Camiguin Matigue Island','Camiguin Matigue Island',4),
-(13,'/Images/Destinations/Camiguin/attraction_camiguinpond.jpg','Camiguin Pond','Camiguin Pond',5);
+-- Bohol - Dolphin Watching
+(12,'/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png','','Bohol Dolphin Watching',1),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_virgin_island_01.JPG','','Bohol Dolphin Watching',2),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping.jpg','','Bohol Dolphin Watching',3),
+
+-- Camiguin - Countryside and Panglao
+(13,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-01.jpg','Alona Tropical Resort','Bohol Alona Resort',1),
+(13,'/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg','Bohol Beach Club','Bohol Beach Club',2),
+(13,'/Images/Destinations/Bohol/attraction_Panglao_church.jpg','Panglao Church','Panglao Church',3),
+(13,'/Images/Destinations/Bohol/attraction_Panglao_beefarm.jpg','Panglao bee Farm','Panglao Bee Farm',4),
+(13,'/Images/Destinations/Bohol/attraction_Panglao_beach3.jpg','Panglao Beach','Pangalao Beach',5),
+(13,'/Images/Destinations/Bohol/ChocolateHills.jpg','Chocolate hills','chocolate hills',6),
+(13,'/Images/Destinations/Bohol/BloodCompactShrine.jpg','blood compact shrine','blood compact shrine',7),
+(13,'/Images/Destinations/Bohol/BoholLobocRiver.JPG','Bohol Loboc River','Bohol Loboc River',8)
+;
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2), -- Davao
-(1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages 
-(2,6),(2,7),(2,8),(2,9),(2,10),(2,11), -- bohol add on products
-(1,13); -- Camiguin Tour Package
+(1,3),(1,4),(1,5),(1,12),(1,13),(1,14), -- Bohol - Featured - Tour Packages 
+(2,6),(2,7),(2,8),(2,9),(2,10),(2,11) -- bohol add on products
+--(1,13)-- Camiguin Tour Package
+; 
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
 (3,2,1,4250,'',1),(3,2,2,2600,'',1),(3,2,3,2100,'',1),(3,2,4,1950,'',1),(3,2,5,1800,'',1),(3,2,6,1700,'',1),(3,2,7,1600,'',1),(3,2,8,1550,'',1),(3,2,9,1450,'',1),(3,2,10,1350,'',1);
@@ -167,26 +203,28 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 (9,'Panglao Villa','Php 39,050 per night','With Breakfast for 2',3),
 
 -- Dumaluan  --
-(10,'Room Rates','No Available as of this time','Contact our travel consultant for reservation',1),
+(10,'Room Rates','No Available as of this time','Contact our travel consultants for reservation',1),
 
 -- Bohol Beach Club --
-(11,'Room Rates','No Available as of this time','Contact our travel consultant for reservation',1),
+(11,'Room Rates','No Available as of this time.','Contact our travel consultants for reservation',1)
 
--- Camiguin Tour Package --
-(13,'Camiguin Tour Package','Highlights','',1),
-(13,'','','- Sunken Cemetery',2),
-(13,'','','- White island,',3),
-(13,'','','- Katibawasan falls',4),
-(13,'','','- Walkway to Old Volcano',5),
-(13,'','','- Gui-ob Church',6),
-(13,'','','- Sto. Niño Cold Spring',7),
-(13,'','Inclusions:','',8),
-(13,'','','- Transportation from hotel/airport to Camiguin and back to airport or hotel Applicable Entrances',9),
-(13,'','','',10),
-(13,'','','Exclusions (available upon request)',4),
-(13,'','','Airfare, Tour guide, Meals and Accommodation',5),
-(13,'','','- Gui-ob Church',6),
-(13,'','','- Sto. Niño Cold Spring',7);
+
+-- Camiguin Tour Package - removed --
+--(13,'Camiguin Tour Package','Highlights','',1),
+--(13,'','','- Sunken Cemetery',2),
+--(13,'','','- White island,',3),
+--(13,'','','- Katibawasan falls',4),
+--(13,'','','- Walkway to Old Volcano',5),
+--(13,'','','- Gui-ob Church',6),
+--(13,'','','- Sto. Niño Cold Spring',7),
+--(13,'','Inclusions:','',8),
+--(13,'','','- Transportation from hotel/airport to Camiguin and back to airport or hotel Applicable Entrances',9),
+--(13,'','','',10),
+--(13,'','','Exclusions (available upon request)',4),
+--(13,'','','Airfare, Tour guide, Meals and Accommodation',5),
+--(13,'','','- Gui-ob Church',6),
+--(13,'','','- Sto. Niño Cold Spring',7)
+;
 
 
 Insert into tpKeywords([Keyword],[tpProductsId]) values
@@ -200,7 +238,9 @@ Insert into tpKeywords([Keyword],[tpProductsId]) values
 ('Bohol','10'),('Tour','10'),('Travel','10'),('Vacation','10'),('Package','10'),
 ('Bohol','11'),('Tour','11'),('Travel','11'),('Vacation','11'),('Package','11'),
 ('Bohol','12'),('Tour','12'),('Travel','12'),('Vacation','12'),('Package','12'),
-('Camiguin','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13');
+('Bohol','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13')
+--('Camiguin','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13')
+;
 
 
 Insert into tpBacklinks([LinkType],[LinkUrl],[Description],[LinkExpiry],[Status]) values

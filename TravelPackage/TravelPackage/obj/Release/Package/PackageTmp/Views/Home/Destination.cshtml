@@ -18,22 +18,28 @@
     @ViewBag.Destination&raquo;
     </p>
 </div>
-<div class="row">
 
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4">
-            <h2>@item.Name</h2>
-            <a href="@Url.Action("Product",new { id = @item.Id, ProductName = @item.Name })" title="@item.Name"><img width="100%" src="@item.PgFeatureImg"></a>
-            <p>@item.ShortRemarks</p>
-            <p>
-                @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name }, new { @class = "btn btn-default" })
+    <div class="row">
 
-            </p>
-        </div>
-    }
+        @foreach (var item in Model)
+        {
+            <text>
+            <div class="col-md-4" style="padding:10px;">
+                <h2>@item.Name</h2>
+                <a href="@Url.Action("Product",new { id = @item.Id, ProductName = @item.Name })" title="@item.Name"><img width="100%" height="250" src="@item.PgFeatureImg"></a>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">@item.ShortRemarks</p>
+                <p>
+                    @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name }, new { @class = "btn btn-default" })
 
-</div>
+                </p>
+            </div>
+         </text>
+        }
+        
+    </div>
+
+
+
 
 
 <div class="row">

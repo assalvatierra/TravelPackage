@@ -27,13 +27,13 @@ namespace TravelPackage.Controllers
             string s1 = "";
             int is1 = 0;
             string sTemp = "";
-            // check bohol website
-            s1 = "www.boholtravelpackages.com";
-            is1 = s1.Length;
-            iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
-            sTemp = sPartUri.Substring(0, iRemainingChars);
-            if (sTemp == s1)
-                return Redirect("http://realbreezetravel.com/TravelPackages/2/BOHOL");
+            //// check bohol website
+            //s1 = "www.boholtravelpackages.com";
+            //is1 = s1.Length;
+            //iRemainingChars = ((sPartUri.Length - is1) >= 0) ? is1 : sPartUri.Length;
+            //sTemp = sPartUri.Substring(0, iRemainingChars);
+            //if (sTemp == s1)
+            //    return Redirect("http://realbreezetravel.com/TravelPackages/2/BOHOL");
 
             ViewBag.UriArea = sTemp;
             // check if localhost

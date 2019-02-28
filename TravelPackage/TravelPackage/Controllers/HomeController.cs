@@ -49,11 +49,14 @@ namespace TravelPackage.Controllers
 
         public ActionResult Destination(int? id, string AreaName)
         {
-            if (id == null)
+            if (id == null && AreaName == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tpAreas tpAreas = db.tpAreas.Find(id);
+
+            //tpAreas tpAreas = db.tpAreas.Find(id);
+            tpAreas tpAreas = db.tpAreas.Where(a=>a.Name.CompareTo(AreaName) == 0).FirstOrDefault();
+            id = tpAreas.Id;
             if (tpAreas == null)
             {
                 return HttpNotFound();
@@ -305,8 +308,6 @@ namespace TravelPackage.Controllers
         }
 
         #endregion
-
-
-
+        
     }
 }

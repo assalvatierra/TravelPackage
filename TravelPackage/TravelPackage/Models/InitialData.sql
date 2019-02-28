@@ -15,37 +15,36 @@ Insert into tpUoms([Measure],[Remarks]) values
 Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
 ('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
 ('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
-('CEBU','One of the most popular travel and vacation destination in Philippines.','CebuPage','/Images/CebuCity.jpg',3),
-('EL NIDO','One of the most popular travel and vacation destination in Philippines.','ElNidoPage','/Images/El_Nido_Palawan.jpg',4),
-('CORON','One of the most popular travel and vacation destination in Philippines.','CoronPage','/Images/coron_palawan.jpg',5),
-('PUERTO PRINCESA','One of the most popular travel and vacation destination in Philippines.','PuertoPrincesaPage','/Images/Puerto.JPG',6)
+('CEBU','Visit Cebu City for vacation in the middle of the city in Philippines.','CebuPage','/Images/CebuCity.jpg',3),
+('EL NIDO','Explore various islands and lagoons in El Nido, Palawan, Philippines.','ElNidoPage','/Images/El_Nido_Palawan.jpg',4),
+('CORON','Visit Coron, Palawan and explore its facinating wonders. ','CoronPage','/Images/coron_palawan.jpg',5),
+('PUERTO PRINCESA','A must see and explore the wonders of the underground river and Puerto Princesa.','PuertoPrincesaPage','/Images/Puerto.JPG',6)
 ;
 --('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
 
 
 Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values 
--- Davao
+-- Davao 
+-- 1-2
 ('City Tour','City Tour','ProductDefaultView','/Images/abreeza-mall.gif',1,1),
 ('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',2,1),
 
 -- Bohol
+-- 3-7 
 ('Country Side Tour','7 - 9 hrs tour across the island of Bohol. Passing thru is cultural destinations and fascinating views of the main island','BoholPackages/CountrySide','/Images/Destinations/Bohol/CountrySideTour.png',1,2),
 ('Panglao Tour','8hrs island tour to the treasured beaches of Panglao.','BoholPackages/Panglao','/Images/Destinations/Bohol/PanglaoTour.png',2,2),
 ('3D2N Vacation','3Days 2 Nights Vacation Package. staying at the heart of the most visited beaches of Panglao.','BoholPackages/3d2n_Panglao_Alona42','/Images/Destinations/Bohol/3d2nBoholVacation.png',4,2),
 ('Domestic Airticket Manila - Bohol','Economy Airticket Manila - Tagbilaran','BoholPackages/AirTicket','/Images/Destinations/Bohol/Airlines101.png',3,2),
 ('Bohol Bee Farm - Panglao, Bohol','Resort & Restaurant','ProductDefaultView','/Images/Destinations/Bohol/accom_boholbeefarm_04.jpg',8,2),
-
+-- 8-12
 ('Alona Tropical Beach Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-10.jpg',5,2),
 ('South Palms Resort Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',6,2),
 ('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
 ('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2),
 ('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/IslandHopping','/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png',3,2),
-
+-- 13-14
 ('Countryside and Panglao','3 Days 2 Nights Vacation Package','BoholPackages/3d2nCountrysidePanglao','/Images/Destinations/Bohol/3d2nCountrySidePanglao2.jpg',9,2),
-('3D2N Countryside','3 Days 2 Nights Vacation Package','BoholPackages/3d2nCountryside','/Images/Destinations/Bohol/3d2nCountrySide.jpg',10,2),
-
---Palawan
-('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/DolphinWatching','/Images/Destinations/Bohol/CountrySideTour.png',3,2)
+('3D2N Countryside','3 Days 2 Nights Vacation Package','BoholPackages/3d2nCountryside','/Images/Destinations/Bohol/3d2nCountrySide.jpg',10,2)
 
 --Camiguin
 --('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3)
@@ -149,7 +148,7 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_virgin_island_01.JPG','','Bohol Dolphin Watching',2),
 (12,'/Images/Destinations/Bohol/attraction_islandHopping.jpg','','Bohol Dolphin Watching',3),
 
--- Camiguin - Countryside and Panglao
+-- Bohol - Countryside and Panglao
 (13,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-01.jpg','Alona Tropical Resort','Bohol Alona Resort',1),
 (13,'/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg','Bohol Beach Club','Bohol Beach Club',2),
 (13,'/Images/Destinations/Bohol/attraction_Panglao_church.jpg','Panglao Church','Panglao Church',3),
@@ -157,7 +156,17 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (13,'/Images/Destinations/Bohol/attraction_Panglao_beach3.jpg','Panglao Beach','Pangalao Beach',5),
 (13,'/Images/Destinations/Bohol/ChocolateHills.jpg','Chocolate hills','chocolate hills',6),
 (13,'/Images/Destinations/Bohol/BloodCompactShrine.jpg','blood compact shrine','blood compact shrine',7),
-(13,'/Images/Destinations/Bohol/BoholLobocRiver.JPG','Bohol Loboc River','Bohol Loboc River',8)
+(13,'/Images/Destinations/Bohol/BoholLobocRiver.JPG','Bohol Loboc River','Bohol Loboc River',8),
+
+-- Bohol - 3d2n Countryside 
+(14,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-01.jpg','Alona Tropical Resort','Bohol Alona Resort',1),
+(14,'/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg','Bohol Beach Club','Bohol Beach Club',2),
+(14,'/Images/Destinations/Bohol/attraction_Panglao_church.jpg','Panglao Church','Panglao Church',3),
+(14,'/Images/Destinations/Bohol/attraction_Panglao_beefarm.jpg','Panglao bee Farm','Panglao Bee Farm',4),
+(14,'/Images/Destinations/Bohol/attraction_Panglao_beach3.jpg','Panglao Beach','Pangalao Beach',5),
+(14,'/Images/Destinations/Bohol/ChocolateHills.jpg','Chocolate hills','chocolate hills',6),
+(14,'/Images/Destinations/Bohol/BloodCompactShrine.jpg','blood compact shrine','blood compact shrine',7),
+(14,'/Images/Destinations/Bohol/BoholLobocRiver.JPG','Bohol Loboc River','Bohol Loboc River',8)
 ;
 
 
@@ -165,7 +174,6 @@ Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2), -- Davao
 (1,3),(1,4),(1,5),(1,12),(1,13),(1,14), -- Bohol - Featured - Tour Packages 
 (2,6),(2,7),(2,8),(2,9),(2,10),(2,11) -- bohol add on products
---(1,13)-- Camiguin Tour Package
 ; 
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
@@ -238,7 +246,8 @@ Insert into tpKeywords([Keyword],[tpProductsId]) values
 ('Bohol','10'),('Tour','10'),('Travel','10'),('Vacation','10'),('Package','10'),
 ('Bohol','11'),('Tour','11'),('Travel','11'),('Vacation','11'),('Package','11'),
 ('Bohol','12'),('Tour','12'),('Travel','12'),('Vacation','12'),('Package','12'),
-('Bohol','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13')
+('Bohol','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13'),
+('Bohol','14'),('Tour','14'),('Travel','14'),('Vacation','14'),('Package','14')
 --('Camiguin','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13')
 ;
 

@@ -390,6 +390,23 @@
     <Content Include="Images\Destinations\Camiguin\attraction_camiguinMantigueIsland.jpg" />
     <Content Include="Images\Destinations\Camiguin\attraction_camiguinpond.jpg" />
     <Content Include="Images\Destinations\Camiguin\CamiguinTourPackageDefault.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\cebu-twin-city-tour.jpg" />
+    <Content Include="Images\Destinations\Cebu\Mactan-Islands\Mactan-Island-Hopping.jpg" />
+    <Content Include="Images\Destinations\Cebu\Mactan-Islands\Caohagan-Island.jpg" />
+    <Content Include="Images\Destinations\Cebu\Mactan-Islands\Hilutungan-Island.jpg" />
+    <Content Include="Images\Destinations\Cebu\Mactan-Islands\Nauslan-Island.jpg" />
+    <Content Include="Images\Destinations\Cebu\Oslob\Olsob-Whale-Tour.jpg" />
+    <Content Include="Images\Destinations\Cebu\Oslob\whale-shark-oslob.jpg" />
+    <Content Include="Images\Destinations\Cebu\Oslob\whale-shark.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Cebu-Heritage-Monument.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Fort-San-Pedro.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Guitar-Factory.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Mactan-Shrine.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Magellans-Cross.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Old-House.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Pasalubong-Center.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Sto-Nino-Cathedral.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\Taoist-Temple.jpg" />
     <Content Include="Images\Destinations\Palawan\Coron\caluit-Black-Island-Cave.jpg" />
     <Content Include="Images\Destinations\Palawan\Coron\caluit-black-island.jpg" />
     <Content Include="Images\Destinations\Palawan\Coron\caluit-buluang-restaurant.jpg" />
@@ -470,6 +487,7 @@
     <Content Include="Images\puertoprincesa.JPG" />
     <Content Include="Images\SamalIslandHopping.png" />
     <Content Include="Images\SamalTour.png" />
+    <Content Include="Models\Cebu.sql" />
     <Content Include="Models\Palawan.sql" />
     <Content Include="Models\InitialData.sql" />
     <Content Include="Scripts\bootstrap.js" />
@@ -627,6 +645,9 @@
     <Content Include="Views\Home\PuertoPrincesaPackages\DolphinWatching.cshtml" />
     <Content Include="Views\Home\PuertoPrincesaPackages\FireflyWatching.cshtml" />
     <Content Include="Views\Home\PuertoPrincesaPackages\DosPalmasDayTour.cshtml" />
+    <Content Include="Views\Home\CebuPackages\CebuTwinCityTour.cshtml" />
+    <Content Include="Views\Home\CebuPackages\MactanIslandHoppingTour.cshtml" />
+    <Content Include="Views\Home\CebuPackages\OslobWhaleTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

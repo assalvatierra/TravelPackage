@@ -26,12 +26,6 @@ namespace TravelPackage
                 );
 
             routes.MapRoute(
-                name: "Bohol-countryside",
-                url: "BOHOL/countryside",
-                defaults: new { controller = "Home", action = "Product", ProductName = "countryside", id = 3 }
-            );
-
-            routes.MapRoute(
                 name: "Bohol",
                 url: "BOHOL/{id}",
                 defaults: new { controller = "Home", action = "Destination", AreaName = "BOHOL", id = UrlParameter.Optional }

@@ -7,9 +7,23 @@
 <div class="jumbotron">
     <h1>Welcome to @ViewBag.Destination</h1>
     <p class="lead">@ViewBag.Description</p>
-    <p>
+
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+63822971831">
+        <strong>LandLine:</strong> (+63) 82 297 1831
+    </a><br />
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639193812657">
+        <strong>Smart:</strong> (+63) 909-076-1575
+    </a><br />
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639954508517">
+        <strong>Globe:</strong> (+63) 916-755-8473
+    </a><br />
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="mailto:realbreezedavao@gmail.com">
+        <strong>Email:</strong> realbreezedavao@gmail.com
+    </a><br />
+
+    <a>
         @Html.ActionLink("Choose another destination", "Index", new { option = 1 }, new { @class = "btn btn-primary btn-lg" })
-    </p>
+    </a>
 </div>
 <div class="breadcrumbs10" style="background-color: #eeeeee;">
     <p>&raquo;

@@ -38,11 +38,15 @@
 <div class="row">
     <div class="col-md-6">
         @{ Html.RenderPartial(pgView, Model); }
+        @{ Html.RenderPartial("ProductContact"); }
         @{ Html.RenderPartial("ProductRates", productRates); }
     </div>
     <div class="col-md-6">
+       
         @{ Html.RenderPartial("ProductInquiry", InquiryObj); }
+          
     </div>
+
 </div>
 
 

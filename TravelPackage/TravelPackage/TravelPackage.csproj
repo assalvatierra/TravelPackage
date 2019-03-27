@@ -200,6 +200,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\tpInqServicesController.cs" />
+    <Compile Include="Controllers\tpInquiriesController.cs" />
     <Compile Include="Controllers\TravelDestinationsController.cs" />
     <Compile Include="Controllers\TravelTourBacklinksController.cs" />
     <Compile Include="Controllers\TravelTourCategoriesController.cs" />
@@ -212,6 +214,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataAnnotations.cs" />
     <Compile Include="Models\DBClasses.cs" />
+    <Compile Include="Models\EmailHandler.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Sitemap.cs" />
@@ -483,6 +486,7 @@
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\Tabon-Cave-tour.jpg" />
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\underground-river-tour.jpg" />
     <Content Include="Images\El_Nido_Palawan.jpg" />
+    <Content Include="Images\Icons\icons-phone.png" />
     <Content Include="Images\Puerto.JPG" />
     <Content Include="Images\puertoprincesa.JPG" />
     <Content Include="Images\SamalIslandHopping.png" />
@@ -515,6 +519,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\TravelPackages\InquiryValidation.js" />
     <Content Include="Scripts\TravelPackages\Product.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Models\TravelDB.Context.tt">
@@ -648,6 +653,17 @@
     <Content Include="Views\Home\CebuPackages\CebuTwinCityTour.cshtml" />
     <Content Include="Views\Home\CebuPackages\MactanIslandHoppingTour.cshtml" />
     <Content Include="Views\Home\CebuPackages\OslobWhaleTour.cshtml" />
+    <Content Include="Views\tpInquiries\Create.cshtml" />
+    <Content Include="Views\tpInquiries\Delete.cshtml" />
+    <Content Include="Views\tpInquiries\Details.cshtml" />
+    <Content Include="Views\tpInquiries\Edit.cshtml" />
+    <Content Include="Views\tpInquiries\Index.cshtml" />
+    <Content Include="Views\tpInqServices\Create.cshtml" />
+    <Content Include="Views\tpInqServices\Delete.cshtml" />
+    <Content Include="Views\tpInqServices\Details.cshtml" />
+    <Content Include="Views\tpInqServices\Edit.cshtml" />
+    <Content Include="Views\tpInqServices\Index.cshtml" />
+    <Content Include="Views\Home\ProductContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

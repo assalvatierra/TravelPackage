@@ -13,7 +13,7 @@ namespace TravelPackage.Controllers
     public class HomeController : Controller
     {
         private TravelDBContainer db = new TravelDBContainer();
-
+        private EmailHandler email = new EmailHandler();
         public ActionResult Index(int? option)
         {
             if ( option == 1 ) return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
@@ -159,6 +159,7 @@ namespace TravelPackage.Controllers
                     Session["INQUIRYOBJ"] = wif; //update session web inquiry object
                 }
 
+
                 return RedirectToAction("RequestProduct");
             }
             catch (Exception e)
@@ -183,6 +184,8 @@ namespace TravelPackage.Controllers
             };
             db.tpInqServices.Add(item);
             db.SaveChanges();
+
+
 
             if (wif.Status == "QUOTE")
             {
@@ -239,6 +242,10 @@ namespace TravelPackage.Controllers
             wif.areaId = product.tpAreasId; //update areaID for use in addon
             Session["INQUIRYOBJ"] = wif; //update session inquiry
 
+            //send email
+            email.SendMail(tpInq.Id, "travel.realbreeze@gmail.com");
+            email.SendMail(tpInq.Id, "realbreezedavao@gmail.com");
+            //email.SendMail(tpInq.Id, "jahdielsvillosa@gmail.com");
 
             if (wif.Status == "QUOTE")
             {
@@ -292,6 +299,7 @@ namespace TravelPackage.Controllers
         {
             return View();
         }
+        
 
         #region Dynamic SiteMap 
         //[Route("sitemap.xml")]

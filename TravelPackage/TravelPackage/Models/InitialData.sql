@@ -135,18 +135,14 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (11,'/Images/Destinations/Bohol/accom_bohol_beachclub_10.jpg','','Bohol Beach Club',10),
 (11,'/Images/Destinations/Bohol/accom_bohol_beachclub_11.jpg','','Bohol Beach Club',11),
 -- Bohol - Island Hopping --
-(12,'/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png','','Bohol Island Hopping',1),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_virgin_island_01.JPG','','Island Hopping Virgin Island Bohol ',2),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping.jpg','','Bohol Island Hopping',3),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_02.jpg','','Island Hopping Balicasag Island Bohol ',4),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_04.jpg','','Island Hopping Balicasag Island Bohol ',5),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_01.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',6),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',7),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',8),
--- Bohol - Dolphin Watching
-(12,'/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png','','Bohol Dolphin Watching',1),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping_virgin_island_01.JPG','','Bohol Dolphin Watching',2),
-(12,'/Images/Destinations/Bohol/attraction_islandHopping.jpg','','Bohol Dolphin Watching',3),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_virgin_island_01.JPG','','Island Hopping Virgin Island Bohol ',1),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping.jpg','','Bohol Island Hopping',2),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_02.jpg','','Island Hopping Balicasag Island Bohol ',3),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_balicasag_island_04.jpg','','Island Hopping Balicasag Island Bohol ',4),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_01.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',5),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',6),
+(12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',7),
+
 
 -- Bohol - Countryside and Panglao
 (13,'/Images/Destinations/Bohol/accom_alona-tropical-beach-resort-01.jpg','Alona Tropical Resort','Bohol Alona Resort',1),
@@ -173,7 +169,7 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2), -- Davao
 (1,3),(1,4),(1,5),(1,12),(1,13),(1,14), -- Bohol - Featured - Tour Packages 
-(2,6),(2,7),(2,8),(2,9),(2,10),(2,11) -- bohol add on products
+(2,7),(2,8),(2,9),(2,10),(2,11) -- bohol add on products
 ; 
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values

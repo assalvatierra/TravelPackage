@@ -245,6 +245,8 @@ namespace TravelPackage.Controllers
             //send email
             email.SendMail(tpInq.Id, "travel.realbreeze@gmail.com");
             email.SendMail(tpInq.Id, "realbreezedavao@gmail.com");
+            email.SendMail(tpInq.Id, "inquiries.realwheels@gmail.com");
+
             //email.SendMail(tpInq.Id, "jahdielsvillosa@gmail.com");
 
             if (wif.Status == "QUOTE")

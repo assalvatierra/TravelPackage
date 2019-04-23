@@ -15,6 +15,8 @@ $(document).ready(function () {
     if ($('#guestEmail').val() == "") {
         $("#btnSubmit1").prop('disabled', true);
     }
+
+
 });
 
 $('#NoOfAdult').change(function () {
@@ -34,6 +36,7 @@ $('#NoOfChild').change(function () {
 function validation() {
     var flag = true;
     var message = "";
+
 
     if ($('#guestContact').val() == "") {
         flag = false;
@@ -66,6 +69,12 @@ function validation() {
         message = "Lead Guest field is empty";
     }
 
+    if (!validateDates()) {
+        flag = false;
+        message = "Start Date must be 5 days from today";
+    }
+    console.log("flag: " + flag);
+
     if (flag) {
         $("#btnSubmit1").prop('disabled', false);
         message = "";
@@ -75,6 +84,27 @@ function validation() {
         $("#btnSubmit1").prop('disabled', true);
     }
 
+
+
+}
+
+function validateDates() {
+    //Check dates
+    var start = $('input[name="JobStart"]').val();
+
+    var datetoday = new Date();
+    datetoday = moment(datetoday).format("YYYY-MM-DD");
+    var dateAddFive = moment(datetoday, "YYYY-MM-DD").add(5, 'days');
+    var startdate = moment(start).format("YYYY-MM-DD");
+
+    //alert(startdate);
+    //alert(datetoday); 
+    //console.log(start);
+
+    var isafter = moment(startdate).isAfter(dateAddFive);
+    alert(isafter);
+
+    return isafter;
 
 }
 

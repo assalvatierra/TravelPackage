@@ -31,7 +31,7 @@
     {
         <div class="col-md-4">
             <h2>@item.Name</h2>
-            <a href="@Url.Action("Destination",new { id = @item.Id, AreaName = @item.Name })" title="@item.Name">
+            <a href="@Url.Action("Destination",new { AreaName = @item.Name })" title="@item.Name">
                 <img width="100%" src="@item.PgFeatureImg" alt="@item.Name Tour Package">
             </a>
             <p>@item.PageRemarks</p>

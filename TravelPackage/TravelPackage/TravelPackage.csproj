@@ -282,9 +282,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="googleccc62e697a97aaad.html" />
     <Content Include="Images\abreeza-mall.gif" />
+    <Content Include="Images\Bohol.jpg" />
     <Content Include="Images\CebuCity.jpg" />
     <Content Include="Images\coron_palawan.jpg" />
     <Content Include="Images\CountrySide.gif" />
+    <Content Include="Images\Davao.jpg" />
     <Content Include="Images\Destinations\Bohol\3d2nBoholVacation.png" />
     <Content Include="Images\Destinations\Bohol\3d2nCountrySide.jpg" />
     <Content Include="Images\Destinations\Bohol\3d2nCountrySidePanglao2.jpg" />
@@ -410,6 +412,14 @@
     <Content Include="Images\Destinations\Cebu\Twin-city\Pasalubong-Center.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Sto-Nino-Cathedral.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Taoist-Temple.jpg" />
+    <Content Include="Images\Destinations\Korea\4d3nKoreaTour.jpg" />
+    <Content Include="Images\Destinations\Korea\Korea.jpg" />
+    <Content Include="Images\Destinations\Malaysia\4d3nMalaysiaTour.jpg" />
+    <Content Include="Images\Destinations\Malaysia\Malaysia.jpg" />
+    <Content Include="Images\Destinations\Singapore\4d3nSingaporeTour.jpg" />
+    <Content Include="Images\Destinations\Singapore\Singapore.jpg" />
+    <Content Include="Images\Destinations\Thailand\4d3nThailandTour.jpg" />
+    <Content Include="Images\Destinations\Thailand\Thailand.jpg" />
     <Content Include="Images\Destinations\Palawan\Coron\caluit-Black-Island-Cave.jpg" />
     <Content Include="Images\Destinations\Palawan\Coron\caluit-black-island.jpg" />
     <Content Include="Images\Destinations\Palawan\Coron\caluit-buluang-restaurant.jpg" />
@@ -487,13 +497,14 @@
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\underground-river-tour.jpg" />
     <Content Include="Images\El_Nido_Palawan.jpg" />
     <Content Include="Images\Icons\icons-phone.png" />
+    <Content Include="Images\Puerto2.JPG" />
     <Content Include="Images\Puerto.JPG" />
-    <Content Include="Images\puertoprincesa.JPG" />
     <Content Include="Images\SamalIslandHopping.png" />
     <Content Include="Images\SamalTour.png" />
-    <Content Include="Models\Cebu.sql" />
-    <Content Include="Models\Palawan.sql" />
-    <Content Include="Models\InitialData.sql" />
+    <Content Include="Models\SQL\International.sql" />
+    <Content Include="Models\SQL\Cebu.sql" />
+    <Content Include="Models\SQL\Palawan.sql" />
+    <Content Include="Models\SQL\InitialData.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -664,6 +675,10 @@
     <Content Include="Views\tpInqServices\Edit.cshtml" />
     <Content Include="Views\tpInqServices\Index.cshtml" />
     <Content Include="Views\Home\ProductContact.cshtml" />
+    <Content Include="Views\Home\KoreaPackages\4d3nKoreaTour.cshtml" />
+    <Content Include="Views\Home\MalaysiaPackages\4d3nMalaysiaTour.cshtml" />
+    <Content Include="Views\Home\SingaporePackages\4d3nSingaporeTour.cshtml" />
+    <Content Include="Views\Home\ThailandPackages\4d3nThailandTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -30,6 +30,11 @@ namespace TravelPackage
                 url: "BOHOL/{id}",
                 defaults: new { controller = "Home", action = "Destination", AreaName = "BOHOL", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Bohol_",
+                url: "BOHOL",
+                defaults: new { controller = "Home", action = "Destination", AreaName = "BOHOL", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "El Nido",
@@ -59,6 +64,30 @@ namespace TravelPackage
                 name: "Puerto Princesa",
                 url: "PUERTO PRINCESA/{id}",
                 defaults: new { controller = "Home", action = "Destination", AreaName = "PUERTO PRINCESA", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Malaysia",
+                url: "MALAYSIA/{id}",
+                defaults: new { controller = "Home", action = "Destination", AreaName = "MALAYSIA", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Thailand",
+                url: "THAILAND/{id}",
+                defaults: new { controller = "Home", action = "Destination", AreaName = "THAILAND", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Korea",
+                url: "KOREA/{id}",
+                defaults: new { controller = "Home", action = "Destination", AreaName = "KOREA", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Singapore",
+                url: "SINGAPORE/{id}",
+                defaults: new { controller = "Home", action = "Destination", AreaName = "SINGAPORE", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

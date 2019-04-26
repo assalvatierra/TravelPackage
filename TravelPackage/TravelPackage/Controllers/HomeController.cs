@@ -138,6 +138,7 @@ namespace TravelPackage.Controllers
         [HttpPost]
         public ActionResult Product([Bind( Include = "ProductId, LeadGuest, ContactNo, Email, NoOfAdult, NoOfChild, JobStart, Message, Status")] WebInquiryForm wif, string btnSubmit)
         {
+           
             try
             {
                 if (ModelState.IsValid)

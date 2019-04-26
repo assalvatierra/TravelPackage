@@ -152,7 +152,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2019 09:33:27</publishTime>
     </File>
     <File Include="bin/TravelPackage.dll">
-      <publishTime>04/23/2019 13:36:05</publishTime>
+      <publishTime>04/26/2019 09:46:55</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>02/11/2019 09:33:31</publishTime>
@@ -196,17 +196,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/abreeza-mall.gif">
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
+    <File Include="Images/Bohol.jpg">
+      <publishTime>04/25/2019 17:06:56</publishTime>
+    </File>
     <File Include="Images/Bohol101.png">
       <publishTime>02/11/2019 09:33:17</publishTime>
     </File>
     <File Include="Images/CebuCity.jpg">
-      <publishTime>02/11/2019 11:12:56</publishTime>
+      <publishTime>04/25/2019 16:13:56</publishTime>
     </File>
     <File Include="Images/coron_palawan.jpg">
-      <publishTime>02/11/2019 11:37:06</publishTime>
+      <publishTime>04/25/2019 16:14:43</publishTime>
     </File>
     <File Include="Images/CountrySide.gif">
       <publishTime>02/11/2019 09:33:17</publishTime>
+    </File>
+    <File Include="Images/Davao.jpg">
+      <publishTime>04/25/2019 17:07:36</publishTime>
     </File>
     <File Include="Images/Destinations/Bohol/3d2nBoholVacation.png">
       <publishTime>02/11/2019 09:33:17</publishTime>
@@ -583,6 +589,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Destinations/Cebu/Twin-city/Taoist-Temple.jpg">
       <publishTime>03/04/2019 10:53:25</publishTime>
     </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTour.jpg">
+      <publishTime>04/25/2019 17:50:14</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/Korea.jpg">
+      <publishTime>04/25/2019 16:08:52</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d3nMalaysiaTour.jpg">
+      <publishTime>04/25/2019 17:41:14</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Malaysia.jpg">
+      <publishTime>04/25/2019 16:08:37</publishTime>
+    </File>
     <File Include="Images/Destinations/Palawan/Coron/caluit-Black-Island-Cave.jpg">
       <publishTime>02/26/2019 15:42:03</publishTime>
     </File>
@@ -817,13 +835,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Destinations/Palawan/PuertoPrincesa/underground-river-tour.jpg">
       <publishTime>02/27/2019 17:49:29</publishTime>
     </File>
+    <File Include="Images/Destinations/Singapore/4d3nSingaporeTour.jpg">
+      <publishTime>04/25/2019 17:58:57</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/Singapore.jpg">
+      <publishTime>04/25/2019 16:08:42</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/4d3nThailandTour.jpg">
+      <publishTime>04/25/2019 17:44:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/Thailand.jpg">
+      <publishTime>04/25/2019 16:08:47</publishTime>
+    </File>
     <File Include="Images/El_Nido_Palawan.jpg">
-      <publishTime>02/11/2019 10:23:24</publishTime>
+      <publishTime>04/25/2019 16:14:31</publishTime>
     </File>
     <File Include="Images/Icons/icons-phone.png">
       <publishTime>03/27/2019 10:20:27</publishTime>
     </File>
     <File Include="Images/Puerto.JPG">
+      <publishTime>04/25/2019 16:14:15</publishTime>
+    </File>
+    <File Include="Images/Puerto2.JPG">
       <publishTime>02/11/2019 11:43:09</publishTime>
     </File>
     <File Include="Images/puertoprincesa.JPG">
@@ -842,6 +875,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 09:57:22</publishTime>
     </File>
     <File Include="Models/Palawan.sql">
+      <publishTime>02/28/2019 14:31:02</publishTime>
+    </File>
+    <File Include="Models/SQL/Cebu.sql">
+      <publishTime>03/04/2019 13:38:27</publishTime>
+    </File>
+    <File Include="Models/SQL/InitialData.sql">
+      <publishTime>03/27/2019 09:57:22</publishTime>
+    </File>
+    <File Include="Models/SQL/International.sql">
+      <publishTime>04/25/2019 18:16:53</publishTime>
+    </File>
+    <File Include="Models/SQL/Palawan.sql">
       <publishTime>02/28/2019 14:31:02</publishTime>
     </File>
     <File Include="Models/TravelDB.edmx.diagram">
@@ -1025,10 +1070,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 10:50:11</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/17/2019 17:48:35</publishTime>
+      <publishTime>04/25/2019 18:26:12</publishTime>
+    </File>
+    <File Include="Views/Home/KoreaPackages/4d3nKoreaTour.cshtml">
+      <publishTime>04/25/2019 18:10:13</publishTime>
     </File>
     <File Include="Views/Home/LinkSite.cshtml">
       <publishTime>02/11/2019 09:35:21</publishTime>
+    </File>
+    <File Include="Views/Home/MalaysiaPackages/4d3nMalaysiaTour.cshtml">
+      <publishTime>04/25/2019 18:10:16</publishTime>
     </File>
     <File Include="Views/Home/Product.cshtml">
       <publishTime>03/27/2019 10:08:10</publishTime>
@@ -1101,6 +1152,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Home/RequestQuote.cshtml">
       <publishTime>02/11/2019 09:33:21</publishTime>
+    </File>
+    <File Include="Views/Home/SingaporePackages/4d3nSingaporeTour.cshtml">
+      <publishTime>04/25/2019 18:10:19</publishTime>
+    </File>
+    <File Include="Views/Home/ThailandPackages/4d3nThailandTour.cshtml">
+      <publishTime>04/25/2019 18:10:21</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>02/11/2019 09:33:21</publishTime>

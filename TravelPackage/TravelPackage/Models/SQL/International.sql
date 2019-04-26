@@ -28,16 +28,40 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 
 -- Singapore
 -- 38
-('5D4N Singapore Tour','Enjoy the best attractions in Singapore.','SingaporePackages/4d3nSingaporeTour','/Images/Destinations/Cebu/Twin-city/cebu-twin-city-tour.jpg',1,10)
+('5D4N Singapore Tour','Enjoy the best attractions in Singapore.','SingaporePackages/5d4nSingaporeTour.cshtml','/Images/Destinations/Singapore/5d4nSingaporeTour.jpg',1,10)
 ;
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 
--- Cebu City Twin Tour
-(32,'/Images/Destinations/Cebu/Twin-City/Cebu-Heritage-Monument.jpg','Cebu Heritage Monument','Cebu Heritage Monument',1),
-(32,'/Images/Destinations/Cebu/Twin-City/Fort-San-Pedro.jpg','Fort San Pedro','Fort san Pedro',2),
-(32,'/Images/Destinations/Cebu/Twin-City/Guitar-Factory.jpg','Guitar Factory','Guitar Factory',3),
-(32,'/Images/Destinations/Cebu/Twin-City/Mactan-Shrine.jpg','Mactan Shrine','Mactan Shrine',4)
+-- Malaysia
+(35,'/Images/Destinations/Malaysia/4d2nGentingKualaLumpur/batu-caves.jpg','Batu Caves','Batu Caves',1),
+(35,'/Images/Destinations/Malaysia/4d2nGentingKualaLumpur/independence-square.jpg','Independence Sqaure','Independence Sqaure',2),
+(35,'/Images/Destinations/Malaysia/4d2nGentingKualaLumpur/Kuala-Lumpur-International-Airport.jpg','Kuala Lumpur International Airport','Kuala Lumpur International Airport',3),
+(35,'/Images/Destinations/Malaysia/4d2nGentingKualaLumpur/National-Monument.jpg','National Monument','National Monument',4),
+(35,'/Images/Destinations/Malaysia/4d2nGentingKualaLumpur/Petronas-Twin-Towers.jpg','Pertronas Twin Tower','Pertronas Twin Tower',4),
+
+-- Thailand
+(36,'/Images/Destinations/Thailand/4d3nBangkokPattayaTour/Bee-Farm-Pattaya.jpg','Bee Farm Pattaya','Bee Farm Pattaya',1),
+(36,'/Images/Destinations/Thailand/4d3nBangkokPattayaTour/elephant-in-the-jungle.jpg','Elephant in the Jungle','Elephant in the Jungle',2),
+(36,'/Images/Destinations/Thailand/4d3nBangkokPattayaTour/Frost-Magical-Siam.jpg','Frost Magical Siam','Frost Magical Siam',3),
+(36,'/Images/Destinations/Thailand/4d3nBangkokPattayaTour/Noongnooch.jpg','Noongnooch','Noongnooch',4),
+
+-- Korea
+(37,'/Images/Destinations/Korea/4d3nKoreaTourPackage/Deoksugung-Palace.jpg','Deoksugung Palace','Deoksugung Palace',1),
+(37,'/Images/Destinations/Korea/4d3nKoreaTourPackage/Dongdaemun-Market.jpg','Dongdeamun Market','Dongdeamun Market',2),
+(37,'/Images/Destinations/Korea/4d3nKoreaTourPackage/Everland-Park-Korea.jpg','Everland Park Korea','Everland Park Korea',3),
+(37,'/Images/Destinations/Korea/4d3nKoreaTourPackage/padlock-Wall-korea.jpg','Padlock Wall','Padlock Wall',4),
+(37,'/Images/Destinations/Korea/4d3nKoreaTourPackage/Petite-France-Korea.jpg','Petite France Korea','Petite France Korea',5),
+(37,'/Images/Destinations/Korea/4d3nKoreaTourPackage/Seoul-Tower.jpg','Seoul Tower','Seoul Tower',6),
+
+-- Singapore
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/Changi-Airport.jpg','Changi Airport','Changi Airport',1),
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/fountain-of-wealth.jpg','Fountain of Wealth','Fountain of Wealth',2),
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/merlion-park.jpg','Merlion Park','Merlion Park',3),
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/Singapore-Cable-Car.jpg','Singapore Cable Car','Singapore Cable Car',4),
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/The-Helix-Bridge.jpg','The Helix Bridge','The Helix Bridge',5),
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/Universal-Studio.jpg','Universal Studio','Universal Studio',6),
+(38,'/Images/Destinations/Singapore/5d4nSingaporeTour/Universal-studios-minions.jpg','Universal Studio','Universal Studio',7)
 ;
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values

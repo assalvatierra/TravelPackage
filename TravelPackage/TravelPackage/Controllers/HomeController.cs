@@ -209,7 +209,7 @@ namespace TravelPackage.Controllers
             //add to database
             Models.tpInquiry tpInq = new tpInquiry
             {
-                dtInquiry = DateTime.Now,
+                dtInquiry = GetCurrentTime(),
                 LeadGuest = wif.LeadGuest,
                 ContactNo = wif.ContactNo,
                 Email = wif.Email,
@@ -246,7 +246,7 @@ namespace TravelPackage.Controllers
             //send email
             email.SendMail(tpInq.Id, "travel.realbreeze@gmail.com");
             email.SendMail(tpInq.Id, "realbreezedavao@gmail.com");
-            email.SendMail(tpInq.Id, "inquiries.realwheels@gmail.com");
+            //email.SendMail(tpInq.Id, "inquiries.realwheels@gmail.com");
 
             //email.SendMail(tpInq.Id, "jahdielsvillosa@gmail.com");
 
@@ -302,7 +302,14 @@ namespace TravelPackage.Controllers
         {
             return View();
         }
-        
+
+        public DateTime GetCurrentTime()
+        {
+            DateTime _localTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Singapore Standard Time"));
+            _localTime = _localTime.Date;
+
+            return _localTime;
+        }
 
         #region Dynamic SiteMap 
         //[Route("sitemap.xml")]

@@ -152,7 +152,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2019 09:33:27</publishTime>
     </File>
     <File Include="bin/TravelPackage.dll">
-      <publishTime>04/26/2019 09:46:55</publishTime>
+      <publishTime>05/21/2019 14:20:50</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>02/11/2019 09:33:31</publishTime>
@@ -169,8 +169,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/daterangepicker.scss">
       <publishTime>02/11/2019 09:33:17</publishTime>
     </File>
+    <File Include="Content/Gallery/baguetteBox.js">
+      <publishTime>05/16/2019 11:30:05</publishTime>
+    </File>
+    <File Include="Content/Gallery/baguetteBox.scss">
+      <publishTime>05/16/2019 11:30:05</publishTime>
+    </File>
+    <File Include="Content/mdb.lite.min.css">
+      <publishTime>05/17/2019 11:22:04</publishTime>
+    </File>
     <File Include="Content/Site.css">
-      <publishTime>03/27/2019 10:48:31</publishTime>
+      <publishTime>05/15/2019 17:09:53</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>02/11/2019 09:33:21</publishTime>
@@ -193,8 +202,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="googleccc62e697a97aaad.html">
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
+    <File Include="Images/Abreeza-Davao-City.jpg">
+      <publishTime>05/20/2019 16:12:23</publishTime>
+    </File>
     <File Include="Images/abreeza-mall.gif">
       <publishTime>02/11/2019 09:33:21</publishTime>
+    </File>
+    <File Include="Images/Bohol-Package.jpg">
+      <publishTime>05/20/2019 16:12:23</publishTime>
     </File>
     <File Include="Images/Bohol.jpg">
       <publishTime>04/25/2019 17:06:56</publishTime>
@@ -592,14 +607,167 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Destinations/Korea/4d3nKoreaTour.jpg">
       <publishTime>04/25/2019 17:50:14</publishTime>
     </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage.jpg">
+      <publishTime>04/26/2019 13:31:54</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage/Deoksugung-Palace.jpg">
+      <publishTime>04/26/2019 16:28:24</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage/Dongdaemun-Market.jpg">
+      <publishTime>04/26/2019 16:28:24</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage/Everland-Park-Korea.jpg">
+      <publishTime>04/26/2019 16:28:24</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage/padlock-Wall-korea.jpg">
+      <publishTime>04/26/2019 16:28:24</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage/Petite-France-Korea.jpg">
+      <publishTime>04/26/2019 16:28:24</publishTime>
+    </File>
+    <File Include="Images/Destinations/Korea/4d3nKoreaTourPackage/Seoul-Tower.jpg">
+      <publishTime>04/26/2019 16:28:24</publishTime>
+    </File>
     <File Include="Images/Destinations/Korea/Korea.jpg">
       <publishTime>04/25/2019 16:08:52</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d2nGentingKualaLumpur/batu-caves.jpg">
+      <publishTime>04/26/2019 16:03:30</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d2nGentingKualaLumpur/independence-square.jpg">
+      <publishTime>04/26/2019 16:03:30</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d2nGentingKualaLumpur/Kuala-Lumpur-International-Airport.jpg">
+      <publishTime>04/26/2019 16:03:30</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d2nGentingKualaLumpur/National-Monument.jpg">
+      <publishTime>04/26/2019 16:03:30</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d2nGentingKualaLumpur/Petronas-Twin-Towers.jpg">
+      <publishTime>04/26/2019 16:03:30</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/4d3nGentingKualaLumpurTour.jpg">
+      <publishTime>04/26/2019 11:35:31</publishTime>
     </File>
     <File Include="Images/Destinations/Malaysia/4d3nMalaysiaTour.jpg">
       <publishTime>04/25/2019 17:41:14</publishTime>
     </File>
+    <File Include="Images/Destinations/Malaysia/Article/Central_Shopping.jpg">
+      <publishTime>05/17/2019 13:27:52</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Independence-Square.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/KL-Observation-deck.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/KLCC.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Aquaria.jpg">
+      <publishTime>05/16/2019 10:24:43</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Aquarium.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_BatuCaves.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Cabel_Car.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Cabel_Car_2.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_City.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Food.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Food2.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Golden_Buddha.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Hotel.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Hotel_2.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Hotel_3.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Hotel_4.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Hotel_Pool.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL1.jpg">
+      <publishTime>05/16/2019 10:24:43</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL2.jpg">
+      <publishTime>05/16/2019 10:24:43</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL_city.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL_tower %282%29.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL_Tower.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL_Tower2.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_KL_Tower_Food.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Merdeka Square  Independence square.jpg">
+      <publishTime>05/17/2019 11:55:53</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Shopping.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Malaysia_Street_Food.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Menara_KL.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/National_Monument.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/National_Mosque.jpg">
+      <publishTime>05/17/2019 13:18:26</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Pavilion.jpg">
+      <publishTime>05/17/2019 13:18:23</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Petronas.jpg">
+      <publishTime>05/17/2019 13:27:52</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Resorts_World_Genting.jpg">
+      <publishTime>05/17/2019 13:30:18</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Royal King.jpg">
+      <publishTime>05/17/2019 13:52:23</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/Royal King’s PalaceIstana Negara.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Article/RoyalKing.jpg">
+      <publishTime>05/17/2019 13:18:25</publishTime>
+    </File>
     <File Include="Images/Destinations/Malaysia/Malaysia.jpg">
       <publishTime>04/25/2019 16:08:37</publishTime>
+    </File>
+    <File Include="Images/Destinations/Malaysia/Malaysia_City.jpg">
+      <publishTime>05/15/2019 17:14:21</publishTime>
     </File>
     <File Include="Images/Destinations/Palawan/Coron/caluit-Black-Island-Cave.jpg">
       <publishTime>02/26/2019 15:42:03</publishTime>
@@ -838,8 +1006,47 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Destinations/Singapore/4d3nSingaporeTour.jpg">
       <publishTime>04/25/2019 17:58:57</publishTime>
     </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour.jpg">
+      <publishTime>04/26/2019 15:57:23</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/Changi-Airport.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/fountain-of-wealth.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/merlion-park.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/Singapore-Cable-Car.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/The-Helix-Bridge.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/Universal-Studio.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
+    <File Include="Images/Destinations/Singapore/5d4nSingaporeTour/Universal-studios-minions.jpg">
+      <publishTime>04/26/2019 16:00:04</publishTime>
+    </File>
     <File Include="Images/Destinations/Singapore/Singapore.jpg">
       <publishTime>04/25/2019 16:08:42</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/4d3nBangkokPattayaTour.jpg">
+      <publishTime>04/26/2019 13:21:47</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/4d3nBangkokPattayaTour/Bee-Farm-Pattaya.jpg">
+      <publishTime>04/26/2019 16:28:12</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/4d3nBangkokPattayaTour/elephant-in-the-jungle.jpg">
+      <publishTime>04/26/2019 16:28:12</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/4d3nBangkokPattayaTour/Frost-Magical-Siam.jpg">
+      <publishTime>04/26/2019 16:28:12</publishTime>
+    </File>
+    <File Include="Images/Destinations/Thailand/4d3nBangkokPattayaTour/Noongnooch.jpg">
+      <publishTime>04/26/2019 16:28:12</publishTime>
     </File>
     <File Include="Images/Destinations/Thailand/4d3nThailandTour.jpg">
       <publishTime>04/25/2019 17:44:46</publishTime>
@@ -884,7 +1091,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 09:57:22</publishTime>
     </File>
     <File Include="Models/SQL/International.sql">
-      <publishTime>04/25/2019 18:16:53</publishTime>
+      <publishTime>05/15/2019 10:01:29</publishTime>
     </File>
     <File Include="Models/SQL/Palawan.sql">
       <publishTime>02/28/2019 14:31:02</publishTime>
@@ -943,8 +1150,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
+    <File Include="Scripts/mdb.min.js">
+      <publishTime>05/17/2019 11:24:31</publishTime>
+    </File>
     <File Include="Scripts/modernizr-2.6.2.js">
       <publishTime>02/11/2019 09:33:21</publishTime>
+    </File>
+    <File Include="Scripts/popper.min.js">
+      <publishTime>05/17/2019 11:24:31</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>02/11/2019 09:33:21</publishTime>
@@ -959,7 +1172,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/23/2019 13:25:47</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>03/27/2019 16:23:10</publishTime>
+      <publishTime>05/17/2019 11:24:31</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>02/11/2019 09:33:21</publishTime>
@@ -1037,7 +1250,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 11:26:40</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>03/08/2019 10:06:06</publishTime>
+      <publishTime>05/21/2019 14:19:51</publishTime>
     </File>
     <File Include="Views/Home/CoronPackages/CaluitSafariTour.cshtml">
       <publishTime>03/27/2019 11:26:40</publishTime>
@@ -1055,7 +1268,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 11:26:40</publishTime>
     </File>
     <File Include="Views/Home/Destination.cshtml">
-      <publishTime>03/27/2019 09:36:43</publishTime>
+      <publishTime>05/21/2019 14:19:14</publishTime>
     </File>
     <File Include="Views/Home/ElNidoPackages/ElNidoTourA.cshtml">
       <publishTime>03/27/2019 11:26:40</publishTime>
@@ -1070,16 +1283,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 10:50:11</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/25/2019 18:26:12</publishTime>
+      <publishTime>05/20/2019 13:33:39</publishTime>
     </File>
     <File Include="Views/Home/KoreaPackages/4d3nKoreaTour.cshtml">
-      <publishTime>04/25/2019 18:10:13</publishTime>
+      <publishTime>04/26/2019 15:20:38</publishTime>
     </File>
     <File Include="Views/Home/LinkSite.cshtml">
       <publishTime>02/11/2019 09:35:21</publishTime>
     </File>
+    <File Include="Views/Home/MalaysiaPackages/4d3nGentingKualaLumpurTour.cshtml">
+      <publishTime>04/26/2019 11:21:29</publishTime>
+    </File>
     <File Include="Views/Home/MalaysiaPackages/4d3nMalaysiaTour.cshtml">
       <publishTime>04/25/2019 18:10:16</publishTime>
+    </File>
+    <File Include="Views/Home/MalaysiaPackages/PartialViewMalaysia.cshtml">
+      <publishTime>05/20/2019 16:07:02</publishTime>
     </File>
     <File Include="Views/Home/Product.cshtml">
       <publishTime>03/27/2019 10:08:10</publishTime>
@@ -1091,7 +1310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2019 09:35:22</publishTime>
     </File>
     <File Include="Views/Home/ProductContact.cshtml">
-      <publishTime>03/27/2019 10:37:10</publishTime>
+      <publishTime>05/20/2019 15:56:33</publishTime>
     </File>
     <File Include="Views/Home/ProductCustom.cshtml">
       <publishTime>03/27/2019 10:22:06</publishTime>
@@ -1156,6 +1375,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/SingaporePackages/4d3nSingaporeTour.cshtml">
       <publishTime>04/25/2019 18:10:19</publishTime>
     </File>
+    <File Include="Views/Home/SingaporePackages/5d4nSingaporeTour.cshtml">
+      <publishTime>04/26/2019 15:48:40</publishTime>
+    </File>
+    <File Include="Views/Home/ThailandPackages/4d3nBangkokPattayaTour.cshtml">
+      <publishTime>04/26/2019 13:19:39</publishTime>
+    </File>
     <File Include="Views/Home/ThailandPackages/4d3nThailandTour.cshtml">
       <publishTime>04/25/2019 18:10:21</publishTime>
     </File>
@@ -1184,7 +1409,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/11/2019 09:33:21</publishTime>
+      <publishTime>05/15/2019 09:52:15</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>03/27/2019 09:53:20</publishTime>

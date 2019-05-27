@@ -17,8 +17,8 @@
     <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639954508517">
         <strong>Globe:</strong> (+63) 916-755-8473
     </a><br />
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="mailto:realbreezedavao@gmail.com">
-        <strong>Email:</strong> realbreezedavao@gmail.com
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="mailto:travel.realbreeze@gmail.com">
+        <strong>Email:</strong> travel.realbreeze@gmail.com
     </a><br />
 
     <a>
@@ -28,7 +28,7 @@
 <div class="breadcrumbs10" style="background-color: #eeeeee;">
     <p>&raquo;
     @Html.ActionLink("HOME", "Index", new { option = 0 }, new { @class = "btn btn-primary btn-sm" })
-    @Html.ActionLink("DESTINATIONS", "Index", new { option = 1 }, new {@class="btn btn-primary btn-sm"})
+    @Html.ActionLink("DESTINATIONS", "Index", new { option = 1 }, new { @class = "btn btn-primary btn-sm" })
     @ViewBag.Destination&raquo;
     </p>
 </div>
@@ -40,7 +40,7 @@
             <text>
             <div class="col-md-4" style="padding:10px;">
                 <h2>@item.Name</h2>
-                <a href="@Url.Action("Product",new { id = @item.Id, ProductName = @item.Name })" title="@item.Name"><img width="100%" height="250" src="@item.PgFeatureImg"></a>
+                <a href="@Url.Action("Product", new { id = @item.Id, ProductName = @item.Name })" title="@item.Name"><img width="100%" height="250" src="@item.PgFeatureImg"></a>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">@item.ShortRemarks</p>
                 <p>
                     @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name }, new { @class = "btn btn-default" })
@@ -52,10 +52,6 @@
         
     </div>
 
-
-
-
-
 <div class="row">
     @foreach (var item in AddOns)
     {
@@ -64,9 +60,26 @@
             <div style="width:100%;height:150px;background-color:aliceblue;background-image:url(@item.PgFeatureImg);background-size: cover; background-repeat:no-repeat">&nbsp;</div>
             <p>@item.ShortRemarks</p>
             <p>
-                @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name.Replace("&","") }, new { @class = "btn btn-default" })
+                @Html.ActionLink("More...", "Product", new { id = @item.Id, ProductName = @item.Name.Replace("&", "") }, new { @class = "btn btn-default" })
 
             </p>
         </div>
     }
 </div>
+
+<!-- Add Site Descriptions here -->
+    <!-- 
+    Use Switch to handle different destination's descriptions.
+    Does not work when Viewbag is inside the RenderPArtial
+    -->
+@{
+    string dest = ViewBag.Destination;
+    switch (dest)
+    {
+        case "MALAYSIA":
+            Html.RenderPartial("MalaysiaPackages/PartialViewMalaysia");
+            break;
+    }
+    
+}
+

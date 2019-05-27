@@ -21,11 +21,17 @@ namespace TravelPackage
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/mdb.min.js",
+                      "~/Scripts/popper.min.js"
+                      
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/mdb.min.css"
+                      ));
 
             //datetimepicker bundles
             bundles.Add(new ScriptBundle("~/bundles/DateRangePicker").Include(

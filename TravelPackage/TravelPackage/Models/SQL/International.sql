@@ -9,7 +9,7 @@ Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) value
 ('MALAYSIA' ,'International Tour in Malaysia'   ,'MalaysiaPage' ,'/Images/Destinations/Malaysia/Malaysia.jpg'  ,7),
 ('THAILAND' ,'International Tour in Thailand'   ,'ThailandPage' ,'/Images/Destinations/Thailand/Thailand.jpg'  ,8),
 ('KOREA'    ,'International Tour in South Korea','KoreaPage'    ,'/Images/Destinations/Korea/Korea.jpg'        ,9),
-('SINGAPORE','International Tour in Malaysia'   ,'SingaporePage','/Images/Destinations/Singapore/Singapore.jpg',10)
+('SINGAPORE','International Tour in Singapore'  ,'SingaporePage','/Images/Destinations/Singapore/Singapore.jpg',10)
 ;
 
 Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values 
@@ -28,7 +28,7 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 
 -- Singapore
 -- 38
-('5D4N Singapore Tour','Enjoy the best attractions in Singapore.','SingaporePackages/5d4nSingaporeTour.cshtml','/Images/Destinations/Singapore/5d4nSingaporeTour.jpg',1,10)
+('5D4N Singapore Tour','Enjoy the best attractions in Singapore.','SingaporePackages/5d4nSingaporeTour','/Images/Destinations/Singapore/5d4nSingaporeTour.jpg',1,10)
 ;
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values

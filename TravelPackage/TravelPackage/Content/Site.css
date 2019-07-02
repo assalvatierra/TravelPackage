@@ -123,3 +123,50 @@ textarea {
     column-width: 100%;
     }
 }
+
+.home{
+    background-image: url('../Images/RealbreezeTravel-Banner-2.jpg');
+}
+
+.CEBU{
+    background-image: url('../Images/Cebu.jpg');
+}
+
+.BOHOL{
+    background-image: url('../Images/Bohol.jpg');
+}
+
+.CORON {
+    background-image: url('../Images/Palawan.jpg');
+}
+
+.EL {
+    background-image: url('../Images/Palawan.jpg');
+}
+
+.PUERTO {
+    background-image: url('../Images/Palawan.jpg');
+}
+
+.MALAYSIA {
+    background-image: url('../Images/MALAYSIA.jpg');
+}
+
+.SINGAPORE {
+    background-image: url('../Images/Singapore.jpg');
+}
+
+.THAILAND {
+    background-image: url('../Images/Thailand.jpg');
+}
+
+.KOREA {
+    background-image: url('../Images/Korea.jpg');
+}
+.banner{
+    height:100%;
+    width:auto;
+    object-fit: cover;
+    background-repeat:no-repeat;
+    background-size: cover;
+}

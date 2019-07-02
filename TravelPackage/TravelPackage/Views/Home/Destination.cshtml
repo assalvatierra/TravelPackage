@@ -4,7 +4,7 @@
     IEnumerable<TravelPackage.Models.tpProducts> AddOns = (IEnumerable<TravelPackage.Models.tpProducts>)ViewBag.Addons;
 }
 
-<div class="jumbotron">
+<div class="jumbotron banner @ViewBag.Destination">
     <h1>Welcome to @ViewBag.Destination</h1>
     <p class="lead">@ViewBag.Description</p>
 

@@ -206,10 +206,11 @@ namespace TravelPackage.Controllers
         {
             WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
 
+            DateTime today = GetCurrentTime();
             //add to database
             Models.tpInquiry tpInq = new tpInquiry
             {
-                dtInquiry = GetCurrentTime(),
+                dtInquiry = today,
                 LeadGuest = wif.LeadGuest,
                 ContactNo = wif.ContactNo,
                 Email = wif.Email,
@@ -228,7 +229,7 @@ namespace TravelPackage.Controllers
                     tpInquiryId = tpInq.Id,
                     tpProductsId = item01.ProductId,
                     dtSvcStart = item01.dtStart,
-                    Message = item01.Message
+                    Message = item01.Message 
                 };
                 db.tpInqServices.Add(tpSvc);
                 db.SaveChanges();

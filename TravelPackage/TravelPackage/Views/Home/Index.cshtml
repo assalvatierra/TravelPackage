@@ -5,7 +5,7 @@
     ViewBag.metaDescription = "We are travel agency that provides affordable tour, vacation and travel packages to popular tourist destinations in the philippines.";
 }
 
-<div class="jumbotron">
+<div class="jumbotron home banner">
     <h1>Welcome to Philippines!</h1>
     <p>Get a well planned travel, relax and sound vacation, exciting and optimized tour</p>
     <p class="lead">Find your best package here!</p>
@@ -29,7 +29,7 @@
 
     @foreach (var item in Model)
     {
-        <div class="col-md-4">
+        <div class="col-md-4" >
             <h2>@item.Name</h2>
             <a href="@Url.Action("Destination",new { AreaName = @item.Name })" title="@item.Name">
                 <img width="100%" src="@item.PgFeatureImg" alt="@item.Name Tour Package">

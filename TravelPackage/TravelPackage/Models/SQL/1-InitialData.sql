@@ -13,8 +13,8 @@ Insert into tpUoms([Measure],[Remarks]) values
 ('Unit','Per unit ( Room, Car, Boat)'),('Pax','per person rate');
 
 Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
-('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
-('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
+('DAVAO','Davao City','DavaoPage','/Images/Abreeza-Davao-City.jpg',1),
+('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.jpg',2),
 ('CEBU','Visit Cebu City for vacation in the middle of the city in Philippines.','CebuPage','/Images/CebuCity.jpg',3),
 ('EL NIDO','Explore various islands and lagoons in El Nido, Palawan, Philippines.','ElNidoPage','/Images/El_Nido_Palawan.jpg',4),
 ('CORON','Visit Coron, Palawan and explore its facinating wonders. ','CoronPage','/Images/coron_palawan.jpg',5),

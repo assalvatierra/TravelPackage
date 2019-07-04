@@ -152,7 +152,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2019 09:33:27</publishTime>
     </File>
     <File Include="bin/TravelPackage.dll">
-      <publishTime>05/21/2019 14:20:50</publishTime>
+      <publishTime>07/02/2019 18:10:58</publishTime>
+    </File>
+    <File Include="bin/TravelPackage.dll.config">
+      <publishTime>07/02/2019 17:02:27</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>02/11/2019 09:33:31</publishTime>
@@ -179,7 +182,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/17/2019 11:22:04</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>05/15/2019 17:09:53</publishTime>
+      <publishTime>05/30/2019 10:22:44</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>02/11/2019 09:33:21</publishTime>
@@ -208,14 +211,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/abreeza-mall.gif">
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
+    <File Include="Images/Abreeze-mall.jpg">
+      <publishTime>07/02/2019 16:05:14</publishTime>
+    </File>
     <File Include="Images/Bohol-Package.jpg">
       <publishTime>05/20/2019 16:12:23</publishTime>
     </File>
     <File Include="Images/Bohol.jpg">
-      <publishTime>04/25/2019 17:06:56</publishTime>
+      <publishTime>05/29/2019 17:26:19</publishTime>
+    </File>
+    <File Include="Images/Bohol101.jpg">
+      <publishTime>07/02/2019 16:05:14</publishTime>
     </File>
     <File Include="Images/Bohol101.png">
       <publishTime>02/11/2019 09:33:17</publishTime>
+    </File>
+    <File Include="Images/CEBU.jpg">
+      <publishTime>05/29/2019 17:26:17</publishTime>
     </File>
     <File Include="Images/CebuCity.jpg">
       <publishTime>04/25/2019 16:13:56</publishTime>
@@ -228,6 +240,39 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Images/Davao.jpg">
       <publishTime>04/25/2019 17:07:36</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Baguio-Cathedral.jpeg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Baguio-strawberry-farm.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Baguio-Tour-Package.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/BaguioMainTour.jpg">
+      <publishTime>07/02/2019 15:42:58</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/burnham-park-Baguio.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Camp-John-Hay-Baguio.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Camp-John-hay.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Mines-View-Baguio.jpg">
+      <publishTime>07/02/2019 15:42:39</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Mines_View_Park,_Baguio_City.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/Tam-awan-Village-Baguio.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Baguio/The_Mansion,_Baguio_City.jpg">
+      <publishTime>07/02/2019 11:40:01</publishTime>
     </File>
     <File Include="Images/Destinations/Bohol/3d2nBoholVacation.png">
       <publishTime>02/11/2019 09:33:17</publishTime>
@@ -603,6 +648,117 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Images/Destinations/Cebu/Twin-city/Taoist-Temple.jpg">
       <publishTime>03/04/2019 10:53:25</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Baler/Aurora-House.JPG">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Baler/Baler-Beach.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Baler/Baler-Tour-Package.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Baler/ermita-hill-baler.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Baler/Mother-Falls.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Baler/Museo de Baler.JPG">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/100-Islands-Alaminos.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/Bolinao Church.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/Bolinao-.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/bolinao-falls.png">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/Bolinao-Tour-Package.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/Enchanted-Cave.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Bolinao/pilgrimage-island-at-hundred-islands.png">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos/Ilocos Sand Dunes.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos/Ilocos-Tour-2019.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos/ilocos-Vigan.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos/Ilocos-Wind-Farm.JPG">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos/Malacanang of the North.JPG">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Bantay-Church-Bell-Tower.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Cape Bonjeador Lighthouse.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Ilocos-4d3N-Tour-Package.jpg">
+      <publishTime>07/02/2019 15:37:31</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Ilocos-Wind-mills.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Juan-Luna Shrine.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Kapurpuran Rock Formation.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Laoag Church.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Pagudpud.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/PAgupud-Beach.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Pagupud-blue-lagoon.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/St-Williams-church.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/St.Paul Cathedral.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Ilocos4D3N/Vigan-Heritage-Village-1.jpg">
+      <publishTime>07/02/2019 15:27:01</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/IlocosMainTour.jpg">
+      <publishTime>07/01/2019 15:48:51</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Sagada/La Trinidad Houses.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Sagada/sagada-Banaue.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Sagada/Sagada-sea-of-clouds.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Sagada/Sagada-Tour-Package.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
+    </File>
+    <File Include="Images/Destinations/Ilocos/Sagada/Strawberry.jpg">
+      <publishTime>07/01/2019 15:17:46</publishTime>
     </File>
     <File Include="Images/Destinations/Korea/4d3nKoreaTour.jpg">
       <publishTime>04/25/2019 17:50:14</publishTime>
@@ -1060,6 +1216,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/Icons/icons-phone.png">
       <publishTime>03/27/2019 10:20:27</publishTime>
     </File>
+    <File Include="Images/Korea.jpg">
+      <publishTime>05/30/2019 10:23:39</publishTime>
+    </File>
+    <File Include="Images/MALAYSIA.jpg">
+      <publishTime>05/29/2019 17:46:21</publishTime>
+    </File>
+    <File Include="Images/PALAWAN.jpg">
+      <publishTime>05/29/2019 17:26:17</publishTime>
+    </File>
     <File Include="Images/Puerto.JPG">
       <publishTime>04/25/2019 16:14:15</publishTime>
     </File>
@@ -1069,11 +1234,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/puertoprincesa.JPG">
       <publishTime>02/11/2019 11:39:03</publishTime>
     </File>
+    <File Include="Images/RealbreezeTravel-Banner-2.jpg">
+      <publishTime>05/29/2019 17:00:07</publishTime>
+    </File>
+    <File Include="Images/RealbreezeTravel-Banner.jpg">
+      <publishTime>05/29/2019 16:42:19</publishTime>
+    </File>
     <File Include="Images/SamalIslandHopping.png">
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
     <File Include="Images/SamalTour.png">
       <publishTime>02/11/2019 09:33:21</publishTime>
+    </File>
+    <File Include="Images/Singapore.jpg">
+      <publishTime>05/30/2019 09:46:37</publishTime>
+    </File>
+    <File Include="Images/Thailand.jpg">
+      <publishTime>05/30/2019 10:07:58</publishTime>
     </File>
     <File Include="Models/Cebu.sql">
       <publishTime>03/04/2019 13:38:27</publishTime>
@@ -1083,6 +1260,24 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Models/Palawan.sql">
       <publishTime>02/28/2019 14:31:02</publishTime>
+    </File>
+    <File Include="Models/SQL/1-InitialData.sql">
+      <publishTime>07/02/2019 16:09:32</publishTime>
+    </File>
+    <File Include="Models/SQL/2-Palawan.sql">
+      <publishTime>02/28/2019 14:31:02</publishTime>
+    </File>
+    <File Include="Models/SQL/3-Cebu.sql">
+      <publishTime>03/04/2019 13:38:27</publishTime>
+    </File>
+    <File Include="Models/SQL/4-International.sql">
+      <publishTime>05/15/2019 10:01:29</publishTime>
+    </File>
+    <File Include="Models/SQL/5-Ilocos.sql">
+      <publishTime>07/02/2019 16:01:30</publishTime>
+    </File>
+    <File Include="Models/SQL/6-Baguio.sql">
+      <publishTime>07/02/2019 15:52:22</publishTime>
     </File>
     <File Include="Models/SQL/Cebu.sql">
       <publishTime>03/04/2019 13:38:27</publishTime>
@@ -1213,6 +1408,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/About.cshtml">
       <publishTime>02/11/2019 09:35:21</publishTime>
     </File>
+    <File Include="Views/Home/BaguioPackages/BaguioTour.cshtml">
+      <publishTime>07/02/2019 11:44:59</publishTime>
+    </File>
     <File Include="Views/Home/BoholPackages/3d2nCountryside.cshtml">
       <publishTime>03/27/2019 10:09:15</publishTime>
     </File>
@@ -1268,7 +1466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/27/2019 11:26:40</publishTime>
     </File>
     <File Include="Views/Home/Destination.cshtml">
-      <publishTime>05/21/2019 14:19:14</publishTime>
+      <publishTime>05/29/2019 17:29:34</publishTime>
     </File>
     <File Include="Views/Home/ElNidoPackages/ElNidoTourA.cshtml">
       <publishTime>03/27/2019 11:26:40</publishTime>
@@ -1282,8 +1480,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/ElNidoPackages/ElNidoTourD.cshtml">
       <publishTime>03/27/2019 10:50:11</publishTime>
     </File>
+    <File Include="Views/Home/IlocosPackages/BalerTour.cshtml">
+      <publishTime>07/01/2019 15:00:02</publishTime>
+    </File>
+    <File Include="Views/Home/IlocosPackages/BolinaoTour.cshtml">
+      <publishTime>07/01/2019 13:34:44</publishTime>
+    </File>
+    <File Include="Views/Home/IlocosPackages/Ilocos4D3NTour.cshtml">
+      <publishTime>07/02/2019 15:22:39</publishTime>
+    </File>
+    <File Include="Views/Home/IlocosPackages/IlocosTour.cshtml">
+      <publishTime>07/02/2019 11:44:15</publishTime>
+    </File>
+    <File Include="Views/Home/IlocosPackages/SagadaTour.cshtml">
+      <publishTime>07/01/2019 15:02:54</publishTime>
+    </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>05/20/2019 13:33:39</publishTime>
+      <publishTime>05/29/2019 17:30:21</publishTime>
     </File>
     <File Include="Views/Home/KoreaPackages/4d3nKoreaTour.cshtml">
       <publishTime>04/26/2019 15:20:38</publishTime>
@@ -1571,7 +1784,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/11/2019 09:33:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/05/2019 09:22:07</publishTime>
+      <publishTime>07/03/2019 09:13:52</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -251,6 +251,12 @@
     <Compile Include="Models\tpUom.cs">
       <DependentUpon>TravelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\tpAreas.cs">
@@ -273,6 +279,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\TravelPackage.dll" />
+    <Content Include="bin\TravelPackage.pdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\daterangepicker.css" />
@@ -285,8 +293,10 @@
     <Content Include="googleccc62e697a97aaad.html" />
     <Content Include="Images\Abreeza-Davao-City.jpg" />
     <Content Include="Images\abreeza-mall.gif" />
+    <Content Include="Images\Abreeze-mall.jpg" />
     <Content Include="Images\Bohol-Package.jpg" />
     <Content Include="Images\BOHOL.jpg" />
+    <Content Include="Images\Bohol101.jpg" />
     <Content Include="Images\CEBU.jpg" />
     <Content Include="Images\CebuCity.jpg" />
     <Content Include="Images\coron_palawan.jpg" />
@@ -672,7 +682,9 @@
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\Honda-Bay-Cowrie-Island.jpg" />
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\Honda-Bay-Luli-Island.jpg" />
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\Honda-Bay-Starfish-Island.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

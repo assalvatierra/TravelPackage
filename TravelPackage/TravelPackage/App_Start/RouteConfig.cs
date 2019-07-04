@@ -91,6 +91,12 @@ namespace TravelPackage
             );
 
             routes.MapRoute(
+                name: "Ilocos",
+                url: "ILOCOS/{id}",
+                defaults: new { controller = "Home", action = "Destination", AreaName = "ILOCOS", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Destination",
                 url: "TravelPackages/{id}/{AreaName}",
                 defaults: new { controller = "Home", action = "Destination", id = UrlParameter.Optional }

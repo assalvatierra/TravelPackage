@@ -170,3 +170,13 @@ textarea {
     background-repeat:no-repeat;
     background-size: cover;
 }
+
+
+/* Product Contact */
+.prod-contact-link{
+    color:white;
+}
+.prod-contact-icon{
+    margin-bottom:2px;
+    margin-right:2px;
+}

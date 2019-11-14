@@ -7,19 +7,49 @@
 <div class="jumbotron banner @ViewBag.Destination">
     <h1>Welcome to @ViewBag.Destination</h1>
     <p class="lead">@ViewBag.Description</p>
+    
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639193812657">
+        <img src="~/Images/Icons/call-white.png" width="18" class="prod-contact-icon" /><strong>Smart:</strong> (+63) 909-076-1575
+    </a><br />
+
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639954508517">
+        <img src="~/Images/Icons/call-white.png" width="18" class="prod-contact-icon" /><strong>Globe:</strong> (+63) 916-755-8473
+    </a><br />
+
+    <a class="btn btn-success rsv-call-btn rsv-call-text" href="mailto:travel.realbreeze@gmail.com" style="font-size:13px;">
+        <img src="~/Images/Icons/email-white.png" width="18" class="prod-contact-icon" /><strong >Email:</strong> travel.realbreeze@gmail.com
+    </a><br />
 
     <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+63822971831">
-        <strong>LandLine:</strong> (+63) 82 297 1831
+        <img src="~/Images/Icons/landline-phone.png" width="18" class="prod-contact-icon" /><strong>LandLine:</strong> (+63) 82 333 5157
     </a><br />
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639193812657">
-        <strong>Smart:</strong> (+63) 909-076-1575
-    </a><br />
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639954508517">
-        <strong>Globe:</strong> (+63) 916-755-8473
-    </a><br />
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="mailto:travel.realbreeze@gmail.com">
-        <strong>Email:</strong> travel.realbreeze@gmail.com
-    </a><br />
+
+    <p style="margin-top:10px;">
+        <a href="https://api.whatsapp.com/send?phone=639167558473">
+            <button class="btn btn-success">
+                <img src="~/Images/Icons/whatsapp-original.png" width="25" /><br />
+                <text style="font-size:8px;">WhatsApp</text>
+            </button>
+        </a>
+        <a href="https://m.me/realbreezeCebu">
+            <button class="btn btn-success">
+                <img src="~/Images/Icons/fb-messenger-original.png" width="25" /><br />
+                <text style="font-size:8px;">Messenger</text>
+            </button>
+        </a>
+        <a href="viber://chat?number=639167558473">
+            <button class="btn btn-success" style="padding:6px 14px;">
+                <img src="~/Images/Icons/viber-original.png" width="25" /><br />
+                <text style="font-size:8px;">Viber</text>
+            </button>
+        </a>
+        <a href="https://m.me/realbreezeCebu">
+            <button class="btn btn-success" style="padding:6px 14px;">
+                <img src="~/Images/Icons/line-original.png" width="25" /><br />
+                <text style="font-size:8px;">Line</text>
+            </button>
+        </a>
+    </p>
 
     <a>
         @Html.ActionLink("Choose another destination", "Index", new { option = 1 }, new { @class = "btn btn-primary btn-lg" })
@@ -79,7 +109,10 @@
         case "MALAYSIA":
             Html.RenderPartial("MalaysiaPackages/PartialViewMalaysia");
             break;
+        case "CEBU":
+            Html.RenderPartial("CebuPackages/PartialViewCebu");
+            break;
     }
-    
+
 }
 

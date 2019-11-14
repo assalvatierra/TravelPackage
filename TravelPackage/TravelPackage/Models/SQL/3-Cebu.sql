@@ -37,16 +37,16 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 -- oslob dolphin watching                
 (34,'/Images/Destinations/Cebu/Oslob/whale-shark-oslob.jpg','Whale Shark','Whale Shark',1),
 (34,'/Images/Destinations/Cebu/Oslob/whale-shark.jpg','Whale Shark','Whale Shark',2)
+
 ;
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
-(1,32),(1,33),(1,34)       -- Cebu
+(1,32),(1,33),(1,34)      -- Cebu
 ; 
 
 
 Insert into tpKeywords([Keyword],[tpProductsId]) values
-
 ('Cebu','29'),('Tour','29'),('Travel','29'),('Vacation','29'),('Package','29'),
 ('Cebu','30'),('Tour','30'),('Travel','30'),('Vacation','30'),('Package','30'),
 ('Cebu','31'),('Tour','31'),('Travel','31'),('Vacation','31'),('Package','31')

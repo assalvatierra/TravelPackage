@@ -279,6 +279,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-TravelPackage-20170726021530.mdf" />
+    <Content Include="App_Data\aspnet-TravelPackage-20170726021530_log.ldf">
+      <DependentUpon>aspnet-TravelPackage-20170726021530.mdf</DependentUpon>
+    </Content>
     <Content Include="bin\TravelPackage.dll" />
     <Content Include="bin\TravelPackage.pdb" />
     <Content Include="Content\bootstrap.css" />
@@ -421,6 +425,18 @@
     <Content Include="Images\Destinations\Camiguin\attraction_camiguinMantigueIsland.jpg" />
     <Content Include="Images\Destinations\Camiguin\attraction_camiguinpond.jpg" />
     <Content Include="Images\Destinations\Camiguin\CamiguinTourPackageDefault.jpg" />
+    <Content Include="Images\Destinations\Cebu\Canyoneering-Moalboal\Canyoneering-Moalboal.png" />
+    <Content Include="Images\Destinations\Cebu\Cebu-Oceanpark\Cebu-City-Oceanpark.png" />
+    <Content Include="Images\Destinations\Cebu\Cebu-Oceanpark\Cebu-Oceapark.png" />
+    <Content Include="Images\Destinations\Cebu\Kawasan-Moalboal\Cebu-Kawasan-Moalboal-Tour.png" />
+    <Content Include="Images\Destinations\Cebu\Kawasan-Moalboal\Kawasan-falls-2017-1024x737.jpg" />
+    <Content Include="Images\Destinations\Cebu\Kawasan-Moalboal\moalboal-turtle-point.jpg" />
+    <Content Include="Images\Destinations\Cebu\Kawasan-Moalboal\Pescador-Island.jpg" />
+    <Content Include="Images\Destinations\Cebu\Kawasan-Moalboal\sardine-run.jpg" />
+    <Content Include="Images\Destinations\Cebu\Oslob\FB-CEB-Oslob-Whale-Watching-Tour.png" />
+    <Content Include="Images\Destinations\Cebu\Simala-Cebu-Oceanpark\Simala-Cebu-Oceanpark.png" />
+    <Content Include="Images\Destinations\Cebu\Simala-Cebu-Tour-Package\Simala-Cebu-Tour-Package.png" />
+    <Content Include="Images\Destinations\Cebu\Simala-Cebu-Tour-Package\Simala-Cebu-Tour.png" />
     <Content Include="Images\Destinations\Cebu\Twin-city\cebu-twin-city-tour.jpg" />
     <Content Include="Images\Destinations\Cebu\Mactan-Islands\Mactan-Island-Hopping.jpg" />
     <Content Include="Images\Destinations\Cebu\Mactan-Islands\Caohagan-Island.jpg" />
@@ -430,6 +446,7 @@
     <Content Include="Images\Destinations\Cebu\Oslob\whale-shark-oslob.jpg" />
     <Content Include="Images\Destinations\Cebu\Oslob\whale-shark.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Cebu-Heritage-Monument.jpg" />
+    <Content Include="Images\Destinations\Cebu\Twin-city\FB-CEB-Tour.png" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Fort-San-Pedro.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Guitar-Factory.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Mactan-Shrine.jpg" />
@@ -438,6 +455,9 @@
     <Content Include="Images\Destinations\Cebu\Twin-city\Pasalubong-Center.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Sto-Nino-Cathedral.jpg" />
     <Content Include="Images\Destinations\Cebu\Twin-city\Taoist-Temple.jpg" />
+    <Content Include="Images\Destinations\Cebu\Whaleshark-Kawasan\Oslob-Whale-Kawasan.png" />
+    <Content Include="Images\Destinations\Cebu\Whaleshark-Sumilon-Kawasan\Whaleshark-Sumilon-Kawasan.png" />
+    <Content Include="Images\Destinations\Cebu\Whaleshark-Sumilon-Tumalog\Oslob-Whale-sumilon-tumalog.png" />
     <Content Include="Images\Destinations\Ilocos\Baler\Baler-Beach.jpg" />
     <Content Include="Images\Destinations\Ilocos\Baler\Aurora-House.JPG" />
     <Content Include="Images\Destinations\Ilocos\Baler\Baler-Tour-Package.jpg" />
@@ -618,7 +638,18 @@
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\Tabon-Cave-tour.jpg" />
     <Content Include="Images\Destinations\Palawan\PuertoPrincesa\underground-river-tour.jpg" />
     <Content Include="Images\El_Nido_Palawan.jpg" />
+    <Content Include="Images\Icons\call-white.png" />
+    <Content Include="Images\Icons\email-white.png" />
+    <Content Include="Images\Icons\fb-messenger-original.png" />
+    <Content Include="Images\Icons\fb-messenger-white.png" />
     <Content Include="Images\Icons\icons-phone.png" />
+    <Content Include="Images\Icons\landline-phone.png" />
+    <Content Include="Images\Icons\line-original.png" />
+    <Content Include="Images\Icons\line-white.png" />
+    <Content Include="Images\Icons\viber-original.png" />
+    <Content Include="Images\Icons\viber-white.png" />
+    <Content Include="Images\Icons\whatsapp-original.png" />
+    <Content Include="Images\Icons\whatsapp-white.png" />
     <Content Include="Images\Korea.jpg" />
     <Content Include="Images\MALAYSIA.jpg" />
     <Content Include="Images\PALAWAN.jpg" />
@@ -630,6 +661,8 @@
     <Content Include="Images\SamalTour.png" />
     <Content Include="Images\Singapore.jpg" />
     <Content Include="Images\Thailand.jpg" />
+    <Content Include="Models\SQL\0-Initial-All.sql" />
+    <Content Include="Models\SQL\7-Cebu-new.sql" />
     <Content Include="Models\SQL\6-Baguio.sql" />
     <Content Include="Models\SQL\5-Ilocos.sql" />
     <Content Include="Models\SQL\4-International.sql" />
@@ -822,10 +855,20 @@
     <Content Include="Views\Home\IlocosPackages\BalerTour.cshtml" />
     <Content Include="Views\Home\BaguioPackages\BaguioTour.cshtml" />
     <Content Include="Views\Home\IlocosPackages\Ilocos4D3NTour.cshtml" />
+    <Content Include="Views\Home\CebuPackages\PartialViewCebu.cshtml" />
+    <Content Include="Views\Home\CebuPackages\CebuWhaleSharkTumalog.cshtml" />
+    <Content Include="Views\Home\BoholPackages\3d2nCountryside - Copy.cshtml" />
+    <Content Include="Views\Home\CebuPackages\CebuKawasanMoalboal.cshtml" />
+    <Content Include="Views\Home\CebuPackages\CanyoneeringMoalboal.cshtml" />
+    <Content Include="Views\Home\CebuPackages\OslobWhalesharkKawasan.cshtml" />
+    <Content Include="Views\Home\CebuPackages\OslobWhalesharkSumilonKawasan.cshtml" />
+    <Content Include="Views\Home\CebuPackages\SimalaCebuOceanparkTour.cshtml" />
+    <Content Include="Views\Home\CebuPackages\OslobWhalesharkSumilonTumalog - Copy.cshtml" />
+    <None Include="Views\Home\CebuPackages\OslobWhalesharkSumilonTumalog.cshtml" />
+    <Content Include="Views\Home\CebuPackages\SimalaCebuTour.cshtml" />
+    <Content Include="Views\Home\CebuPackages\CebuOceanparkTour.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

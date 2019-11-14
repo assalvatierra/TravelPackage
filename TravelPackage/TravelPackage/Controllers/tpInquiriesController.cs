@@ -17,7 +17,7 @@ namespace TravelPackage.Controllers
         // GET: tpInquiries
         public ActionResult Index()
         {
-            return View(db.tpInquiries.Include(c=>c.tpInqServices).ToList());
+            return View(db.tpInquiries.Include(c=>c.tpInqServices).OrderByDescending(c=>c.Id).ToList());
         }
 
         // GET: tpInquiries/Details/5

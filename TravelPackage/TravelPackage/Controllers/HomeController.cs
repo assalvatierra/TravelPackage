@@ -245,12 +245,10 @@ namespace TravelPackage.Controllers
             Session["INQUIRYOBJ"] = wif; //update session inquiry
 
             //send email
-            email.SendMail(tpInq.Id, "travel.realbreeze@gmail.com");
-            email.SendMail(tpInq.Id, "realbreezedavao@gmail.com");
-            //email.SendMail(tpInq.Id, "inquiries.realwheels@gmail.com");
-
-            //email.SendMail(tpInq.Id, "jahdielsvillosa@gmail.com");
-
+            email.SendMailRedirect(tpInq.Id, "travel.realbreeze@gmail.com");
+            email.SendMailRedirect(tpInq.Id, "realbreezedavao@gmail.com");
+            email.SendMailRedirect(tpInq.Id, "reservation.realwheels@gmail.com");
+            
             if (wif.Status == "QUOTE")
             {
                 return RedirectToAction("RequestQuote", new { id = product.tpAreasId } );

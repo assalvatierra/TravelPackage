@@ -106,12 +106,11 @@ namespace TravelPackage.Models
                 //send email in /joborder
                 tpInqServices inquiry = db.tpInqServices.Find(InqId);
 
-                md.Subject = inquiry.tpInquiry.LeadGuest + ": Inquiry";   //mail title
+                md.Subject = " New Inquiry";   //mail title
 
                 //mail content for client inquiries
-
-                message = "<div style=';margin-left:25%;margin-right:10%;font-size:18px;text-align:left;'>" +
-                 "<a href='http://realbreezetravel.com/tpInquiries'> Please Follow this link </text><br /></div />";
+                message = "<div style=';margin-left:40%;margin-right:10%;font-size:18px;text-align:left;'>" +
+                          "<a href='http://realbreezetravel.com/tpInquiries'> Please Follow this link </text><br /></div />";
 
                 body =
                     " <div style='background-color:#f4f4f4;padding:20px' align='center'>" +

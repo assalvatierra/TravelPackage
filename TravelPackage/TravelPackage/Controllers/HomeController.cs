@@ -305,7 +305,7 @@ namespace TravelPackage.Controllers
         public DateTime GetCurrentTime()
         {
             DateTime _localTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Singapore Standard Time"));
-            _localTime = _localTime.Date;
+            //_localTime = _localTime.Date;
 
             return _localTime;
         }

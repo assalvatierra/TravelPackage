@@ -66,7 +66,7 @@ namespace TravelPackage.Models
                 MailMessage msg = md.CreateMailMessage(recieverMail, replacements, body, new System.Web.UI.Control());
 
                 SmtpServer.Port = 587;          //default smtp port
-                SmtpServer.Credentials = new System.Net.NetworkCredential("admin@realwheelsdavao.com", "Real123!");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("Realwheels.Reservation@realwheelsdavao.com", "Real123!");
                 SmtpServer.EnableSsl = false;   //enable for gmail smtp server
                 System.Net.ServicePointManager.Expect100Continue = false;
                 SmtpServer.Send(msg);           //send message
@@ -112,18 +112,20 @@ namespace TravelPackage.Models
                 message = "<div style=';margin-left:40%;margin-right:10%;font-size:18px;text-align:left;'>" +
                           "<a href='http://realbreezetravel.com/tpInquiries'> Please Follow this link </text><br /></div />";
 
-                body =
+                body = 
                     " <div style='background-color:#f4f4f4;padding:20px' align='center'>" +
                     " <h1> Realbreeze Travel </h1> " +
                     " <div style='background-color:white;min-width:250px;margin-left:15px;padding:30px;text-align:center;'> <h1>Inquiry Details</h2>" +
-                     message +
+                      message +
                     " </div></div>" +
-                    "";
+                    " ";
 
                 MailMessage msg = md.CreateMailMessage(recieverMail, replacements, body, new System.Web.UI.Control());
 
                 SmtpServer.Port = 587;          //default smtp port
-                SmtpServer.Credentials = new System.Net.NetworkCredential("admin@realwheelsdavao.com", "Real123!");
+                SmtpServer.Credentials = new System.Net.NetworkCredential(
+                   System.Web.Configuration.WebConfigurationManager.AppSettings["SmtpEmail"],
+                   System.Web.Configuration.WebConfigurationManager.AppSettings["SmtpPass"]);
                 SmtpServer.EnableSsl = false;   //enable for gmail smtp server
                 System.Net.ServicePointManager.Expect100Continue = false;
                 SmtpServer.Send(msg);           //send message

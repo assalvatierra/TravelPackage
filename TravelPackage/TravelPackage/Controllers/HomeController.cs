@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,6 +15,11 @@ namespace TravelPackage.Controllers
     {
         private TravelDBContainer db = new TravelDBContainer();
         private EmailHandler email = new EmailHandler();
+        public ActionResult Index24(int? option)
+        {
+
+            return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
+        }
         public ActionResult Index(int? option)
         {
             if ( option == 1 ) return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
@@ -104,6 +110,7 @@ namespace TravelPackage.Controllers
             }
             wif.ProductId = (int)id;
             wif.JobStart = DateTime.Today;
+            wif.Status = "INQUIRY";
 
             ViewBag.Inquiry = wif;
             ViewBag.DestId = product.tpAreasId;
@@ -128,7 +135,7 @@ namespace TravelPackage.Controllers
             //Backlinks
             ViewBag.Backlinks = db.tpBacklinks.Where(d=>d.LinkType=="PRODUCT").ToList();
 
-
+            
             ViewBag.metaTitle = product.Name + " - " + product.tpArea.Name + " Travel|Tour Packages - " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString() + ")";
             ViewBag.metaDescription = product.Name + " Vacation, Adventure Tour, Travel and Holiday Packages to " + product.tpArea.Name;
             ViewBag.subTitle = product.tpArea.Name + " Travel and Tour Packages - " + DateTime.Now.Year.ToString() + "-" + (DateTime.Now.Year + 1).ToString();
@@ -136,12 +143,16 @@ namespace TravelPackage.Controllers
         }
 
         [HttpPost]
-        public ActionResult Product([Bind( Include = "ProductId, LeadGuest, ContactNo, Email, NoOfAdult, NoOfChild, JobStart, Message, Status")] WebInquiryForm wif, string btnSubmit)
+        public ActionResult Product([Bind( Include = "ProductId, LeadGuest, ContactNo, Email, NoOfAdult, NoOfChild, JobStart, Message, Status")] WebInquiryForm wif, string btnSubmit, string JobStart)
         {
            
             try
             {
-                if (ModelState.IsValid)
+                //override
+                wif.JobStart = DateTime.ParseExact(JobStart, "d", CultureInfo.InvariantCulture); 
+
+                //if (ModelState.IsValid)
+                if(ValidateInquiryForm(wif))
                 {
 
                     //add product for inquiry/book 
@@ -158,15 +169,16 @@ namespace TravelPackage.Controllers
                     if (btnSubmit == "Book this Product") wif.Status = "BOOK";
 
                     Session["INQUIRYOBJ"] = wif; //update session web inquiry object
+
+                    return RedirectToAction("RequestProduct");
                 }
+                return RedirectToAction("RequestInvalid");
 
-
-                return RedirectToAction("RequestProduct");
             }
             catch (Exception e)
             {
                 ViewBag.errormsg = e.Message.Trim(); //for debugging purposes only
-                return RedirectToAction("RequestProduct");
+                return RedirectToAction("RequestInvalid");
             }
         }
 
@@ -245,11 +257,14 @@ namespace TravelPackage.Controllers
             Session["INQUIRYOBJ"] = wif; //update session inquiry
 
             //send email
-            //email.SendMailRedirect(tpInq.Id, "travel.realbreeze@gmail.com");
-            email.SendMailRedirect(tpInq.Id, "realbreeze.cebu@gmail.com");
-            email.SendMailRedirect(tpInq.Id, "realbreezedavao@gmail.com");
+            email.SendMailRedirect(tpInq.Id, "travel.realbreeze@gmail.com");
+            //email.SendMailRedirect(tpInq.Id, "realbreeze.cebu@gmail.com");
+            //email.SendMailRedirect(tpInq.Id, "realbreezedavao@gmail.com");
             //email.SendMailRedirect(tpInq.Id, "reservation.realwheels@gmail.com");
-            
+
+            //for testing
+            // var test = email.SendMailRedirect(tpInq.Id, "jahdielsvillosa@gmail.com");
+
             if (wif.Status == "QUOTE")
             {
                 return RedirectToAction("RequestQuote", new { id = product.tpAreasId } );
@@ -265,6 +280,18 @@ namespace TravelPackage.Controllers
         }
 
         public ActionResult RequestQuote(int? id)
+        {
+            WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
+
+            var addons = db.tpProdCats.Where(d => d.tpCategory.SysCode == "ADDON").Select(s => s.tpProductsId);
+            ViewBag.Addons = db.tpProducts.Where(d => d.tpAreasId == id && addons.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
+            ViewBag.Added = db.tpInqServices.Where(d => d.tpInquiryId == wif.Id);
+            ViewBag.RefNo = wif.Id;
+            return View();
+        }
+
+
+        public ActionResult RequestInvalid(int? id)
         {
             WebInquiryForm wif = (WebInquiryForm)Session["INQUIRYOBJ"];
 
@@ -309,6 +336,33 @@ namespace TravelPackage.Controllers
             //_localTime = _localTime.Date;
 
             return _localTime;
+        }
+
+        private bool ValidateInquiryForm(WebInquiryForm inquiryForm)
+        {
+            if ( String.IsNullOrEmpty(inquiryForm.LeadGuest) )
+            {
+                return false;
+            }
+
+            if (inquiryForm.NoOfAdult == 0)
+            {
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(inquiryForm.Email))
+            {
+                return false;
+            }
+
+
+            if (String.IsNullOrEmpty(inquiryForm.ContactNo))
+            {
+                return false;
+            }
+
+
+            return true;
         }
 
         #region Dynamic SiteMap 

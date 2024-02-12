@@ -53,3 +53,130 @@ textarea {
         visibility:hidden !important;
     }
 }
+
+.rsv-call-btn {
+    width:254px;
+}
+
+.product-contact{
+    padding:1px 10px 20px 20px;
+    font-size:18px;
+    color:white;
+    background-color:dodgerblue;
+}
+
+.product-contact a{
+    color:orange;
+}
+
+
+.product-contact-img {
+   margin-top: 50%;
+   margin-left: 10%;
+}
+
+.product-img{
+    width:100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .product-contact-img {
+       margin-top: 10%;
+    }
+    .product-img{
+        width:180px;
+    }
+}
+
+
+
+/*  Gallery  */
+
+.gallery {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%;
+}
+
+.gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease; 
+}
+
+.gallery .animation 
+{
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); 
+}
+
+@media (max-width: 450px) {
+    .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+    }
+}
+
+.home{
+    background-image: url('../Images/RealbreezeTravel-Banner-2.jpg');
+}
+
+.CEBU{
+    background-image: url('../Images/Cebu.jpg');
+}
+
+.BOHOL{
+    background-image: url('../Images/Bohol.jpg');
+}
+
+.CORON {
+    background-image: url('../Images/Palawan.jpg');
+}
+
+.EL {
+    background-image: url('../Images/Palawan.jpg');
+}
+
+.PUERTO {
+    background-image: url('../Images/Palawan.jpg');
+}
+
+.MALAYSIA {
+    background-image: url('../Images/MALAYSIA.jpg');
+}
+
+.SINGAPORE {
+    background-image: url('../Images/Singapore.jpg');
+}
+
+.THAILAND {
+    background-image: url('../Images/Thailand.jpg');
+}
+
+.KOREA {
+    background-image: url('../Images/Korea.jpg');
+}
+.banner{
+    height:100%;
+    width:auto;
+    object-fit: cover;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+
+/* Product Contact */
+.prod-contact-link{
+    color:white;
+}
+.prod-contact-icon{
+    margin-bottom:2px;
+    margin-right:2px;
+}

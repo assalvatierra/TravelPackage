@@ -25,6 +25,7 @@ $(document).ready(function () {
 
 
     InitDatePicker();
+
     initFieldEvents();
 })
 
@@ -40,30 +41,28 @@ function InitDatePicker() {
         }
     },
     function (start, end, label) {
-        //alert(start.format('YYYY-MM-DD h:mm A'));
         checkvalues();
+        validation(start);
     }
     );
 }
 
 //unused block
 function initFieldEvents() {
-    $('#LeadGuest').on('change', function () {
+    $('#leadguest').on('change', function () {
         checkvalues();
     });
     $('#NoOfAdult').on('change', function () {
         checkvalues();
     });
-    $('#Email').on('change', function () {
+    $('#guestEmail').on('change', function () {
         checkvalues();
     });
 
-    $('#ContactNo').on('change', function () {
+    $('#guestContact').on('change', function () {
         checkvalues();
     });
-    $('#NoOfChild').on('change', function () {
-        checkvalues();
-    });
+
     $('#Message').on('change', function () {
         checkvalues();
     });
@@ -73,8 +72,7 @@ function initFieldEvents() {
 function checkvalues() {
     var isOK = 0;
     
-
-    var leadguest = $('#LeadGuest').val();
+    var leadguest = $('#leadguest').val();
     if (leadguest.trim().length > 0) isOK = 1;
     else {
         isOK = 0;
@@ -82,9 +80,9 @@ function checkvalues() {
     }
 
     if (isOK == 1) {
-        var email = $('#Email').val();
+        var email = $('#guestEmail').val();
         if (email.trim().length > 0) {
-            if (ValidateEmail(email)) isOK = 1;
+            if (validateMail(email)) isOK = 1;
             else {
                 isOK = 0;
                 sMsg = "Valid Email is required!";
@@ -108,16 +106,106 @@ function checkvalues() {
     return isOK;
 }
 
-function ValidateEmail(mail) {
 
-    var x = mail;
-    var atpos = x.indexOf('@');
-    var dotpos = x.lastIndexOf(".");
-    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
-        //alert("Not a valid e-mail address");
-        return (false);
+function validation(startdate) {
+    var flag = true;
+    var message = "";
+
+    if (!validateDates(startdate)) {
+        flag = false;
+        message = "Start Date must be 5 days from today";
+        console.log("Start Date must be 5 days from today");
+    }
+   // console.log("flag: " + flag);
+
+    if ($('#guestContact').val() == "") {
+        flag = false;
+        message = "Contact Number field is empty";
     }
 
-    return (true);
+    if (!validatePhone($('#guestContact').val())) {
+        flag = false;
+        message = "Contact Number is invalid";
+        console.log("contact invalid");
+    }
+
+    if ($('#guestEmail').val() == "") {
+        flag = false;
+        message = "Email field is empty";
+    }
+
+    if (!validateMail($('#guestEmail').val())) {
+        flag = false;
+        message = "Email is invalid";
+        console.log("email invalid");
+    } 
+
+    if ($('#leadguest').val() == "") {
+        flag = false;
+        message = "Lead Guest field is empty";
+    }
+
+
+    if (flag) {
+        $("#btnSubmit1").prop('disabled', false);
+        message = "";
+        $('#FormMsg').text(message);
+    } else {
+        $('#FormMsg').text(message);
+        $("#btnSubmit1").prop('disabled', true);
+    }
 }
 
+function validatePhone(txtPhone) {
+    var filter = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/;
+    if (filter.test(txtPhone)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+function validateMail(mail) {
+    var filter = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (filter.test(mail)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+function validateDates(start) {
+    //Check dates
+    var datetoday = new Date();
+    datetoday = moment(datetoday).format("YYYY-MM-DD");
+    var dateAddFive = moment(datetoday, "YYYY-MM-DD").add(5, 'days');
+    var startdate = moment(start).format("YYYY-MM-DD");
+
+    //alert(startdate);
+    //alert(datetoday); 
+    //console.log(start);
+
+    var isafter = moment(startdate).isAfter(dateAddFive);
+    //alert(isafter
+    console.log(isafter);
+
+    return isafter;
+
+}
+
+
+$('#leadguest').change(function () {
+    validation();
+});
+
+$('#guestContact').change(function () {
+    validation();
+});
+
+$('#guestEmail').change(function () {
+    validation();
+});

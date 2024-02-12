@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TravelPackage.Models.tpInquiry>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+           Job Date
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadGuest)
+        </th>
+        <th>
+            Area - Package
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfChild)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfAdult)
+        </th>
+        <th>
+           Remarks
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtInquiry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeadGuest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tpInqServices.Where(s => s.tpInquiryId == item.Id).FirstOrDefault().tpProduct.tpArea.Name) - 
+            @Html.DisplayFor(modelItem => item.tpInqServices.Where(s => s.tpInquiryId == item.Id).FirstOrDefault().tpProduct.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tpInqServices.Where(s => s.tpInquiryId == item.Id).FirstOrDefault().dtSvcStart) 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfChild)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfAdult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tpInqServices.Where(s => s.tpInquiryId == item.Id).FirstOrDefault().Message)
+        </td>
+    </tr>
+}
+
+</table>

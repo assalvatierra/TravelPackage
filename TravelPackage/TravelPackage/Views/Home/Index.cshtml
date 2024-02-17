@@ -3,143 +3,268 @@
 @{
     ViewBag.metaTitle = "Travel, Vacation and Tour Packages in Philippines";
     ViewBag.metaDescription = "We are travel agency that provides affordable tour, vacation and travel packages to popular tourist destinations in the philippines.";
-}           
+}
 
-<div class="jumbotron home banner">
-    <h1>Welcome to Philippines!</h1>
-    <p>Get a well planned travel, relax and sound vacation, exciting and optimized tour</p>
-    <p class="lead">Find your best package here!</p>
-    <p>@ViewBag.UriArea</p>
+<!-- banner -->
+<div class="travel-banner">
+    <div>
 
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639193812657">
-        <img src="~/Images/Icons/call-white.png" width="18" class="prod-contact-icon" /><strong>Smart:</strong> (+63) 909-076-1575
-    </a><br />
-
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+639954508517">
-        <img src="~/Images/Icons/call-white.png" width="18" class="prod-contact-icon" /><strong>Globe:</strong> (+63) 916-755-8473
-    </a><br />
-
-    <a class="btn btn-success rsv-call-btn rsv-call-text" href="mailto:realbreeze.cebu@gmail.com" style="font-size:13px;">
-        <img src="~/Images/Icons/email-white.png" width="18" class="prod-contact-icon" /><strong >Email:</strong> realbreeze.cebu@gmail.com
-    </a><br />
-
-    @*<a class="btn btn-success rsv-call-btn rsv-call-text" href="tel:+63822971831">
-        <img src="~/Images/Icons/landline-phone.png" width="18" class="prod-contact-icon" /><strong>LandLine:</strong> (+63) 82 333 5157
-    </a><br />*@
-    <p style="margin-top:10px;" >
-        <a href="https://api.whatsapp.com/send?phone=639167558473">
-            <button class="btn btn-success">
-                <img src="~/Images/Icons/whatsapp-original.png" width="25" /><br />
-                <text style="font-size:8px;">WhatsApp</text>
-            </button>
-        </a>
-        <a href="https://m.me/realbreezeCebu">
-            <button class="btn btn-success">
-                <img src="~/Images/Icons/fb-messenger-original.png" width="25" /><br />
-                <text style="font-size:8px;">Messenger</text>
-            </button>
-        </a>
-        <a href="viber://chat?number=639167558473">
-            <button class="btn btn-success" style="padding:6px 14px;">
-                <img src="~/Images/Icons/viber-original.png" width="25" /><br />
-                <text style="font-size:8px;">Viber</text>
-            </button>
-        </a>
-        <a href="line://oaMessage/realbreeze/">
-            <button class="btn btn-success" style="padding:6px 14px;">
-                <img src="~/Images/Icons/line-original.png" width="25" /><br />
-                <text style="font-size:8px;">Line</text>
-            </button>
-        </a>
-    </p>
-
+        <h1 style="font-size:80px;color:midnightblue;" > Enjoy your life <br /> and go explore </h1>
+        <p style="font-size:25px;color:black;"> Enjoy breathaking view of the nature <br />
+        Relax and cherish your dreams to the fullest.</p>
+    </div>
 </div>
 
-<div class="row">
+<!-- contents -->
+<div class="container">
+    <!-- Search / Booking -->
+    <div class="booking-search-form form-inline">
+        <div class="form-group mb-1 search-input">
+            <label> Location </label>
+            @*<input type="text" name="Input-location" class="form-control" />*@
 
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4" >
-            <h2>@item.Name</h2>
-            <a href="@Url.Action("Destination",new { AreaName = @item.Name })" title="@item.Name">
-                <img width="100%" src="@item.PgFeatureImg" alt="@item.Name Tour Package">
-            </a>
-            <p>@item.PageRemarks</p>
-            <p>
-                @Html.ActionLink("GO TO " + @item.Name + " >>", "Destination", new {AreaName = @item.Name }, new { @class = "btn btn-default" } )
-            </p>
+            <select id="input-Location" class="form-control" style="width:10rem;">
+                <option selected>Location</option>
+                <option>Davao City</option>
+                <option>Cebu City</option>
+                <option>Bohol City</option>
+            </select>
         </div>
-    }
+        <div class="form-group mb-1  search-input">
+            <label> Tour </label>
+            <select id="inputState" class="form-control" style="width:12rem;">
+                <option selected>Activity</option>
+                <option>City Tour</option>
+                <option>Countryside Tour</option>
+                <option>Island Hopping</option>
+            </select>
+        </div>
+        <div class="form-group mb-1  search-input">
+            <label> Date Start</label>
+            <input type="date" name="Input-date-start" class="form-control" id="" />
+        </div>
+        <div class="form-group mb-1  search-input">
+            <label> Date End </label>
+            <input type="date" name="Input-date-end" class="form-control" />
+        </div>
+        <div class="form-group mb-1  search-input">
+            <label> Guests </label>
+            <input type="number" name="Input-noGuests" class="form-control" style="width:10rem;" value="2" />
+        </div>
+        <button class="btn btn-primary mb1" style=" margin-top: 20px; margin-left: 10px; padding: 10px 40px; "> Search </button>
+    </div>
+
+
+
+    <div class="Tour-Packages-List">
+        <div class="row" style="margin-bottom:30px;">
+            <h2 class="tour-section-title"> Popular Tours </h2>
+            <a href="#" style="padding-top:10px;margin-left:20px;"> View All Tours > </a>
+        </div>
+        <div class="row" style="margin-bottom:120px;">
+            @foreach (var products in ViewBag.FeaturedTour as IEnumerable<TravelPackage.Models.tpProducts>)
+            {
+
+
+                <div class="tour-package-card col-lg-3 col-md-4  col-sm-6">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <a href="@Url.Action("Product", new { id = products.Id, ProductName = products.Name })">
+
+                                <img class="card-img-top" src="@products.PgFeatureImg" alt="Card image cap">
+
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-card-bold">@products.Name</h5>
+                            <p class="home-product-description"> @products.ShortRemarks </p>
+                            <p class="card-text"> <small class="text-muted">Price : <span style="color: mediumseagreen;"> P-PPP </span>  </small> </p>
+                            <a href="@Url.Action("Product", new { id = products.Id, ProductName = products.Name })" class="card-link">More information ></a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
 
 </div>
-<hr />
-<div class="row">
-    <h3>Real Breeze Travel and Tours</h3>
-    <p>
-        <b><a href="http://www.realbreezetravel.com/">Real Breeze Travel and Tours</a></b> is travel agency providing services for your various travel and
-        vacation needs. If you are looking for a package tour for your vacation or travel in Philippines,
-        that is flexible and suits your needs at the best available price from a reliable company, you
-        can check with us for the best offers.
-    </p>
-    <p>
-        <b><a href="http://www.realbreezetravel.com/">Real Breeze Travel and Tours</a></b>, established in Davao City last 2015, is one of the leading 
-        <a href="http://www.realbreezetravel.com/"> travel agencies </a>in Davao City and continue to expand its services to his partners throughout the country
-        specially in <a href="http://realbreezedavaotours.com/"> Davao </a>, <a href="http://www.realbreezetravel.com/CEBU">Cebu</a>,
-        <a href="http://www.realbreezetravel.com/BOHOL">Bohol</a>, <a href="http://www.realbreezetravel.com/EL NIDO"> El Nido</a>,
-        <a href="http://www.realbreezetravel.com/CORON">Coron</a>, <a href="http://www.realbreezetravel.com/PUERTO PRINCESA">Puerto Princesa</a>
-        and other top destinations in the country. Real Breeze is eager to share to his guests the experiences,
-        landscapes, nature and people’s culture and lifestyle of the country.
-    </p>
-    <p>
-        <b>We offer variety of services such as</b>
-    </p>
-    <p>
-        <b>All-inclusive package tours</b> – if you want to include in the tour package all necessary expenses such 
-        as meals, accommodation, airport transfers and transportation. 
-    </p>
-    <p>
-        <b>Land arrangements, flexible tours and optional tours</b> – we also offer a flexible type of tour package 
-        where you can omit some options from the package. You can book your hotel and you have the option to avail 
-        our flexible day tour packages. It gives you more freedom on your daily activities during your vacation.
-    </p>
-    <p>
-        <b>Vacation packages, free and easy, air and hotel packages</b> - we can offer hotel packages and can incorporate 
-        hotel transfers for peace of mind. You may decide later for your daily activities once you’re in the city. 
-        With the variety of options in the city, surely you can adjust to your needs and budget. 
-    </p>
-    <p>
-        <b>Transportation (van, car and boat) arrangements</b> – We can arrange your transportation needs and you can 
-        have your own itinerary or follow our standard tour itinerary. You have the option which destinations to 
-        visit or skip. 
-    </p>
-    <p>
-        <b>Airport and hotel transfers</b> – sometimes, airport to hotel and hotel to airport is a difficult and one of 
-        the most tiring part when you travel due to the luggage and bags you carry. Keep your belongings safe by 
-        availing our car rental airport hotel transfer services.
-    </p>
-    <p>
-        <strong>Smart:</strong> 
-        <a  href="tel:+639193812657">
-            (+63) 909-076-1575
-        </a><br />
 
-        <strong>Globe:</strong>
-        <a  href="tel:+639954508517">
-            (+63) 916-755-8473
-        </a><br />
+<!-- Featured Activities -->
+<div class="div-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12" style="margin-top: 100px;">
+                <h2> Featured Activities </h2>
+                <p style="margin-top: 30px;">
+                    Go wild, go slow, go smooth, go solo – an adventure is what you make of it.
+                    Choose one style or create a package, fill your passports with adventures together.
+                </p>
+                <a href="#" style="margin-top: 30px;">
+                    Browse all activities >
+                </a>
+            </div>
+            <div class="col-lg-8 col-sm-12 featured-activities-items" >
+                <div class="activity-bg-img">
+                    <h4> City Tours </h4>
+                </div>
+                <div class="activity-bg-img" style="background-image:url('/Images/Destinations/Palawan/coron_palawan.jpg')">
+                    <h4> Island Hopping </h4>
+                </div>
+                <div class="activity-bg-img" style="background-image:url('/Images/Destinations/Cebu/Canyoneering-Moalboal/Canyoneering.png')">
+                    <h4> Canyoneering </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <strong>WhatsApp:</strong>
-        <a href="https://api.whatsapp.com/send?phone=639167558473">
-            (+63) 916-755-8473
-        </a><br />
 
-        <strong>Email:</strong>
-        <a href="mailto:travel.realbreeze@gmail.com">
-             travel.realbreeze@gmail.com
-        </a><br />
-        @*<strong>LandLine:</strong>
-        <a href="tel:+63823335157">
-            (+63) 82 333 5157
-        </a><br />*@
-    </p>
+
+<!-- Popular Destinations -->
+<div class="container">
+
+    <div class="Tour-Packages-List">
+        <div class="row" style="margin-bottom:30px;">
+            <h2> Popular Destinations </h2>
+            <a href="#" style="padding-top:10px;margin-left:20px;"> View All Tours > </a>
+        </div>
+        <div class="row" style="margin-bottom:120px;">
+            @foreach (var item in Model)
+            { 
+
+                <div class="tour-package-card col-lg-4 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="@item.PgFeatureImg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">@item.Name</h4>
+                            <p class="card-text">@item.PageRemarks</p>
+                            <a href="@Url.Action("Destination",new { AreaName = @item.Name })" class="">More information ></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Services -->
+<div class="div-gray" style="padding-bottom: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12" style="margin-top: 50px;padding-top:100px;">
+                <h2> Services </h2>
+                <p style="margin-top: 30px;">
+                    Go wild, go slow, go smooth, go solo – an adventure is what you make of it. 
+                    Choose one style or create a package, fill your passports with adventures together.
+                </p>
+
+            </div>
+            <div class="col-lg-8  col-sm-12" style="margin-top: 50px;">
+                <div class="row">
+
+                    <div class="col-lg-4 col-sm-6 home-services">
+
+                        <img src="~/Images/Icons/icon-sailing.png"/>
+
+                        <div>
+                            <h3> Tour Packages </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 home-services">
+                        <img src="~/Images/Icons/icon-explore.png"  />
+
+                        <div>
+                            <h3> Air Ticket Booking </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 home-services">
+                        <img src="~/Images/Icons/icon-explore.png" />
+                        <div>
+                            <h3> Transportations Services </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 home-services">
+                        <img src="~/Images/Icons/icon-event.png" />
+                        <div>
+                            <h3> Visa Processing </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 home-services">
+                        <img src="~/Images/Icons/icon-cruise.png"  />
+                        <div>
+                            <h3> Island Hopping </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 home-services">
+                        <img src="~/Images/Icons/icon-Hiking-trekking.png"  />
+                        <div>
+                            <h3> Hotel Booking </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding:100px 0px 100px 0px;">
+    <div class="row" style="display:flex;justify-content:center;margin-bottom:50px;">
+        <h2> CAR RENTALS </h2>
+    </div>
+    <div class="row vehicle-card-container">
+
+        <div class="card card-vehicle">
+            <img class="card-img-top" src="~/Images/CarRental/Toyota-Grandia.png" />
+            <div class="card-body">
+                <h5> Toyota Grandia - Van  </h5>
+                <p> Capacity : 12 persons </p>
+                <p> With Driver </p>
+                <hr />   
+                <div class="card-vehicle-price">
+                    <p>  P3,500 / day</p>
+                    <button class="btn btn-outline-primary" style="margin-left:50px;"> Book </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-vehicle">
+            <img class="card-img-top" src="~/Images/CarRental/Toyota-Fortuner.jpg" />
+            <div class="card-body">
+                
+                <h5> Toyota Fortuner (SUV) </h5>
+                <p> Capacity : 6 persons </p>
+                <p> With Driver </p>
+                
+                <hr />
+                <div class="card-vehicle-price">
+                    <p> P3,500 / day</p>
+                    <button class="btn btn-outline-primary" style="margin-left:50px;"> Book </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-vehicle ">
+            <img class="card-img-top" src="~/Images/CarRental/Toyota-Innova.png" />
+            <div class="card-body">
+                
+                <h5> Toyota Innova (MPV) </h5>
+                <p> Capacity : 6 persons </p>
+                <p> With Driver </p>
+               
+                <hr />
+                <div class="card-vehicle-price">
+                    <p>  P3,500 / day</p>
+                    <button class="btn btn-outline-primary" style="margin-left:50px;"> Book </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="display:flex;justify-content:center;">
+        <button class="btn btn-outline-primary" style="padding:20px 50px;"> View More Vehicles </button>
+    </div>
 </div>

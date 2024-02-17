@@ -303,10 +303,14 @@
     <Content Include="Images\Abreeza-Davao-City.jpg" />
     <Content Include="Images\abreeza-mall.gif" />
     <Content Include="Images\Abreeze-mall.jpg" />
+    <Content Include="Images\Banner\Realbreeze-Travel-bg-2024.png" />
     <Content Include="Images\Banner\TravelBanner-2024.PNG" />
     <Content Include="Images\Bohol-Package.jpg" />
     <Content Include="Images\BOHOL.jpg" />
     <Content Include="Images\Bohol101.jpg" />
+    <Content Include="Images\CarRental\Toyota-Grandia.png" />
+    <Content Include="Images\CarRental\Toyota-Innova.png" />
+    <Content Include="Images\CarRental\Toyota-Fortuner.jpg" />
     <Content Include="Images\CEBU.jpg" />
     <Content Include="Images\CebuCity.jpg" />
     <Content Include="Images\coron_palawan.jpg" />
@@ -487,6 +491,8 @@
     <Content Include="Images\Destinations\Cebu\Whaleshark-Sumilon-Tumalog\Sumilon-Island.png" />
     <Content Include="Images\Destinations\Cebu\Whaleshark-Sumilon-Tumalog\Tumalog-Falls.png" />
     <Content Include="Images\Destinations\Cebu\Whaleshark-Sumilon-Tumalog\whale-shark.jpg" />
+    <Content Include="Images\Destinations\Davao\Davao-Peoples-Park.jpg" />
+    <Content Include="Images\Destinations\Davao\Davao-Phil-Eagle.png" />
     <Content Include="Images\Destinations\Ilocos\Baler\Baler-Beach.jpg" />
     <Content Include="Images\Destinations\Ilocos\Baler\Aurora-House.JPG" />
     <Content Include="Images\Destinations\Ilocos\Baler\Baler-Tour-Package.jpg" />
@@ -671,10 +677,33 @@
     <Content Include="Images\Icons\email-white.png" />
     <Content Include="Images\Icons\fb-messenger-original.png" />
     <Content Include="Images\Icons\fb-messenger-white.png" />
+    <Content Include="Images\Icons\icon-accommodation.png" />
+    <Content Include="Images\Icons\icon-activity.png" />
+    <Content Include="Images\Icons\icon-arrow-blue.png" />
+    <Content Include="Images\Icons\icon-bus.PNG" />
+    <Content Include="Images\Icons\icon-calendar.png" />
+    <Content Include="Images\Icons\icon-cruise.png" />
+    <Content Include="Images\Icons\icon-date.png" />
+    <Content Include="Images\Icons\icon-destination-sm.png" />
+    <Content Include="Images\Icons\icon-destination.png" />
+    <Content Include="Images\Icons\icon-event.png" />
+    <Content Include="Images\Icons\icon-explore.png" />
+    <Content Include="Images\Icons\icon-guest.png" />
+    <Content Include="Images\Icons\icon-Hiking-trekking.png" />
+    <Content Include="Images\Icons\icon-pen.png" />
+    <Content Include="Images\Icons\icon-pin-location.png" />
+    <Content Include="Images\Icons\icon-product-check.png" />
+    <Content Include="Images\Icons\icon-product-ex.png" />
+    <Content Include="Images\Icons\icon-product-highlights-list.png" />
+    <Content Include="Images\Icons\icon-sailing.png" />
+    <Content Include="Images\Icons\icon-time.png" />
+    <Content Include="Images\Icons\icon-tour-guide.png" />
+    <Content Include="Images\Icons\icon-world-travel.png" />
     <Content Include="Images\Icons\icons-phone.png" />
     <Content Include="Images\Icons\landline-phone.png" />
     <Content Include="Images\Icons\line-original.png" />
     <Content Include="Images\Icons\line-white.png" />
+    <Content Include="Images\Icons\product-highlights-list.png" />
     <Content Include="Images\Icons\viber-original.png" />
     <Content Include="Images\Icons\viber-white.png" />
     <Content Include="Images\Icons\whatsapp-original.png" />
@@ -855,7 +884,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index23.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -894,7 +923,7 @@
     <Content Include="Views\TravelTourPackages\Details.cshtml" />
     <Content Include="Views\TravelTourPackages\Edit.cshtml" />
     <Content Include="Views\TravelTourPackages\Index.cshtml" />
-    <Content Include="Views\Home\Product.cshtml" />
+    <Content Include="Views\Home\Product23.cshtml" />
     <Content Include="Views\Home\ProductCustom.cshtml" />
     <Content Include="Views\Home\ProductDefaultView2.cshtml" />
     <Content Include="Views\Home\ProductImages.cshtml" />
@@ -1004,7 +1033,8 @@
     <Content Include="Views\Home\CebuPackages\SimalaCebuTour.cshtml" />
     <Content Include="Views\Home\CebuPackages\CebuOceanparkTour.cshtml" />
     <Content Include="Views\Home\RequestInvalid.cshtml" />
-    <Content Include="Views\Home\Index24.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

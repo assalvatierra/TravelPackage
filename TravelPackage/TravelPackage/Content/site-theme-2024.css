@@ -1,5 +1,5 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +8,330 @@
 
 body {
 
+}
+
+
+
+.travel-banner {
+    background-image: url("/Images/Banner/Realbreeze-Travel-bg-2024.png");
+    background-color: gray;
+    width: 100%;
+    min-height: 720px;
+    /*min-width: 1080px;*/
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+    .travel-banner div {
+        position: absolute;
+        top: 300px;
+        left: 50px;
+        font-size: 80px;
+    }
+
+.booking-search-form {
+    /*border: 1px solid lightgray;*/
+
+    padding: 15px;
+    box-shadow: 2px 10px 15px #e0e0e0;
+    border-radius: 5px;
+    position: relative;
+    margin-top: -40px;
+    background-color: white;
+    padding-bottom: 30px;
+}
+
+    .booking-search-form .form-group {
+        align-items: flex-start;
+    }
+
+        .booking-search-form .form-group label {
+            padding-left: 14px;
+            font-weight: 600;
+        }
+
+
+    .booking-search-form div {
+        margin-left: 7px;
+    }
+
+.search-input {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.Tour-Packages-List {
+    margin-top: 8rem;
+}
+
+.tour-package-card {
+    padding: 0.5rem;
+}
+
+    .tour-package-card .card {
+        box-shadow: 0px 5px 10px #e0e0e0;
+    }
+
+.dropdown-toggle:after {
+    content: none !important;
+}
+
+.div-gray {
+    width: 100%;
+    min-height: 600px;
+    background-color: aliceblue;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.home-services {
+    padding: 20px;
+    margin: 50px 0px;
+    display: flex;
+    flex-flow: row
+}
+
+    .home-services img {
+        padding-right: 20px;
+        width: 5rem;
+        height: 4rem;
+    }
+
+.text-card-bold {
+    font-weight: 600;
+}
+
+.card-img-top {
+    min-height: 200px;
+}
+
+.card-img-top {
+    display: inline-block;
+    overflow: hidden; /* clip the excess when child gets bigger than parent */
+}
+
+    .card-img-top img {
+        height: 200px;
+        display: block;
+        transition: transform .4s; /* smoother zoom */
+    }
+
+    .card-img-top:hover img {
+        transform: scale(1.3);
+        transform-origin: 50% 50%;
+    }
+
+.homepage-footer {
+    min-height: 500px;
+    padding-top: 100px;
+}
+
+    .homepage-footer .row div {
+        margin-bottom: 30px;
+    }
+
+.footer-img {
+    width: 200px;
+    height: 200px;
+}
+
+.activity-bg-img {
+    background-image: url("/Images/Abreeza-Davao-City.jpg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    width: 300px;
+    height: 300px;
+    border-radius: 50px 50px;
+    margin: 20px;
+}
+
+    .activity-bg-img h4 {
+        color: white;
+        position: relative;
+        top: 230px;
+        left: 20px;
+    }
+
+.card-vehicle {
+    width: 20rem;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    transition: border 1s;
+    transition: box-shadow 1s;
+}
+
+    .card-vehicle:hover {
+        border: 1px solid #007bff;
+        box-shadow: 0px 0px 10px #007bff;
+    }
+
+.card-vehicle-description {
+    position: absolute;
+    border-radius: 10px;
+    padding: 10px;
+    top: 220px;
+    left: 20px;
+    border: 1px solid lightgray;
+    width: 17rem;
+    background-color: white;
+}
+
+    .card-vehicle-description div {
+        padding: 10px 10px 0px 10px;
+    }
+
+        .card-vehicle-description div p {
+            color: gray;
+        }
+
+.card-vehicle-price {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.vehicle-card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.featured-activities-items{
+    display:flex;
+    flex-direction:row;
+}
+
+
+.home-product-description {
+    font-family: 'Fredoka', sans-serif;
+    color: dimgray;
+    font-size:12px;
+}
+
+.product-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.products-images-container {
+    padding: 0px 30px;
+}
+
+.gallery-products-img {
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+}
+
+.product-summary {
+    color: dimgray;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.product-description {
+    margin-top: 20px;
+}
+
+.product-highlights li {
+    list-style: none;
+    padding: 5px 0px;
+    font-family: 'Fredoka', sans-serif;
+    color: dimgray;
+}
+
+.product-inclusions {
+    list-style: none;
+    padding: 5px 0px;
+    font-family: 'Fredoka', sans-serif;
+    color: dimgray;
+}
+
+.product-destinations {
+    list-style: none;
+    padding: 5px 0px;
+    font-family: 'Fredoka', sans-serif;
+    color: dimgray;
+}
+
+    .product-destinations li img {
+        margin-right: 10px;
+    }
+
+.product-deals-img {
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.label-text-gray {
+    color: dimgray;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.price-text {
+    color: darkturquoise;
+}
+
+.product-booking-form {
+    background-color: #e1f2fa;
+}
+
+.breadcrumb-link {
+    color: gray;
+    padding-right: 10px;
+}
+
+    .breadcrumb-link:hover {
+        color: darkturquoise;
+    }
+
+@media (max-width: 600px) {
+    .travel-banner {
+        height: 150px !important;
+    }
+        .travel-banner div {
+            top: 200px !important;
+        }
+
+
+        .travel-banner div h1 {
+            font-size: 40px !important;
+        }
+
+    .booking-search-form {
+        margin-top: -200px !important;
+    }
+
+    .tour-section-title{
+        padding-left:10px;
+    }
+
+    .card-img-top img {
+        height: 300px !important;
+    }
+
+
+    .featured-activities-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .activity-bg-img{
+        width:430px !important;
+    }
+
+    .home-services {
+        margin: 0px 0px !important;
+    }
+
+    .add-card-vehicle-margin-bottom{
+        margin-bottom:250px !important;
+    }
+
+    .hide-on-mobile{
+        display:none;
+    }
 }

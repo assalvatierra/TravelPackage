@@ -36,7 +36,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Real Breeze Travel and Tours</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,20 +44,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="/"> About Us </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                        Tour Packages
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="/DAVAO"> Davao </a>
+                        <a class="dropdown-item" href="/CEBU"> Cebu </a>
+                        <a class="dropdown-item" href="/PUERTO PRINCESA"> Palawan </a>
+                        <a class="dropdown-item" href="/Home/Destination?AreaName=BAGUIO"> Bagiuo </a>
+                        <a class="dropdown-item" href="/ILOCOS"> Ilocos </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/KOREA"> Korea </a>
+                        <a class="dropdown-item" href="/THAILAND"> Thailand </a>
+                        <a class="dropdown-item" href="/MALAYSIA"> Malaysia </a>
+                        <a class="dropdown-item" href="/SINGAPORE"> Singapore </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Car Rental
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/CarRentals"> Davao </a>
                     </div>
                 </li>
             </ul>
@@ -71,11 +85,71 @@
 
     <div class="body-content">
         @RenderBody()
+
         <hr />
+
+        <!-- Footer -->
+        <div class="container homepage-footer">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12">
+
+                    <h4> Real Breeze Travel and Tours </h4>
+                    <p> Contact Us </p>
+                    <p> travel.realbreeze@gmail.com </p>
+                    <p> Landline: 082 333 5156 </p>
+                    <p> Smart: +639 </p>
+                    <p> Smart: +639 </p>
+                    <p> Socials:  Facebook </p>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <h6> Featured Tours </h6>
+
+                    <div class="list-group list-group-flush">
+                        <a href="/DAVAO" class="list-group-item"> Davao City Tour </a>
+                        <a href="/DAVAO" class="list-group-item"> Davao City Countryside Tour</a>
+                        <a href="/TourPackages/32/Cebu Twin City Tour" class="list-group-item"> Cebu City Tour</a>
+                        <a href="/TourPackages/3/Country Side Tour" class="list-group-item"> Bohol Countryside Tour</a>
+                        <a href="/EL NIDO" class="list-group-item"> Elnido Tour - Palawan</a>
+                        <a href="/PUERTO PRINCESA" class="list-group-item"> Puerto Princesa Tour Palawan</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <h6> Latest Updataes </h6>
+
+                    <div class="list-group list-group-flush">
+                        <a href="/DAVAO" class="list-group-item"> Davao Tour</a>
+                        <a href="/DAVAO" class="list-group-item"> Davao Countryside Tour</a>
+                        <a href="/TourPackages/32/Cebu Twin City Tour" class="list-group-item"> Cebu Countryside Tour</a>
+                        <a href="/TourPackages/3/Country Side Tour" class="list-group-item"> Bohol Countryside Tour</a>
+                        <a href="/EL NIDO" class="list-group-item"> Elnido Tour - Palawan</a>
+                        <a href="/PUERTO PRINCESA" class="list-group-item"> Puerto Princesa Tour Palawan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row" style="flex-wrap:nowrap;overflow:hidden;">
+                <img src="~/Images/Destinations/Baguio/Baguio-Cathedral.jpeg" class="footer-img" />
+                <img src="~/Images/Destinations/Bohol/ChocolateHills.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Cebu/Canyoneering-Moalboal/Canyoneering.png" class="footer-img" />
+                <img src="~/Images/Destinations/Ilocos/Ilocos/ilocos-Vigan.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Ilocos/Sagada/sagada-Banaue.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Palawan/Coron/caluit-black-island.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Palawan/Elnido/TourA/el-nido-tour-a-big-lagoon.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Bohol/Tarsier.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Baguio/Baguio-strawberry-farm.jpg" class="footer-img" />
+                <img src="~/Images/Destinations/Cebu/Oslob/whale-shark-oslob.jpg" class="footer-img" />
+            </div>
+        </div>
+
+        <hr style="margin-top:0px;" />
         <footer class="container">
             <p>&copy; @DateTime.Now.Year - Real Breeze Travel and Tours - Philippines</p>
         </footer>
     </div>
+
 
     @*<div class="navbar navbar-inverse navbar-fixed-bottom callbutton">
             <div class="container">

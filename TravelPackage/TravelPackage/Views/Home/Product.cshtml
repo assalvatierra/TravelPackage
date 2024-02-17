@@ -5,6 +5,9 @@
     string sArea = ViewBag.DestName;
     string pgView = Model.PageView;
 
+    string location = ViewBag.ProdLocation as string != null ? ViewBag.ProdLocation : "";
+    string ProdCode = ViewBag.ProdCode as string != null ? ViewBag.ProdCode : "";
+
     List<TravelPackage.Models.tpProductImages> productImages = (List<TravelPackage.Models.tpProductImages>)ViewBag.ProdImages;
     List<TravelPackage.Models.tpProdRate> productRates = (List<TravelPackage.Models.tpProdRate>)ViewBag.ProdRate;
     TravelPackage.Models.WebInquiryForm InquiryObj = (TravelPackage.Models.WebInquiryForm)ViewBag.Inquiry;
@@ -17,63 +20,370 @@
     List<TravelPackage.Models.tpBacklink> backLinks = (List<TravelPackage.Models.tpBacklink>)ViewBag.Backlinks;
 }
 
-<div class="breadcrumbs10" style="background-color: #eeeeee;">
+<hr />
+<div class="container-fluid">
     <p>
-        &raquo;
-        @Html.ActionLink("HOME", "Index", null, new { @class = "btn btn-primary btn-sm" })
-        @Html.ActionLink("DESTINATIONS", "Index", null, new { @class = "btn btn-primary btn-sm" })
-        @Html.ActionLink(@sArea, "Destination", new { id = ViewBag.DestId, AreaName = sArea }, new { @class = "btn btn-primary btn-sm" })
-        @Model.Name&raquo;
+        <a href="/Home" class="breadcrumb-link">  Home  </a> > &nbsp;
+        <a href="/@Model.tpArea.Name" class="breadcrumb-link"> @Model.tpArea.Name </a>  > &nbsp;
+        <span style="color:darkcyan;">
+            @Model.Name
+        </span>
     </p>
 </div>
 
-<div class="row">
-    <div class="col-md-10">
-        <h1>@Model.Name</h1>
-        <h2 style="font-size:medium;">@ViewBag.subTitle</h2>
-        <p class="lead">@Model.ShortRemarks</p>
-    </div>
-</div>
 <hr />
-<div class="row">
-    <div class="col-md-6">
-        @{ Html.RenderPartial(pgView, Model); }
-        @{ Html.RenderPartial("ProductContact"); }
-        @{ Html.RenderPartial("ProductRates", productRates); }
-    </div>
-    <div class="col-md-6">
-       
-        @{ Html.RenderPartial("ProductInquiry", InquiryObj); }
-          
-    </div>
 
-</div>
+<div class="products-images-container">
+    <div class="row">
 
+        @foreach (var mainImages in ViewBag.ProdImagesMain as IEnumerable<TravelPackage.Models.tpProductImages>)
+        {
 
-<div class="row">
-    <div class="col-md-6">
-        @{ Html.RenderPartial("productImages", productImages); }
-    </div>
-</div>
+            <div class="col-lg-4 col-sm-4  hide-on-mobile">
+                <img src="@mainImages.ImgPath" class="gallery-products-img" />
+            </div>
+        }
 
-@{ Html.RenderPartial("ProductCategories", productCategories); }
-@{ Html.RenderPartial("ProductKeywords", productKeywords); }
-
-<div class="row">
-    <div class="col-md-4">
-        @{ Html.RenderPartial("ProductNearby", nearbyAds); }
-    </div>
-    <div class="col-md-4">
-        @{ Html.RenderPartial("ProductSimilarAds", similarAds); }
-    </div>
-    <div class="col-md-4">
-        @{ Html.RenderPartial("ProductBacklinks", backLinks); }
+        @*<div class="col-lg-4 col-sm-4 hide-on-mobile">
+                <img src="~/Images/Destinations/Davao/Davao-Phil-Eagle.png" class="gallery-products-img" />
+            </div>
+            <div class="col-lg-4 col-sm-4">
+                <img src="~/Images/Abreeze-mall.jpg" class="gallery-products-img" />
+            </div>
+            <div class="col-lg-4 col-sm-4 hide-on-mobile">
+                <img src="~/Images/Destinations/Davao/Davao-Peoples-Park.jpg" class="gallery-products-img" />
+            </div>
+        *@
     </div>
 </div>
 
-<p>
-    @Html.ActionLink("Back to List", "Destination", new { id = ViewBag.DestId, AreaName = sArea })
-</p>
+
+<div class="container-lg product-container">
+
+    <h1> @Model.Name </h1>
+    <p style="color:gray;font-size:15px">
+        @if (location != null)
+        {
+            <img src="~/Images/Icons/icon-destination.png" width="30" />
+            @location
+        }
+    </p>
+    <div class="row">
+        <div style="margin-left:20px;">
+            <span class="label-text-gray"> Price : </span>
+            <span class="price-text" style="font-size:20px;"> P 2,500.00  </span>
+        </div>
+        <div style="margin-left:50px;">
+            <span class="label-text-gray">Duration : </span>
+            @*8-10 hours*@
+        </div>
+        <div style="margin-left:50px;">
+            <span class="label-text-gray">Tour Code: </span>
+            @ProdCode
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+
+        <div class="col-lg-8  col-sm-12">
+            <div class="product-description">
+                <h4> About This Tour</h4>
+                <div>
+                    @foreach (var description in ViewBag.ProdDescMgs as IEnumerable<TravelPackage.Models.tpProductDesc>)
+                    {
+                        <p class="product-summary">
+                            @description.tpDesc
+                        </p>
+                    }
+
+                    <!-- Insert existing tour descriptions-->
+                    @{ Html.RenderPartial(pgView, Model); }
+                </div>
+                <br />
+                <h4> Highlights </h4>
+                <ul class="product-highlights">
+                    @foreach (var description in ViewBag.ProdHighlights as IEnumerable<TravelPackage.Models.tpProductDesc>)
+                    {
+                        <li>
+                            <img src="~/Images/Icons/icon-product-highlights-list.png" />
+                            @description.tpDesc
+                        </li>
+                    }
+                    @*<li>
+                            <img src="~/Images/Icons/icon-product-highlights-list.png" />
+                            Ride in comfort in a climate-controlled, luxury tour bus
+                        </li>
+                        <li>
+                            <img src="~/Images/Icons/icon-product-highlights-list.png" />
+                            Enjoy 15-minute guided walking tours of NYC's most iconic sites - Central Park, Rockefeller Center, and more!
+                        </li>
+                        <li>
+                            <img src="~/Images/Icons/icon-product-highlights-list.png" />
+                            From April through December, take a seasonal boat cruise for breathtaking views of NYC skyline from water
+                        </li>*@
+                </ul>
+                <br />
+                <h4> What's Included </h4>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="product-inclusions">
+                            @foreach (var inclusions in ViewBag.ProdInclusions as IEnumerable<TravelPackage.Models.tpProductDesc>)
+                            {
+                                <li style="margin-bottom:5px;">
+                                    <img src="~/Images/Icons/icon-product-highlights-list.png" />
+                                    @inclusions.tpDesc
+                                </li>
+                            }
+                            @*<li>
+                                    <img src="~/Images/Icons/icon-product-check.png" />
+                                    Specialized bilingual guide
+                                </li>
+                                <li>
+                                    <img src="~/Images/Icons/icon-product-check.png" />
+                                    Private Transport
+                                </li>
+                                <li>
+                                    <img src="~/Images/Icons/icon-product-check.png" />
+                                    Entrance fees (Cable and car and Moon Valley)
+                                </li>
+                                <li>
+                                    <img src="~/Images/Icons/icon-product-check.png" />
+                                    Box lunch water, banana apple and chocolate
+                                </li>*@
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="product-inclusions">
+                            @foreach (var exclusion in ViewBag.ProdExclusions as IEnumerable<TravelPackage.Models.tpProductDesc>)
+                            {
+                                <li style="margin-bottom:5px;">
+                                    <img src="~/Images/Icons/icon-product-ex.png" />
+                                    @exclusion.tpDesc
+                                </li>
+                            }
+                            @*<li>
+                                    <img src="~/Images/Icons/icon-product-ex.png" />
+                                    Departure Taxes
+                                </li>
+                                <li>
+                                    <img src="~/Images/Icons/icon-product-ex.png" />
+                                    Entry Fees
+                                </li>
+                                <li>
+                                    <img src="~/Images/Icons/icon-product-ex.png" />
+                                    5 Star Accommodation
+                                </li>
+                                <li>
+                                    <img src="~/Images/Icons/icon-product-ex.png" />
+                                    Airport Transfers
+                                </li>*@
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <hr />
+                <div>
+                    <h4> Destinations</h4>
+                    <ul class="product-destinations">
+                        @foreach (var destination in ViewBag.ProdDestinations as IEnumerable<TravelPackage.Models.tpProductDesc>)
+                        {
+                            <li style="margin-bottom:5px;">
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                @destination.tpDesc
+                            </li>
+                        }
+
+                        @*<li>
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                Airport Pickup
+                            </li>
+                            <li>
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                Tour Site 1
+                            </li>
+                            <li>
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                Tour Site 2
+                            </li>
+                            <li>
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                Lunch
+                            </li>
+                            <li>
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                Tour Site 3
+                            </li>
+                            <li>
+                                <img src="~/Images/Icons/icon-destination-sm.png" width="15" />
+                                Hotel Dropoff
+                            </li>*@
+                    </ul>
+                </div>
+                <br />
+                <hr />
+                <div class="row">
+
+                    @foreach (var images in ViewBag.ProdImages as IEnumerable<TravelPackage.Models.tpProductImages>)
+                    {
+                        <div class="col-lg-3">
+                            <img src="@images.ImgPath" style="width:100%;" />
+                            <p> @images.Desc </p>
+                        </div>
+
+                    }
+
+                </div>
+
+                <hr />
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-12">
+            <div class="card product-booking-form">
+
+                <div class="card-body">
+
+                    @{ Html.RenderPartial("ProductInquiry", InquiryObj); }
+
+                    @*@using (Html.BeginForm())
+                        {
+                            <h4> Book This Tour</h4>
+                            <hr />
+                            <div>
+                                <span> Guest Name</span>
+                                <input type="text" id="LeadGuest" class="form-control" maxlength="40" />
+                                <br />
+                            </div>
+                            <div>
+                                <span> Contact Number </span>
+                                <input type="text" id="ContactNo" class="form-control" maxlength="13" />
+                                <br />
+                            </div>
+                            <div>
+                                <span> Email</span>
+                                <input type="email" id="Email" class="form-control" maxlength="80" />
+                                <br />
+                            </div>
+                            <div>
+                                <span>  Adult </span>
+                                <input type="number" id="NoOfAdult" class="form-control" maxlength="2" />
+                                <br />
+                            </div>
+                            <div>
+                                <span>  Child </span>
+                                <input type="number" id="NoOfChild" class="form-control" maxlength="2" />
+                                <br />
+                            </div>
+                            <div>
+                                <span> Tour Date</span>
+                                <input type="date" id="JobStart" class="form-control" />
+                                <br />
+                            </div>
+                            <div>
+                                <span>  Remarks / Message </span>
+                                <input type="text" id="Message" class="form-control" maxlength="80" />
+                                <br />
+                            </div>
+                            <div hidden>
+                                <span>  Tour Code </span>
+                                <input type="text" class="form-control" value="DVO-DCT" disabled />
+                                <br />
+                            </div>
+                            <div hidden>
+                                <span>  Tour Code </span>
+                                <input type="text" id="ProductId" class="form-control" value="@Model.Id" disabled />
+                                <br />
+                            </div>
+                            <div hidden>
+                                <span>  Status </span>
+                                <input type="text" id="Status" class="form-control" value="QUOTE" disabled />
+                                <br />
+                            </div>
+                            <hr />
+                            <button class="btn btn-primary" style="width:100%; padding:10px 30px;" type="submit" value="Create"> Book Now </button>
+
+                        }*@
+                </div>
+            </div>
+            <br />
+            @*<div class="card" style="padding:20px;">
+                    <h4 style="padding:10px 20px 0px 0px;"> Travel Deals </h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="~/Images/Bohol101.png" class="product-deals-img" />
+                        </div>
+                        <div class="col-lg-8">
+                            <h5> Bohol Tour Package</h5>
+                            <p class="price-text">P3,500 - P5,000</p>
+                        </div>
+                    </div> <hr />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="~/Images/CebuCity.jpg" class="product-deals-img" />
+                        </div>
+                        <div class="col-lg-8">
+                            <h5> Cebu Tour Package</h5>
+                            <p class="price-text">P3,500</p>
+                        </div>
+                    </div> <hr />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="~/Images/Abreeze-mall.jpg" class="product-deals-img" />
+                        </div>
+                        <div class="col-lg-8">
+                            <h5> Davao Tour Package</h5>
+                            <p class="price-text">P3,500</p>
+                        </div>
+                    </div><hr />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="~/Images/El_Nido_Palawan.jpg" class="product-deals-img" />
+                        </div>
+                        <div class="col-lg-8">
+                            <h5> El Nido Palawan Tour </h5>
+                            <p class="price-text">P5,500</p>
+                        </div>
+                    </div>
+                    <br />
+                </div>*@
+        </div>
+
+        <hr />
+
+        <div class="col-lg-12">
+
+            <h4>
+                You May Also Like
+                <!-- Insert Other related tour packages-->
+            </h4>
+
+            <div class="row">
+
+                @foreach (var products in ViewBag.SimilarAds as IEnumerable<TravelPackage.Models.tpProducts>)
+                {
+                    <div class="tour-package-card col-lg-3 col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-img-top">
+                                <img class="card-img-top" src="@products.PgFeatureImg" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-card-bold">@products.Name</h5>
+                                <p class="card-text">@products.ShortRemarks</p>
+                                <p class="card-text">Price $-$$</p>
+                                <a href="@Url.Action("Product", new { id = products.Id, ProductName = products.Name })" class="card-link">More information ></a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 
 @section scripts {

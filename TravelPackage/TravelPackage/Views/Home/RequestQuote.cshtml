@@ -4,40 +4,41 @@
     IEnumerable<TravelPackage.Models.tpProducts> AddOns = (IEnumerable<TravelPackage.Models.tpProducts>)ViewBag.Addons;
     IEnumerable<TravelPackage.Models.tpInqServices> AddedProducts = (IEnumerable<TravelPackage.Models.tpInqServices>)ViewBag.Added;
 }
+<div class="container">
 
-<h2>Quotation Request</h2>
-<p>Ref No: @ViewBag.RefNo </p>
-<p>
-    Dear Customer:
-    <br />
-    <br />Your request is now being processed in our system.
-    <br />We will contact you to as soon as possible. For other inquiries and
-    <br /> concerns you can email us at travel.realbreeze@gmail.com
-</p>
-
-<p>
-    --- Requested Products ---
-</p>
-@foreach (var item in AddedProducts)
-{
+    <h2>Quotation Request</h2>
+    <p>Ref No: @ViewBag.RefNo </p>
     <p>
-        <span>-@item.dtSvcStart.ToString("dd/MMM/yyyy")</span>
-        <span>-@item.tpProduct.Name</span>
-    </p> 
-}
-<p>
-    --- End of list ---
-</p>
-<p>
-    <br /> Rgds!
-    <br /> Sales Team
-    <br /> RealBreeze Travel and Tours
-    <br />
-</p>
+        Dear Customer:
+        <br />
+        <br />Your request is now being processed in our system.
+        <br />We will contact you to as soon as possible. For other inquiries and
+        <br /> concerns you can email us at travel.realbreeze@gmail.com
+    </p>
 
-<div class="row" style="background-color: #eeeeee;">
-    <h2>Other Products</h2>
-</div>
+    <p>
+        --- Requested Products ---
+    </p>
+    @foreach (var item in AddedProducts)
+    {
+        <p>
+            <span>-@item.dtSvcStart.ToString("dd/MMM/yyyy")</span>
+            <span>-@item.tpProduct.Name</span>
+        </p>
+    }
+    <p>
+        --- End of list ---
+    </p>
+    <p>
+        <br /> Rgds!
+        <br /> Sales Team
+        <br /> RealBreeze Travel and Tours
+        <br />
+    </p>
+
+    <div class="row" style="background-color: #eeeeee;">
+        <h2>Other Products</h2>
+    </div>
 
     <div class="row">
         @foreach (var item in AddOns)
@@ -57,3 +58,5 @@
     @Html.ActionLink("Back", "Index")
 
 
+
+</div>

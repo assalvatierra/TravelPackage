@@ -50,6 +50,13 @@ namespace TravelPackage.Controllers
             if (sTemp == s1)
                 return Redirect("http://realbreezedavaotours.com/");
 
+            var Destinations = db.tpAreas.ToList().OrderBy(d => d.Sort);
+
+            var featured = db.tpProdCats.Where(d => d.tpCategory.SysCode == "FEATURED").Select(s => s.tpProductsId);
+            var featuredTours = db.tpProducts.Where(d => featured.Contains(d.Id)).OrderBy(d => d.Sort).ToList();
+
+            ViewBag.FeaturedTour = featuredTours;
+
             return View(db.tpAreas.ToList().OrderBy(d => d.Sort));
         }
 
@@ -87,6 +94,13 @@ namespace TravelPackage.Controllers
 
         }
 
+
+        public ActionResult ProductDetails()
+        {
+            return View();
+        }
+        
+
         public ActionResult Product(int? id, string ProductName)
         {
             if (id == null)
@@ -116,7 +130,16 @@ namespace TravelPackage.Controllers
             ViewBag.DestId = product.tpAreasId;
             ViewBag.DestName = product.tpArea.Name;
             ViewBag.ProdImages = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s=>s.Sort).ToList();
-            ViewBag.ProdDesc = db.tpProductDescs.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdImagesMain = db.tpProductImages.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).ToList().Take(3);
+
+            var ProdDesc = db.tpProductDescs.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdDescMgs = ProdDesc.Where(d => d.tpDescH1 == "Description").OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdHighlights = ProdDesc.Where(d => d.tpDescH1 == "Highlights").OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdInclusions = ProdDesc.Where(d => d.tpDescH1 == "Inclusions").OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdExclusions = ProdDesc.Where(d => d.tpDescH1 == "Exclusions").OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdDestinations = ProdDesc.Where(d => d.tpDescH1 == "Destinations").OrderBy(s => s.Sort).ToList();
+            ViewBag.ProdLocation = ProdDesc.Where(d => d.tpDescH1 == "Location").OrderBy(s => s.Sort).FirstOrDefault();
+            ViewBag.ProdCode = ProdDesc.Where(d => d.tpDescH1 == "TourCode").OrderBy(s => s.Sort).FirstOrDefault();
             ViewBag.ProdRate = db.tpProdRates.Where(d => d.tpProductsId == id).OrderBy(s => s.Sort).Include(d=>d.tpUom).ToList();
 
             // categories and tags/keywords
@@ -130,7 +153,7 @@ namespace TravelPackage.Controllers
             ViewBag.NearbyAds = db.tpProducts.Where(d => d.tpAreasId == product.tpAreasId).Where(d=> featuredProducts.Contains(d.Id)).ToList();
 
             var similarCat = db.tpProdCats.Where(d => sCat.Contains(d.tpCategoryId)).Select(d=>d.tpProductsId).ToList();
-            ViewBag.SimilarAds = db.tpProducts.Where(d => similarCat.Contains(d.Id)).Where(d=> d.tpAreasId != product.tpAreasId).ToList();
+            ViewBag.SimilarAds = db.tpProducts.Where(d=> d.tpAreasId == product.tpAreasId).Take(4).ToList();
 
             //Backlinks
             ViewBag.Backlinks = db.tpBacklinks.Where(d=>d.LinkType=="PRODUCT").ToList();
@@ -263,7 +286,7 @@ namespace TravelPackage.Controllers
             //email.SendMailRedirect(tpInq.Id, "reservation.realwheels@gmail.com");
 
             //for testing
-            // var test = email.SendMailRedirect(tpInq.Id, "jahdielsvillosa@gmail.com");
+            //var test = email.SendMailRedirect(tpInq.Id, "jahdielsvillosa@gmail.com");
 
             if (wif.Status == "QUOTE")
             {

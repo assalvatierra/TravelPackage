@@ -92,12 +92,14 @@ namespace TravelPackage.Models
                 md.Subject = "Realbreeze Travel Inquiry";      //mail title
 
                 ListDictionary replacements = new ListDictionary();
-                replacements.Add("{name}", "Martin");
-                replacements.Add("{unit}", "Honda City");
-                replacements.Add("{tour}", "City Tour");
-                replacements.Add("{type}", "w/ Driver");
-                replacements.Add("{days}", "2");
-                replacements.Add("{total}", "5500");
+                replacements.Add("{tour}"   , "");
+                replacements.Add("{date}"   , "");
+                replacements.Add("{guest}"  , "");
+                replacements.Add("{contact}", "");
+                replacements.Add("{email}"  , "");
+                replacements.Add("{adult}"  , "");
+                replacements.Add("{child}"  , "");
+                replacements.Add("{message}", "");
 
                 string body, message;
                 //get job details
@@ -106,11 +108,23 @@ namespace TravelPackage.Models
                 //send email in /joborder
                 tpInqServices inquiry = db.tpInqServices.Find(InqId);
 
-                md.Subject = " New Inquiry";   //mail title
+                md.Subject = " New Inquiry - " + inquiry.tpProduct.Name;   //mail title
 
                 //mail content for client inquiries
-                message = "<div style=';margin-left:40%;margin-right:10%;font-size:18px;text-align:left;'>" +
-                          "<a href='http://realbreezetravel.com/tpInquiries'> Please Follow this link </text><br /></div />";
+                message = "<div style=';margin-left:25%;margin-right:10%;font-size:18px;text-align:left;'>" +
+                       "<b>Inquiry Date</b> : <text>" + inquiry.tpInquiry.dtInquiry.ToString() + " </text><br />" +
+                       "<b>Area Package</b> : <text>" + inquiry.tpProduct.tpArea.Name + " - " + inquiry.tpProduct.Name + "</text><br />" +
+                       "<b>Tour Date</b>    : <text>" + inquiry.dtSvcStart.Date.ToString("MMM dd yyyy") + " </text><br />" +
+                       "<b>Lead Guest</b>   : <text>" + inquiry.tpInquiry.LeadGuest + " </text><br />" +
+                       "<b>Contact No.</b>  : <text>" + inquiry.tpInquiry.ContactNo.ToString() + " </text><br />" +
+                       "<b>Guest Email</b>  : <text>" + inquiry.tpInquiry.Email + " </text><br />" +
+                       "<b>No of Adult</b>  : <text>" + inquiry.tpInquiry.NoOfAdult.ToString() + " </text><br />" +
+                       "<b>No of Child</b>  : <text>" + inquiry.tpInquiry.NoOfChild + " </text><br />" +
+                       "<b>Remarks</b>      : <text>" + inquiry.Message + " </text><br />"+
+                       " </div> <hr>" +
+                       "<a href='http://realbreezetravel.com/tpInquiries'> Please Follow this link for List of Inquiries  </a><br />"+
+                       " <p> This is a system generated message. Please do not reply. </p>"+
+                       "</div />";
 
                 body = 
                     " <div style='background-color:#f4f4f4;padding:20px' align='center'>" +
